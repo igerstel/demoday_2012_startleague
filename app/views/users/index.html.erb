@@ -4,7 +4,7 @@
   <tr>
     <th>Email</th>
     <th>Password</th>
-    <th>Password digest</th>
+    <!-- <th>Password digest</th> -->
     <th>Password confirmation</th>
     <th>Name</th>
     <th>Business name</th>
@@ -17,7 +17,7 @@
     <th>About</th>
     <th>Business</th>
     <th>Tag</th>
-    <th>Favorite</th>
+    <!-- <th>Favorite</th> -->
     <th></th>
     <th></th>
     <th></th>
@@ -27,7 +27,7 @@
   <tr>
     <td><%= user.email %></td>
     <td><%= user.password %></td>
-    <td><%= user.password_digest %></td>
+    <!-- <td><#%= user.password_digest %></td> -->
     <td><%= user.password_confirmation %></td>
     <td><%= user.name %></td>
     <td><%= user.business_name %></td>
@@ -40,7 +40,7 @@
     <td><%= user.about %></td>
     <td><%= user.business %></td>
     <td><%= user.tag %></td>
-    <td><%= user.favorite %></td>
+    <!-- <td><#%= user.favorite %></td> -->
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

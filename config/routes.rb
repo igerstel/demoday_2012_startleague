@@ -1,4 +1,7 @@
 Fmf4::Application.routes.draw do
+
+  root :to => 'users#index'
+
   resources :order_items
 
   resources :orders
