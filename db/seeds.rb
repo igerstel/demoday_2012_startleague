@@ -6,111 +6,114 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Faker::Config.locale = :en
+if Rails.env.development? # ???
 
-User.destroy_all
-Product.destroy_all
+	Faker::Config.locale = :en
 
-cereals = ['Cereals',
-					 'corn',
-					 'rice',
-					 'wheat',
-					 'oats']
+	User.destroy_all
+	Product.destroy_all
 
-veggies = ['Vegetables/Melons',
-				 	 'broccoli',
-					 'lettuce',
-					 'spinach',
-					 'asparagus',
-					 'pumpkin']
+	cereals = ['Cereals',
+						 'corn',
+						 'rice',
+						 'wheat',
+						 'oats']
 
-roots = ['Roots/Tubers',
-				 'carrots',
-				 'potatoes',
-				 'beets',
-				 'onions']
+	veggies = ['Vegetables/Melons',
+					 	 'broccoli',
+						 'lettuce',
+						 'spinach',
+						 'asparagus',
+						 'pumpkin']
 
-milk = ['Milk',
-				'whole milk',
-				'butter',
-				'yogurt',
-				'chocolate milk']
+	roots = ['Roots/Tubers',
+					 'carrots',
+					 'potatoes',
+					 'beets',
+					 'onions']
 
-fruit = ['Fruit',
-				 'oranges',
-				 'red apples',
-				 'green apples',
-				 'figs']
+	milk = ['Milk',
+					'whole milk',
+					'butter',
+					'yogurt',
+					'chocolate milk']
 
-meat = ['Meat',
-				'steak',
-				'chicken',
-				'pig',
-				'rabbit']
+	fruit = ['Fruit',
+					 'oranges',
+					 'red apples',
+					 'green apples',
+					 'figs']
 
-fish = ['Fish',
-				'salmon',
-				'tuna',
-				'grouper',
-				'clams']
+	meat = ['Meat',
+					'steak',
+					'chicken',
+					'pig',
+					'rabbit']
 
-eggs = ['Eggs',
-				'grade AA',
-				'grade A',
-				'grade B']
+	fish = ['Fish',
+					'salmon',
+					'tuna',
+					'grouper',
+					'clams']
 
-legumes = ['Legumes',
-					 'alfalfa',
-					 'peas',
-					 'lentils',
-					 'peanuts']
+	eggs = ['Eggs',
+					'grade AA',
+					'grade A',
+					'grade B']
 
-product_cats = [cereals,veggies,roots,milk,
-								fruit,meat,fish,eggs,legumes]
+	legumes = ['Legumes',
+						 'alfalfa',
+						 'peas',
+						 'lentils',
+						 'peanuts']
 
-packaging = ['crate','bushel','barrel','pallet','bag']
-unit = ['ea','lb','oz','dozen']
+	product_cats = [cereals,veggies,roots,milk,
+									fruit,meat,fish,eggs,legumes]
 
-puts "Creating Users..."
-num = 0
-10.times do |u|
-	u = User.new
-	u.email =					Faker::Internet.email
-	u.password = 			"pw#{num}"
-	u.password_confirmation =  "pw#{num}"
-	u.name =					Faker::Name.name
-	u.business_name =	Faker::Company.name
-	u.address =				Faker::Address.street_address
-	u.city =					Faker::Address.city
-	u.state =					Faker::Address.state
-	u.zip =						Faker::Address.zip
-	u.website = 			Faker::Internet.url
-	u.phone = 				Faker::PhoneNumber.cell_phone
-	u.about =					Faker::Lorem.sentences(3)
-	if num%2 == 0
-		u.business = 		"Farm"
-	else u.business =	"Restaurant"
+	packaging = ['crate','bushel','barrel','pallet','bag']
+	unit = ['ea','lb','oz','dozen']
+
+	puts "Creating Users..."
+	num = 0
+	10.times do |u|
+		u = User.new
+		u.email =					Faker::Internet.email
+		u.password = 			"pw#{num}"
+		u.password_confirmation =  "pw#{num}"
+		u.name =					Faker::Name.name
+		u.business_name =	Faker::Company.name
+		u.address =				Faker::Address.street_address
+		u.city =					Faker::Address.city
+		u.state =					Faker::Address.state
+		u.zip =						Faker::Address.zip
+		u.website = 			Faker::Internet.url
+		u.phone = 				Faker::PhoneNumber.cell_phone
+		u.about =					Faker::Lorem.sentences(3)
+		if num%2 == 0
+			u.business = 		"Farm"
+		else u.business =	"Restaurant"
+		end
+		u.tag = 					Faker::Company.bs
+		u.save
+		num+=1
 	end
-	u.tag = 					Faker::Company.bs
-	u.save
-	num+=1
-end
 
-puts "Creating Products..."
-u = User.all
-u.size.times do |pf|
-	5.times do |p|
-		product_type = rand(product_cats.size)
-		product_name = rand(product_cats[product_type].size)
-		p = Product.new
-		p.name = 							product_name
-		p.product_attribute = product_type
-		p.description =				Faker::Lorem.sentences(2)
-		p.packaging = 				packaging[rand(packaging.size)]
-		p.uom =								unit[rand(unit.size)]
-		p.price =							rand(1000)/100.to_f
-		p.qty_avail =					rand(200)
-		p.user_id =						u[pf*2]
-		p.save
+	puts "Creating Products..."
+	u = User.all
+	u.size.times do |pf|
+		5.times do |p|
+			product_type = rand(product_cats.size)
+			product_name = rand(product_cats[product_type].size)
+			p = Product.new
+			p.name = 							product_name
+			p.product_attribute = product_type
+			p.description =				Faker::Lorem.sentences(2)
+			p.packaging = 				packaging[rand(packaging.size)]
+			p.uom =								unit[rand(unit.size)]
+			p.price =							rand(1000)/100.to_f
+			p.qty_avail =					rand(200)
+			p.user_id =						u[pf*2]
+			p.save
+		end
 	end
 end
