@@ -41,7 +41,8 @@
   </div>
   <div class="field">
     <%= f.label :state %><br />
-    <%= f.text_field :state %>
+    <%= select_tag :state,  options_for_select(states) %><br />
+    <!-- <#%= f.text_field :state %> -->
   </div>
   <div class="field">
     <%= f.label :zip %><br />
@@ -62,17 +63,13 @@
   <div class="field">
     <%= f.label :business %><br />
     <%= radio_button_tag(:business, "farm") %>
-    <%= label_tag(:business, "My business is a farm")%>
+    <%= label_tag(:business, "My business is a farm")%><br>
     <%= radio_button_tag(:business, "restaurant")%>
     <%= label_tag(:business, "My business is a restaurant")%>
   </div>
   <div class="field">
     <%= f.label :tag %><br />
     <%= f.text_field :tag %>
-  </div>
-  <div class="field">
-    <%= f.label :favorite %><br />
-    <%= f.check_box :favorite %>
   </div>
   <div class="actions">
     <%= f.submit %>

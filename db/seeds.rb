@@ -75,12 +75,13 @@ if Rails.env.development? # ???
 
 	puts "Creating Users..."
 	num = 0
-	6.times do |u|
+	4.times do |u|
 		u = User.new
 		u.email =					Faker::Internet.email
 		u.password = 			"pw#{num}"
 		u.password_confirmation =  "pw#{num}"
-		u.name =					Faker::Name.name
+		u.first_name =		Faker::Name.first_name
+		u.last_name =	 	  Faker::Name.last_name
 		u.business_name =	Faker::Company.name
 		u.address =				Faker::Address.street_address
 		u.city =					Faker::Address.city
@@ -103,7 +104,7 @@ if Rails.env.development? # ???
 	u.size.times do |pf|
 		4.times do |p|
 			ptype = rand(product_cats.size)
-			pname = rand(product_cats[ptype].size)
+			pname = rand(product_cats[ptype].size-1)+1
 			p = Product.new
 			p.name = 							product_cats[ptype][pname]
 			p.product_attribute = product_cats[ptype][0]

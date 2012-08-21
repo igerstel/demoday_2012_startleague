@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120819221013) do
+ActiveRecord::Schema.define(:version => 20120821195903) do
 
   create_table "order_items", :force => true do |t|
     t.integer  "order_id"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(:version => 20120819221013) do
     t.string   "password"
     t.string   "password_digest"
     t.string   "password_confirmation"
-    t.string   "name"
+    t.string   "first_name"
     t.string   "business_name"
     t.string   "address"
     t.string   "city"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(:version => 20120819221013) do
     t.boolean  "favorite"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
+    t.string   "last_name"
   end
 
 end

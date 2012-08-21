@@ -37,6 +37,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def new2
+    @user = User.find_by_id(session["user_id"])
+  end
+
   # POST /users
   # POST /users.json
   def create
@@ -44,8 +48,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render json: @user, status: :created, location: @user }
+        format.html { redirect_to newlogin_url(params[:user]), notice: 'User was successfully created.' }
+        format.json { render json: newlogin_url(params[:user]), status: :created, location: @user }
       else
         format.html { render action: "new" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -68,6 +72,27 @@ class UsersController < ApplicationController
       end
     end
   end
+
+  def update2
+    @user = User.find(params[:id])
+
+    respond_to do |format|
+      if @user.update_attributes(params[:user])
+        if @user.business == "Farm"
+          format.html { redirect_to new_product_url, notice: 'User was successfully updated.' }
+          format.json { head :no_content }
+        else
+          format.html { redirect_to root_url, notice: 'User was successfully updated.' }
+          format.json { head :no_content }
+        end
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+
 
   # DELETE /users/1
   # DELETE /users/1.json
