@@ -115,6 +115,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def list
+    @search = Produce.search(params[:q])
+    @produces = @search.result  
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @produces }
+    end
+  end
+
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
