@@ -10,6 +10,16 @@ class ProductsController < ApplicationController
     end
   end
 
+  def list
+    @products = Product.find_all_by_user_id(session["user_id"])
+
+    #@products = @pud.by_month(Time.parse(params[:month]) || Time.now)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @products }
+    end
+  end
+
   # GET /products/1
   # GET /products/1.json
   def show

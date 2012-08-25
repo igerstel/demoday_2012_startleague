@@ -10,8 +10,12 @@ class User < ActiveRecord::Base
   has_many :products
   has_many :orders
   
-  # ???
-  validates_associated :products
-  validates_uniqueness_of :email
+
+  #validates_associated :products
+  #validates_associated :orders
+  #validates_uniqueness_of :email => { :case_sensitive => :false,
+  #                        :minimum => 6 }
+
+
   
 end

@@ -114,6 +114,11 @@ if Rails.env.development? # ???
 			p.price =							rand(1000).to_f/100
 			p.qty_avail =					rand(200)
 			p.user_id =						u[pf/2].id
+			dd = rand(2)
+			if dd == 1
+				p.created_at = 			Time.now
+			else p.created_at =		Time.now-7.days
+			end
 			p.save
 		end
 	end
