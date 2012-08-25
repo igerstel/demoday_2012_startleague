@@ -47,21 +47,21 @@ class UsersController < ApplicationController
   end
 
   def new2
-    if session["user_id"].present?
+    # if session["user_id"].present?
+    #   @user = User.find_by_id(session["user_id"])
+    #   if @user.business == 'Farm'
+    #     redirect_to farmer_step3_url
+    #   elsif @user.business == 'Restaurant'
+    #     redirect_to chef_step3_url
+    #   end
+    # else
       @user = User.find_by_id(session["user_id"])
-      if @user.business == 'Farm'
-        redirect_to farmer_step3_url
-      elsif @user.business == 'Restaurant'
-        redirect_to chef_step3_url
-      end
-    else
-      @user = User.new
 
       respond_to do |format|
         format.html # new.html.erb
         format.json { render json: @user }
       end
-    end
+    #end
   end
 
   # POST /users
@@ -102,10 +102,10 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update_attributes(params[:user])
         if @user.business == "Farm"
-          format.html { redirect_to new_product_url, notice: 'User was successfully updated.' }
+          format.html { redirect_to farmer_step3_url, notice: 'User was successfully updated.' }
           format.json { head :no_content }
         else
-          format.html { redirect_to root_url, notice: 'User was successfully updated.' }
+          format.html { redirect_to chef_step3_url, notice: 'User was successfully updated.' }
           format.json { head :no_content }
         end
       else
