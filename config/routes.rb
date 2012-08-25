@@ -2,8 +2,6 @@ Fmf4::Application.routes.draw do
 
   root :to => 'users#new'
 
-  #get "/products/:category" => "Produces#showtype", :as => "protype"
-
   get "/products/list" => 'products#list', :as => :farmer_list
 
   get "/user/new2" => 'users#new2', :as => :user_new2

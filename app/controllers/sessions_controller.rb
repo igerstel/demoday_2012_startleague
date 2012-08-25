@@ -7,7 +7,10 @@ class SessionsController < ApplicationController
     if user
       if user.authenticate(params[:password])
         session["user_id"] = user.id
-        redirect_to user_url(user), notice: "Welcome back, #{user.first_name}."
+        if user.first_name.present?
+          redirect_to user_url(user), notice: "Welcome back, #{user.first_name}."
+        else redirect_to user_url(user), notice: "Welcome back."
+        end
       else
         redirect_to root_url, notice: "Unknown email or password."
       end
