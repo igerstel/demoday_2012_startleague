@@ -11,9 +11,16 @@ class ProductsController < ApplicationController
   end
 
   def list
-    @products = Product.find_all_by_user_id(session["user_id"])
+    @user = User.find_by_id(session["user_id"])
+    if params[:start_date].present? && params[:end_date].present?
+      @start_date = params[:start_date]
+      @end_date = params[:end_date]
+    else
+      @start_date = (Date.today-7).to_s
+      @end_date = (Date.today).to_s
+    end
+    @products = @user.products.find(:all, :conditions => ['created_at >= ? and created_at <= ?', Date.parse(@start_date), Date.parse(@end_date)])
 
-    #@products = @pud.by_month(Time.parse(params[:month]) || Time.now)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }

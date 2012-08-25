@@ -24,11 +24,20 @@ class UsersController < ApplicationController
   # GET /users/new
   # GET /users/new.json
   def new
-    @user = User.new
+    if session["user_id"].present?
+      @user = User.find_by_id(session["user_id"])
+      if @user.business == 'Farm'
+        redirect_to farmer_list_url
+      elsif @user.business == 'Restaurant'
+        redirect_to chef_list_url
+      end
+    else
+      @user = User.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @user }
+      respond_to do |format|
+        format.html # new.html.erb
+        format.json { render json: @user }
+      end
     end
   end
 

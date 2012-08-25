@@ -3,9 +3,14 @@
 <br>
 
 Week of <br>
-<%= Time.now.beginning_of_week.strftime("%m/%d/%Y") %> - <%= Time.now.end_of_week.strftime("%m/%d/%Y") %>
+<%= @start_date %> - <%= @end_date %>
 <br><br>
-<!--<#%= link_to 'Previous Year', farmer_list_url() %>. . .<#%= link_to 'Previous Month', '#' %>. . .<#%= link_to 'Previous Week', '#' %>. . .<#%= link_to 'This Week', '#' %>. . .<#%= link_to 'Next Week', '#' %> -->
+<%= link_to 'Previous Year', farmer_list_url(:start_date => Date.parse(@start_date) - 365, :end_date => Date.parse(@end_date) - 365)
+ %>. . .
+ <%= link_to 'Previous Month', farmer_list_url(:start_date => Date.parse(@start_date) - 30, :end_date => Date.parse(@end_date) - 30) %>. . .
+ <%= link_to 'Previous Week', farmer_list_url(:start_date => Date.parse(@start_date) - 7, :end_date => Date.parse(@end_date) - 7) %>. . .
+ <%= link_to 'This Week', farmer_list_url %>. . .
+ <%= link_to 'Next Week', farmer_list_url(:start_date => Date.parse(@start_date) + 7, :end_date => Date.parse(@end_date) + 7) %>
 
 <br><br><br>
 <table>
@@ -22,7 +27,6 @@ Week of <br>
   <tr>
     <td><%= product.name %></td>
     <td><%= product.product_attribute %></td>
-    <!-- <td><#%= product.description %></td> -->
     <td><%= product.packaging %></td>
     <td><%= product.qty_avail %> <%= product.uom %></td>
     <td><%= number_to_currency(product.price) %></td>

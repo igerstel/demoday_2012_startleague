@@ -2,10 +2,14 @@ Fmf4::Application.routes.draw do
 
   root :to => 'users#new'
 
+  get "user/list" => 'users#list', :as => :chef_list
+
   get "/products/list" => 'products#list', :as => :farmer_list
 
   get "/user/new2" => 'users#new2', :as => :user_new2
   put "/user/new2" => 'users#new2'
+
+  
 
   get "session/newlogin" => 'sessions#newlogin', :as => :newlogin
 
