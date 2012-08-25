@@ -1,0 +1,54 @@
+<%= form_for(@product) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<br>
+Adding Items for the week of <br>
+<%= @start_date %> - <%= @end_date %>
+<br><br>
+<table>
+  <tr>
+ <td class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </dtd>
+  <td class="field">
+    <%= f.label :product_attribute %><br />
+    <%= f.text_field :product_attribute %>
+  </td>
+  <td class="field">
+    <%= f.label :packaging %><br />
+    <%= f.text_field :packaging %>
+  </td>
+  <td class="field">
+    <%= f.label :uom %><br />
+    <%= f.text_field :uom %>
+  </td>
+  <td class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </td>
+  <td class="field">
+    <%= f.label :qty_avail %><br />
+    <%= f.text_field :qty_avail %>
+  </td>
+</tr>
+</table>
+
+  <div class="actions">
+    <%= submit_tag %>
+  </div>
+<% end %>
+
+<br><br>
+<%= userhome %>
+<br><br>

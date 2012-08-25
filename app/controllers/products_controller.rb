@@ -48,6 +48,18 @@ class ProductsController < ApplicationController
       format.json { render json: @product }
     end
   end
+  
+  def new3
+    @product = Product.new
+      
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @product }
+    end
+  end
+  
+  
+  
 
   # GET /products/1/edit
   def edit

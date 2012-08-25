@@ -8,8 +8,12 @@ Fmf4::Application.routes.draw do
 
   get "/user/new2" => 'users#new2', :as => :user_new2
   put "/user/new2" => 'users#new2'
-
   
+  get "/product/new3" => 'products#new3', :as => :farmer_step3
+  put "/product/new3" => 'products#new3'
+  
+  get "/user/new3" => 'users#new3', :as => :chef_step3
+  put "/user/new3" => 'users#new3'
 
   get "session/newlogin" => 'sessions#newlogin', :as => :newlogin
 

@@ -47,7 +47,21 @@ class UsersController < ApplicationController
   end
 
   def new2
-    @user = User.find_by_id(session["user_id"])
+    if session["user_id"].present?
+      @user = User.find_by_id(session["user_id"])
+      if @user.business == 'Farm'
+        redirect_to farmer_step3_url
+      elsif @user.business == 'Restaurant'
+        redirect_to chef_step3_url
+      end
+    else
+      @user = User.new
+
+      respond_to do |format|
+        format.html # new.html.erb
+        format.json { render json: @user }
+      end
+    end
   end
 
   # POST /users
