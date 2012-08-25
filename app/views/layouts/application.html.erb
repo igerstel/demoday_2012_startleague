@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<%= stylesheet_link_tag 'gmaps4rails' %>
+
 	<div id="container">
 		<header>
 			<h1><%= link_to "From My Farmer", root_url %></h1>
@@ -42,6 +44,7 @@
 		
 		<footer>
 			&copy;FMF FOOTER
+			<%= yield :scripts %>
 		</footer>
 	</div>
 </body>

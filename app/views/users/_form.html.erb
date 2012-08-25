@@ -72,6 +72,11 @@
     <%= label_tag(:business, "My business is a restaurant")%>
   </div>
   <div class="field">
+    <%= f.label :photo %><br />
+    <%= f.file_field :photo %>
+  </div>
+
+  <div class="field">
     <%= f.label :tag %><br />
     <%= f.text_field :tag %>
   </div>

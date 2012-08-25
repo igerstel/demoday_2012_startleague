@@ -1,4 +1,21 @@
 <h1>Search</h1>
+
+<%= search_form_for @search do |f| %>
+    <div class="field">
+        <%= f.label :name_cont, "Product Name" %>
+        <%= f.text_field :name_cont %>
+    <div class="field">
+        <%= f.label :product_attribute_cont, "Variety" %>
+        <%= f.text_field :product_attribute_cont %>
+<!--     <div class="field">
+        <#%= f.label :amount_lteq, "Distance <" %>
+        <#%= f.select :amount_lteq, options_for_select(maxdist) %><br />
+ -->    <!-- <#%= f.text_field :state %> -->
+  </div>
+    <div class="actions"><%= f.submit "Search" %>
+    </div>
+<% end %>
+
 <table>
 	<tr>
 		<td>Product Name</td>
@@ -7,21 +24,3 @@
 		<td></td>
 	</tr>
 </table>
-
-<%= search_form_for @search do |f| %>
-    <div class="field">
-        <%= f.label :name_cont, "Name?" %>
-        <%= f.text_field :name_cont %>
-    <div class="field">
-        <%= f.label :product_attribute_cont, "Name?" %>
-        <%= f.text_field :nam_cont %>
-    <div class="field">
-        <%= f.label :amount_lteq, "Distance <" %>
-        <%= f.select :amount_lteq,  %>
-    <%= f.select :state,  options_for_select(maxdist) %><br />
-    <!-- <#%= f.text_field :state %> -->
-  </div>
-
-    <div class="actions"><%= f.submit "Search" %>
-    </div>
-<% end %>
