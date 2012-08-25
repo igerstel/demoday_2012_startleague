@@ -97,7 +97,7 @@ class UsersController < ApplicationController
   end
 
   def update2
-    @user = User.find(params[:id])
+    @user = User.find_by_id(session["user_id"])
 
     respond_to do |format|
       if @user.update_attributes(params[:user])

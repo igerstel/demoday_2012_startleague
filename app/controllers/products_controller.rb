@@ -57,9 +57,6 @@ class ProductsController < ApplicationController
       format.json { render json: @product }
     end
   end
-  
-  
-  
 
   # GET /products/1/edit
   def edit

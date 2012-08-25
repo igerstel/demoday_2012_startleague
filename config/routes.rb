@@ -7,7 +7,8 @@ Fmf4::Application.routes.draw do
   get "/products/list" => 'products#list', :as => :farmer_list
 
   get "/user/new2" => 'users#new2', :as => :user_new2
-  put "/user/new2" => 'users#new2'
+  #put "/user/new2" => 'users#new2'
+  put "/user/update2" => 'users#update2', :as => :update2
   
   get "/product/new3" => 'products#new3', :as => :farmer_step3
   put "/product/new3" => 'products#new3'
