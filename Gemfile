@@ -12,6 +12,7 @@ gem 'sqlite3'
 gem 'faker'
 
 gem 'kaminari'
+gem 'carrierwave'
 
 # Gems used only for assets and not required
 # in production environments by default.
