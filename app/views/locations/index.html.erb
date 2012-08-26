@@ -1,6 +1,12 @@
 <h1>New location</h1>
 
-<%= gmaps4rails(@json) %>
+
+<%= form_tag locations_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search Near", :name => nil %>
+<% end %>
+<!-- <#%= gmaps4rails(@json) %> -->
 
 
 <br><br><br>
@@ -25,6 +31,8 @@
     <td><%= location.state %></td>
     <td><%= location.zip %></td>
     <td><%= location.day %></td>
+ 	<td><%= location.latitude %></td>
+ 	<td><%= location.longitude %></td>
     <td><%= link_to 'Show', location %></td>
     <td><%= link_to 'Edit', edit_location_path(location) %></td>
     <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>

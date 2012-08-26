@@ -1,16 +1,26 @@
 class Location < ActiveRecord::Base
-  attr_accessible :city, :day, :state, :street_address, :zip
+  attr_accessible :city, :day, :state, :street_address, :zip, :latitude, :longitude
 
-  acts_as_gmappable
+  geocoded_by :address
   
-	def gmaps4rails_address
-	#describe how to retrieve the address from your model, if you use
-	#directly a db column, you can dry your code, see wiki
-	  "#{self.street_address}, #{self.city}, #{self.zip}" 
-	end
+  def address
+    "#{self.street_address}, #{self.city}, #{self.state}, #{self.zip}"
+  end
+  
+  after_validation :geocode, :if => :address_changed?
+  
+  # acts_as_gmappable 
+  #   
+  #   
+  #   def gmaps4rails_address
+  #   #describe how to retrieve the address from your model, if you use
+  #   #directly a db column, you can dry your code, see wiki
+  #     "#{self.street_address}, #{self.city}, #{self.zip}" 
+  #   end
 
-	@markers = Location.all.to_gmaps4rails
-
+  #   @markers 
+  # @markers = Location.all.to_gmaps4rails
+  # 
 
 
  # def gmaps4rails_infowindow
