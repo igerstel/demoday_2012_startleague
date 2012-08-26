@@ -8,8 +8,28 @@
 <% end %>
 <!-- <#%= gmaps4rails(@json) %> -->
 
+<br>
+
+<% @locations.each do |location| %>
+<% @url = @url + "%7Clabel:S%7C#{location.latitude},#{location.longitude}&markers=color:green" %>
+
+  <% for dropoff in location.nearbys(10) %>
+    <li><%= link_to dropoff.street_address, dropoff %> (<%= dropoff.distance.round(2) %> miles)</li>
+  <% end %>
+
+<% end %>
+
+<% @url = @url + "&sensor=false" %>
+
+
+  <%= image_tag @url %>
+
+
+  <ul>
+
 
 <br><br><br>
+
 <h1>Listing locations</h1>
 
 <table>

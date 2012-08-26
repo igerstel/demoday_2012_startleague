@@ -1,0 +1,78 @@
+<p>
+  <b>Photo:</b>
+  <%= image_tag @user.photo %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+
+<p>
+  <b>First Name:</b>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <b>Last Name:</b>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <b>Business name:</b>
+  <%= @user.business_name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @user.address %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @user.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @user.state %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @user.zip %>
+</p>
+
+<p>
+  <b>Website:</b>
+  <%= @user.website %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @user.phone %>
+</p>
+
+<p>
+  <b>About:</b>
+  <%= @user.about %>
+</p>
+
+<p>
+  <b>Business:</b>
+  <%= @user.business %>
+</p>
+
+<p>
+  <b>Tag:</b>
+  <%= @user.tag %>
+</p>
+
+<p>
+  <b>Favorite:</b>
+  <%= @user.favorite %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

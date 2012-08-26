@@ -74,13 +74,10 @@ class ProductsController < ApplicationController
       @start_date = params[:start_date]
       @end_date = params[:end_date]
     else
-      @start_date = (Date.today-7).to_s
-      @end_date = (Date.today).to_s
+      @start_date = (Date.today-6).to_s
+      @end_date = (Date.today+1).to_s
     end    
-    #@start_date = @start_date.to_time
-    #@end_date = @end_date.to_time
 
-    @product.user_id = session["user_id"]
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @product }
@@ -90,6 +87,7 @@ class ProductsController < ApplicationController
   def new4
     @product = Product.new(params[:product])
 
+    @product.user_id = session["user_id"]
     respond_to do |format|
       if @product.save
         format.html { redirect_to farmer_list_url, notice: 'Product was successfully created.' }

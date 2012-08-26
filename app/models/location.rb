@@ -1,13 +1,14 @@
 class Location < ActiveRecord::Base
   attr_accessible :city, :day, :state, :street_address, :zip, :latitude, :longitude
 
-  geocoded_by :address
+  geocoded_by :fulladdress
   
-  def address
-    "#{self.street_address}, #{self.city}, #{self.state}, #{self.zip}"
+  def fulladdress
+    latlon = "#{self.street_address}, #{self.city}, #{self.state}, #{self.zip}"
+    return latlon
   end
-  
-  after_validation :geocode, :if => :address_changed?
+
+  after_validation :geocode#, :if => :address_changed?
   
   # acts_as_gmappable 
   #   

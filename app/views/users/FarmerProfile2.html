@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../Style/Style.css">
+		<title>Farmer Profile</title>
+	</head>
+	<body>
+		<div class="wrap">
+			<header class="page_header">
+				<h1> 
+					<a href="Index.html" title="From My Farmer: local farmer, chef, and restaurant marketplace"> <img src="../Style/Image/FarmerFinalGrey_sm.png" alt="From My Farmer Logo"/> </a>
+				</h1>
+					<!-- <a href"Index.html" title="From My Farmer: local farmer and chef marketplace">From My Farmer: local farmer, local chef marketplace<img src="../Style/Image/FarmerFinalGrey_sm.png"/></a></h1> -->
+   				<input type="text" name="search" id="search" placeholder="Search">
+			</header>
+			<div class="two_col">
+				<nav class="nav_bar">
+					<ul>
+						<li><a href="#">Profile</a></li>
+						<li><a href="#">Messages</a></li>
+						<li><a href="#">Products</a></li>
+						<li><a href="#">Orders</a></li>
+						<li><a href="#">Billing</a></li>
+					</ul>
+					<ul>
+						<li class="active">
+							<a href="#">Profile</a>
+							<ul>
+								<li><a href="">sub1</a></li>
+								<li><a href="">sub2</a></li>
+								<li><a href="">sub3</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">Messages</a>
+							<ul>
+								<li><a href="">sub1</a></li>
+								<li><a href="">sub2</a></li>
+								<li><a href="">sub3</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Products</a></li>
+						<li><a href="#">Orders</a></li>
+						<li><a href="#">Billing</a></li>
+					</ul>
+	            </nav>
+				<div class="content">
+					<aside>
+				   		<div class="main_photo"> 
+				    		<img src="../Style/Image/MontalbanoTheFarmers_sm.jpg" alt="The Farmers, Rob and Christine">
+				    	</div> <!-- main_photo************* -->
+					    <div class="thumbnail">
+							<img src="../Style/Image/LettusField.jpg" alt="Lettus Field">
+					    	<img src="../Style/Image/OnionsAsp.jpg" alt="Onions">
+					    	<img src="../Style/Image/TomatoGreenBeanBasket.jpg" alt="Baskets of Tomatoes and Green Beans">
+					    	<img src="../Style/Image/MontalbanoTheFarmers_sm.jpg" alt="The Farmers, Rob and Christine">
+						</div> <!-- thumbnail************ -->
+					</aside>
+					<div class="contact">
+						<h2> @user.farm_name </h2>
+						<address><%= @user.fulladdress %></address>
+						<address>Phone: (630) 882-8008</address>
+					</div>
+					<div class="bio">
+						<h2>About</h2>
+							<p>We are committed to using sustainable organic agricultural practices. Here are some of our pracitices:</p>
+						<ul>
+							<li>No-till</li>
+							<li>Compost</li>
+							<li>Plant-animal fertility recycling</li>
+						</ul>
+						<h2>Favorite quotes</h2>
+						<blockquote>
+							<p>...if you're going to have sustainable agriculture, it has to be adapted locally.</p>
+							<div class="author">
+							<p>-- Wendel Berry</p>
+							</div> <!-- author************ -->
+						</blockquote>
+						<blockquote>
+							<p>"Many organic practices simply make sense, regardless of what overall agricultural system is used. Far from being a quaint throwback to an earlier time, organic agriculture is proving to be a serious contender in modern farming and a more environmentally sustainable system over the long term."</p>
+							<div class="author">
+							<p>-- David Suzuki</p>
+							</div> <!-- author************ -->
+					</div>    <!-- bio********************* --> 
+									</div> <!-- content**************** -->
+ 			</div> <!-- two_col*************** -->
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+
+ 			
+		    <footer>
+		    	<p>(c) 2012 FromMyFarmer. All rights reserved.</p> 
+		    </footer>
+	    </div>      <!-- wrap**************** -->
+	</body>
+</html>
+

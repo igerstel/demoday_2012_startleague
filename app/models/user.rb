@@ -7,6 +7,11 @@ class User < ActiveRecord::Base
   
   has_secure_password
 
+  def fulladdress
+    latlon = "#{self.address}, #{self.city}, #{self.state}, #{self.zip}"
+    return latlon
+  end
+
   has_many :products
   has_many :orders
   has_many :locations

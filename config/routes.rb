@@ -1,7 +1,5 @@
 Fmf4::Application.routes.draw do
 
-  resources :locations
-
   root :to => 'users#new'
 
   get "user/list" => 'users#list', :as => :chef_list
@@ -23,6 +21,8 @@ Fmf4::Application.routes.draw do
   get "session/newlogin" => 'sessions#newlogin', :as => :newlogin
 
   delete "/logout" => 'sessions#destroy', :as => :signout
+
+  resources :locations
 
   resources :order_items
 
