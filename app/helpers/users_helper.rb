@@ -1,7 +1,7 @@
 module UsersHelper
 
 	def maxdist
-		[
+	     [
 			['5 Miles', 5],
 			['10 Miles', 10],
 			['25 Miles', 25],

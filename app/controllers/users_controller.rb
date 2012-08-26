@@ -47,14 +47,6 @@ class UsersController < ApplicationController
   end
 
   def new2
-    # if session["user_id"].present?
-    #   @user = User.find_by_id(session["user_id"])
-    #   if @user.business == 'Farm'
-    #     redirect_to farmer_step3_url
-    #   elsif @user.business == 'Restaurant'
-    #     redirect_to chef_step3_url
-    #   end
-    # else
       @user = User.find_by_id(session["user_id"])
 
       respond_to do |format|
@@ -62,6 +54,10 @@ class UsersController < ApplicationController
         format.json { render json: @user }
       end
     #end
+  end
+
+  def new3
+    @user = User.find_by_id(session["user_id"])
   end
 
   # POST /users

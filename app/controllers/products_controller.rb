@@ -3,7 +3,6 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
-    #http://localhost:3000/movies?sort_by=desc
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }
@@ -12,14 +11,19 @@ class ProductsController < ApplicationController
 
   def list
     @user = User.find_by_id(session["user_id"])
+
     if params[:start_date].present? && params[:end_date].present?
       @start_date = params[:start_date]
       @end_date = params[:end_date]
     else
-      @start_date = (Date.today-7).to_s
-      @end_date = (Date.today).to_s
+      @start_date = (Date.today-6).to_s
+      @end_date = (Date.today+1).to_s
     end
-    @products = @user.products.find(:all, :conditions => ['created_at >= ? and created_at <= ?', Date.parse(@start_date), Date.parse(@end_date)])
+
+    @products = @user.products.find(:all, :conditions => ['created_at >= ? and created_at <= ?', @start_date, @end_date])
+#@products = @user.products.find(:all,     :conditions => ['date_added >= ? and date_added <= ?', Date.parse(@start_date), Date.parse(@end_date)])
+
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -51,12 +55,38 @@ class ProductsController < ApplicationController
   
   def new3
     @product = Product.new
-      
+
+    if params[:start_date].present? && params[:end_date].present?
+      @start_date = params[:start_date]
+      @end_date = params[:end_date]
+    else
+      @start_date = (Date.today-7).to_s
+      @end_date = (Date.today).to_s
+    end
+    
+    #@start_date = @start_date.to_time
+    #@end_date = @end_date.to_time
+
+    @product.user_id = session["user_id"]
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @product }
     end
   end
+
+  def new4
+    @product = Product.new(params[:product])
+
+    respond_to do |format|
+      if @product.save
+        format.html { redirect_to farmer_list_url, notice: 'Product was successfully created.' }
+        format.json { render json: @product, status: :created, location: @product }
+      else
+        format.html { redirect_to farmer_step3_url }
+        format.json { render json: @product.errors, status: :unprocessable_entity }
+      end
+    end
+  end  
 
   # GET /products/1/edit
   def edit
@@ -102,8 +132,9 @@ class ProductsController < ApplicationController
     @product.destroy
 
     respond_to do |format|
-      format.html { redirect_to products_url }
+      format.html { redirect_to farmer_list_url }
       format.json { head :no_content }
     end
   end
+  
 end

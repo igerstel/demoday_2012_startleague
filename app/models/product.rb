@@ -19,4 +19,15 @@ class Product < ActiveRecord::Base
   #validates :cost, :numericality => { :greater_than => 0 }
   #validates :name, :length => { :minimum => 3 }
 
+  # def getdates
+  #   if params[:start_date].present? && params[:end_date].present?
+  #     @start_date = params[:start_date]
+  #     @end_date = params[:end_date]
+  #   else
+  #     @start_date = (Date.today-7).to_s
+  #     @end_date = (Date.today).to_s
+  #   end
+  #   return(@start_date, @end_date)
+  # end
+
 end
