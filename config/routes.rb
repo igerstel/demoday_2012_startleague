@@ -7,16 +7,18 @@ Fmf4::Application.routes.draw do
   get "user/list" => 'users#list', :as => :chef_list
 
   get "/products/list" => 'products#list', :as => :farmer_list
+  post "/products/list" => 'products#list2', :as => :farmer_list2
 
   get "/user/new2" => 'users#new2', :as => :user_new2
-  #put "/user/new2" => 'users#new2'
   put "/user/update2" => 'users#update2', :as => :update2
   
   get "/product/new3" => 'products#new3', :as => :farmer_step3
   post "/product/new3" => 'products#new4', :as => :farmer_step4
   
+  #get "/user/"     # routes to add drop off.
+  #post
+
   get "/user/new3" => 'users#new3', :as => :chef_step3
-  #put "/user/new3" => 'users#new4', :as => :chef_step4
 
   get "session/newlogin" => 'sessions#newlogin', :as => :newlogin
 

@@ -11,6 +11,8 @@ class ProductsController < ApplicationController
 
   def list
     @user = User.find_by_id(session["user_id"])
+    #@products = @user.products.find(:all, :conditions => ['created_at >= ? and created_at <= ?', @start_date, @end_date])
+    @product = Product.new
 
     if params[:start_date].present? && params[:end_date].present?
       @start_date = params[:start_date]
@@ -20,16 +22,28 @@ class ProductsController < ApplicationController
       @end_date = (Date.today+1).to_s
     end
 
-    @products = @user.products.find(:all, :conditions => ['created_at >= ? and created_at <= ?', @start_date, @end_date])
-#@products = @user.products.find(:all,     :conditions => ['date_added >= ? and date_added <= ?', Date.parse(@start_date), Date.parse(@end_date)])
-
-
+    @products = @user.products.where("created_at >= ? and created_at <= ?", @start_date, @end_date)
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }
     end
   end
+
+  def list2
+    @product = Product.new(params[:product])
+    @product.user_id = session["user_id"]
+
+    respond_to do |format|
+      if @product.save
+        format.html { redirect_to farmer_list_url, notice: 'Product was successfully created.' }
+        format.json { render json: @product, status: :created, location: @product }
+      else
+        format.html { redirect_to farmer_step3_url }
+        format.json { render json: @product.errors, status: :unprocessable_entity }
+      end
+    end
+  end  
 
   # GET /products/1
   # GET /products/1.json
@@ -62,8 +76,7 @@ class ProductsController < ApplicationController
     else
       @start_date = (Date.today-7).to_s
       @end_date = (Date.today).to_s
-    end
-    
+    end    
     #@start_date = @start_date.to_time
     #@end_date = @end_date.to_time
 
@@ -136,5 +149,5 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
 end

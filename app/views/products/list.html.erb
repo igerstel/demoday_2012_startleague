@@ -1,7 +1,5 @@
 <h3>My Product List</h3>
 
-<br>
-
 Week of <br>
 <%= @start_date %> - <%= @end_date %>
 <br><br>
@@ -12,7 +10,53 @@ Week of <br>
  <%= link_to 'This Week', farmer_list_url %>. . .
  <%= link_to 'Next Week', farmer_list_url(:start_date => Date.parse(@start_date) + 7, :end_date => Date.parse(@end_date) + 7) %>
 
-<br><br><br>
+<%= form_for(@product, :url => { :action => "list2" }) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<br><br>
+<table>
+  <tr>
+ <td class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </dtd>
+  <td class="field">
+    <%= f.label :product_attribute %><br />
+    <%= f.text_field :product_attribute %>
+  </td>
+  <td class="field">
+    <%= f.label :packaging %><br />
+    <%= f.text_field :packaging %>
+  </td>
+  <td class="field">
+    <%= f.label :uom %><br />
+    <%= f.text_field :uom %>
+  </td>
+  <td class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </td>
+  <td class="field">
+    <%= f.label :qty_avail %><br />
+    <%= f.text_field :qty_avail %>
+  </td>
+</tr>
+</table>
+  <div class="actions">
+    <%= submit_tag %>
+  </div>
+<% end %>
+
+<br>
 <table>
   <tr>
     <th>Product Name</th>

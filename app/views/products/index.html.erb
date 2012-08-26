@@ -18,14 +18,12 @@
 <% @products.each do |product| %>
   <tr>
     <td><%= product.name %></td>
-    <!-- http://guides.rubyonrails.org/v2.3.11/action_controller_overview.html -->
     <td><%= product.product_attribute %></td>
     <td><%= product.description %></td>
     <td><%= product.packaging %></td>
     <td><%= product.uom %></td>
     <td><%= number_to_currency(product.price) %></td>
     <td><%= product.qty_avail %></td>
-    <!-- <td><#%= product.user.first_name %> <#%= product.user.last_name %></td> -->
     <td><%= link_to 'Show', product %></td>
     <td><%= link_to 'Edit', edit_product_path(product) %></td>
     <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
