@@ -1,37 +1,19 @@
+<br><br>
 <h1>New location</h1>
-
 
 <%= form_tag locations_path, :method => :get do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search Near", :name => nil %>
 <% end %>
-<!-- <#%= gmaps4rails(@json) %> -->
 
 <br>
 
-<% @locations.each do |location| %>
-<% @url = @url + "%7Clabel:S%7C#{location.latitude},#{location.longitude}&markers=color:green" %>
+<%= image_tag @url %>
 
-  <% for dropoff in location.nearbys(10) %>
-    <li><%= link_to dropoff.street_address, dropoff %> (<%= dropoff.distance.round(2) %> miles)</li>
-  <% end %>
-
-<% end %>
-
-<% @url = @url + "&sensor=false" %>
-
-
-  <%= image_tag @url %>
-
-
-  <ul>
-
-
-<br><br><br>
+<br><br>
 
 <h1>Listing locations</h1>
-
 <table>
   <tr>
     <th>Street address</th>
@@ -50,29 +32,21 @@
     <th></th>
   </tr>
 
-<% @locations.each do |location| %>
-  <tr>
-    <% for dropoff in location.nearbys(10) %>
-      <td><%= link_to dropoff.id, dropoff %></td>
-      <td></td>
-      <td><%= dropoff.distance.round(2) %> miles</td>
-    <% end %>
+<tr>
+  <% for dropoff in @temp.nearbys(10) %>
+    <td><%= link_to dropoff.street_address, dropoff %></td>
     <td></td>
-    <td><%= location.street_address %></td>
+    <td><%= dropoff.distance_from(@farm).round(2) %> miles </td>
+    <td><%= dropoff.city %></td>
     <td></td>
-    <td><%= location.city %></td>
+    <td><%= dropoff.state %></td>
     <td></td>
-    <td><%= location.state %></td>
+    <td><%= dropoff.zip %></td>
     <td></td>
-    <td><%= location.zip %></td>
-    <td></td>
-    <td><%= location.day %></td>
- 	<!-- <td><%= location.latitude %></td> -->
- 	<!-- <td><%= location.longitude %></td> -->
-
-    <td><%= link_to 'Show', location %></td>
-    <td><%= link_to 'Edit', edit_location_path(location) %></td>
-    <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= dropoff.day %></td>
+    <td><%= link_to 'Show', dropoff %></td>
+    <td><%= link_to 'Edit', edit_location_path(dropoff) %></td>
+    <td><%= link_to 'Destroy', dropoff, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
