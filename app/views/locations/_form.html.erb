@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :state %><br />
-    <%= f.text_field :state %>
+    <%= f.select :state, states %>
   </div>
   <div class="field">
     <%= f.label :zip %><br />
@@ -29,7 +29,7 @@
   </div>
   <div class="field">
     <%= f.label :day %><br />
-    <%= f.text_field :day %>
+    <%= f.select :day, dropoff_day %>
   </div>
   <div class="actions">
     <%= f.submit %>
