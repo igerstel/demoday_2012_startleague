@@ -12,6 +12,7 @@ if Rails.env.development? # ???
 
 	User.destroy_all
 	Product.destroy_all
+	Order.destroy_all
 
 	cereals = ['Cereals',
 						 'corn',
@@ -121,5 +122,6 @@ if Rails.env.development? # ???
 			end
 			p.save
 		end
-	end
+	endexit
+	
 end
