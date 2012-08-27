@@ -45,7 +45,7 @@
   </div>
   <div class="field">
     <%= f.label :state %><br />
-    <%= f.select :state,  options_for_select(states) %><br />
+    <%= f.select :state, states %><br />
     <!-- <#%= f.text_field :state %> -->
   </div>
   <div class="field">
@@ -78,7 +78,7 @@
 
   <div class="field">
     <%= f.label :tag %><br />
-    <%= f.text_field :tag %>
+    <%= f.select :tag, tags %>
   </div>
   <div class="actions">
     <%= f.submit %>

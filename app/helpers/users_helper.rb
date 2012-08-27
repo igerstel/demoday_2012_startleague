@@ -67,4 +67,13 @@ module UsersHelper
     ]
 	end
 
+  def tags
+  [
+    ['Organic'],
+    ['Grass fed'],
+    ['Free Range'],
+    ['Produce']
+  ]
+  end
+  
 end
