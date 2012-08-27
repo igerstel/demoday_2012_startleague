@@ -17,6 +17,7 @@
 				<ul>
 					<% if logged_in? %>
 						<li><%= link_to "View My Profile", user_url(current_user) %></li>
+						<li><%= link_to "Dropoff Locations", locations_url(current_user) %></li>
 						<li><%= link_to "Sign Out", signout_url, :method => :delete %></li>
 					<% else %>		
 						<h2>Log In</h2>
@@ -36,8 +37,8 @@
 			</nav>
 		</header>
 
-		<div id="content">
-			<%= notice %>
+		 <div id="content">
+			<!-- <#%= notice %> -->
 
 			<%= yield %>
 		</div>

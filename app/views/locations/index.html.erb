@@ -35,9 +35,15 @@
 <table>
   <tr>
     <th>Street address</th>
+    <th></th>
+    <th>Distance</th>
+    <th></th>
     <th>City</th>
+    <th></th>
     <th>State</th>
+    <th></th>
     <th>Zip</th>
+    <th></th>
     <th>Day</th>
     <th></th>
     <th></th>
@@ -46,13 +52,24 @@
 
 <% @locations.each do |location| %>
   <tr>
+    <% for dropoff in location.nearbys(10) %>
+      <td><%= link_to dropoff.id, dropoff %></td>
+      <td></td>
+      <td><%= dropoff.distance.round(2) %> miles</td>
+    <% end %>
+    <td></td>
     <td><%= location.street_address %></td>
+    <td></td>
     <td><%= location.city %></td>
+    <td></td>
     <td><%= location.state %></td>
+    <td></td>
     <td><%= location.zip %></td>
+    <td></td>
     <td><%= location.day %></td>
- 	<td><%= location.latitude %></td>
- 	<td><%= location.longitude %></td>
+ 	<!-- <td><%= location.latitude %></td> -->
+ 	<!-- <td><%= location.longitude %></td> -->
+
     <td><%= link_to 'Show', location %></td>
     <td><%= link_to 'Edit', edit_location_path(location) %></td>
     <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>

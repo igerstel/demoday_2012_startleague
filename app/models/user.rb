@@ -3,9 +3,11 @@ class User < ActiveRecord::Base
   								:city, :email, :favorite, :first_name,
   								:last_name, :password, :password_confirmation,
   								:password_digest, :phone, :state, :tag,
-  								:website, :zip
+  								:website, :zip, :latitude, :longitude
   
   has_secure_password
+
+  geocoded_by :fulladdress
 
   def fulladdress
     latlon = "#{self.address}, #{self.city}, #{self.state}, #{self.zip}"
@@ -23,6 +25,6 @@ class User < ActiveRecord::Base
   #validates_uniqueness_of :email => { :case_sensitive => :false,
   #                        :minimum => 6 }
 
-
+  after_validation :geocode#, :if => :address_changed?
   
 end
