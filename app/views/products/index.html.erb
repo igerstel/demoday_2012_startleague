@@ -1,15 +1,22 @@
 <h1>Listing products</h1>
-
+<br><br>
+<%= search_form_for @q do |f| %>
+  <%= hidden_field params[:cat], "cat" %> !!!!!!!!!!!
+  <%= f.label :product_attribute_or_name_cont, "Product Name" %>
+  <%= f.text_field :product_attribute_or_name_cont %> 
+  <%= f.submit %>
+<% end %>
+<br><br>
 <table>
   <tr>
-    <th>Name</th>
-    <th>Product attribute</th>
+    <th><%= sort_link @q, :name, "Name" %></th>
+    <th><%= sort_link @q, :product_attribute, "Product Category" %></th>
     <th>Description</th>
     <th>Packaging</th>
     <th>Uom</th>
-    <th>Price</th>
+    <th><%= sort_link @q, :price, "Price" %></th>
     <th>Qty avail</th>
-    <th>User</th>
+    <th><%= sort_link @q, :user_id, "Farm Name" %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -18,12 +25,13 @@
 <% @products.each do |product| %>
   <tr>
     <td><%= product.name %></td>
-    <td><%= product.product_attribute %></td>
+    <td><%= link_to "#{product.product_attribute}", products_path(:cat => product.product_attribute) %></td>
     <td><%= product.description %></td>
     <td><%= product.packaging %></td>
     <td><%= product.uom %></td>
     <td><%= number_to_currency(product.price) %></td>
     <td><%= product.qty_avail %></td>
+    <td><%= product.user.business_name %></td>
     <td><%= link_to 'Show', product %></td>
     <td><%= link_to 'Edit', edit_product_path(product) %></td>
     <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>

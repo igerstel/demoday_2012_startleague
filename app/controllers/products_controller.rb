@@ -2,7 +2,13 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    #@products = Product.all
+    @q = Product.search(params[:q])
+    @products = @q.result(:distinct => true)
+    if params[:cat].present?
+      @products = @products.find_all_by_product_attribute(params[:cat])
+    end
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }
