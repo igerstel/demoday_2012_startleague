@@ -16,14 +16,28 @@ class LocationsController < ApplicationController
     @temp.longitude = @farm.longitude
 
     @dist = []
+    
+       for dropoff in @farm.nearbys(10)
+         @dist << dropoff.distance.round(2)
+       end  
 
-    for dropoff in @farm.nearbys(10)
-      @dist << dropoff.distance.round(2)
-    end  
-
-    @url = "http://maps.googleapis.com/maps/api/staticmap?markers=#{@loc}&zoom=13&size=450x450&maptype=roadmap&markers=color:green"
+    @url = "http://maps.googleapis.com/maps/api/staticmap?center=#{@loc}&markers=#{@loc}&zoom=11&size=600x600&maptype=roadmap&markers=color:green"
     @locations.each do |location|
+      if location.day == "Monday"
+      @url = @url + "%7Clabel:M%7C#{location.latitude},#{location.longitude}&markers=color:green"
+      elsif location.day == "Tuesday"
+      @url = @url + "%7Clabel:T%7C#{location.latitude},#{location.longitude}&markers=color:green"
+      elsif location.day == "Wednesday"
+      @url = @url + "%7Clabel:W%7C#{location.latitude},#{location.longitude}&markers=color:green"
+      elsif location.day == "Thursday"
+      @url = @url + "%7Clabel:R%7C#{location.latitude},#{location.longitude}&markers=color:green"
+      elsif location.day == "Friday"
+      @url = @url + "%7Clabel:F%7C#{location.latitude},#{location.longitude}&markers=color:green"
+      elsif location.day == "Saturday"
       @url = @url + "%7Clabel:S%7C#{location.latitude},#{location.longitude}&markers=color:green"
+      elsif location.day == "Sunday"
+      @url = @url + "%7Clabel:U%7C#{location.latitude},#{location.longitude}&markers=color:green"
+      end
     end    
     @url = @url + "&sensor=false"
 
