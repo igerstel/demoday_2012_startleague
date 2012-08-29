@@ -1,14 +1,9 @@
-<br>
-
-<br><br><br>
-
 <h2>Sign Up</h2>
 
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
-    <div id="error_explanation">
+    <div class="error">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
       <ul>
       <% @user.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -17,32 +12,28 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <fieldset>
     <%= f.label :business %><br />
     <%= f.radio_button(:business, "Farm") %>
     <%= f.label(:business, "My business is a farm")%><br>
     <%= f.radio_button(:business, "Restaurant")%>
     <%= f.label(:business, "My business is a restaurant")%>
-  </div>
-  <div class="field">  
+  </fieldset>
+  <fieldset>  
     <%= f.label :email %>
     <%= f.text_field :email, :size => 50 %>
-  </div>
-  <div class="field">  
+  </fieldset>
+  <fieldset>  
     <%= f.label :password %>
     <%= f.password_field :password %>
-  </div>
-  <div class="field">  
+  </fieldset>
+  <fieldset>  
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="actions">
+  </fieldset>
+  <fieldset>
     <%= f.submit %>
-  </div>
+  </fieldset>
 <% end %>
-
-
-
-<br><br>
 
 <%= link_to 'Back', users_path %>
