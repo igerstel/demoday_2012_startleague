@@ -1,7 +1,7 @@
 <%= form_for(@location) do |f| %>
   <% if @location.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@location.errors.count, "error") %> prohibited this location from being saved:</h2>
+    <div class="error">
+      <h4><%= pluralize(@location.errors.count, "error") %> prohibited this location from being saved:</h4>
 
       <ul>
       <% @location.errors.full_messages.each do |msg| %>
@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <fieldset>
     <%= f.label :street_address %><br />
     <%= f.text_field :street_address %>
-  </div>
-  <div class="field">
+  </fieldset>
+  <fieldset>
     <%= f.label :city %><br />
     <%= f.text_field :city %>
-  </div>
-  <div class="field">
+  </fieldset>
+  <fieldset>
     <%= f.label :state %><br />
     <%= f.select :state, states %>
-  </div>
-  <div class="field">
+  </fieldset>
+  <fieldset>
     <%= f.label :zip %><br />
     <%= f.number_field :zip %>
-  </div>
-  <div class="field">
+  </fieldset>
+  <fieldset>
     <%= f.label :day %><br />
     <%= f.select :day, dropoff_day %>
-  </div>
-  <div class="actions">
+  </fieldset>
+  <fieldset>
     <%= f.submit %>
-  </div>
+  </fieldset>
 <% end %>
