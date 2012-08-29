@@ -1,7 +1,7 @@
 <h1>Listing products</h1>
 <br><br>
 <%= search_form_for @q do |f| %>
-  <%= hidden_field params[:cat], "cat" %> !!!!!!!!!!!
+  <%= hidden_field params[:cat], "cat" %>
   <%= f.label :product_attribute_or_name_cont, "Product Name" %>
   <%= f.text_field :product_attribute_or_name_cont %> 
   <%= f.submit %>

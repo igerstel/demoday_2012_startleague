@@ -1,5 +1,6 @@
 class Location < ActiveRecord::Base
-  attr_accessible :city, :day, :state, :street_address, :zip, :latitude, :longitude
+  attr_accessible :city, :day, :state, :street_address, :zip,
+                  :latitude, :longitude, :user_id
 
   geocoded_by :fulladdress
   

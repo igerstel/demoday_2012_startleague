@@ -4,6 +4,8 @@ Fmf4::Application.routes.draw do
 
   get "user/list" => 'users#list', :as => :chef_list
 
+  post "/locations" => 'locations#index2', :as => :locindex_2
+
   get "/products/list" => 'products#list', :as => :farmer_list
   post "/products/list" => 'products#list2', :as => :farmer_list2
 

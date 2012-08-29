@@ -30,15 +30,16 @@ Week of <br>
     <%= f.text_field :name %>
   </dtd>
   <td class="field">
-    <%= f.label :product_attribute %><br />
+    <%= f.label :product_attribute, "Category" %><br />
     <%= f.text_field :product_attribute %>
   </td>
   <td class="field">
     <%= f.label :packaging %><br />
     <%= f.text_field :packaging %>
   </td>
+  </tr><tr>
   <td class="field">
-    <%= f.label :uom %><br />
+    <%= f.label :uom, "Unit of Measurement" %><br />
     <%= f.text_field :uom %>
   </td>
   <td class="field">
@@ -46,9 +47,13 @@ Week of <br>
     <%= f.text_field :price %>
   </td>
   <td class="field">
-    <%= f.label :qty_avail %><br />
+    <%= f.label :qty_avail, "Quantity Available" %><br />
     <%= f.text_field :qty_avail %>
+  </td><td class="field">
+    <%= f.label :description, "Product Description" %><br />
+    <%= f.text_area :description %>
   </td>
+
 </tr>
 </table>
   <div class="actions">

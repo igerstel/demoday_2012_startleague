@@ -1,5 +1,50 @@
 <br><br>
-<h1>New location</h1>
+<h2>New Location</h2>
+
+<%= form_for @location, :url => { :action => 'index2'} do |f| %>
+  <% if @location.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@location.errors.count, "error") %> prohibited this location from being saved:</h2>
+
+      <ul>
+      <% @location.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<table>
+<tr>
+  <td class="field">
+    <%= f.label :street_address %><br />
+    <%= f.text_field :street_address %>
+  </td>
+  <td class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </td>
+  <td class="field">
+    <%= f.label :state %><br />
+    <%= f.select :state, states %>
+  </td>
+  <td class="field">
+    <%= f.label :zip %><br />
+    <%= f.number_field :zip %>
+  </td>
+  <td class="field">
+    <%= f.label :day, "Delivery Day" %><br />
+    <%= f.select :day, dropoff_day %>
+  </td>
+  <td class="actions"></br>
+    <%= f.submit %>
+  </td>
+</tr>
+</table>
+<% end %>
+
+<br><br>
+
+<h1>Find location</h1>
 
 <%= form_tag locations_path, :method => :get do %>
   <p>
@@ -8,10 +53,6 @@
 <% end %>
 
 <br>
-
-<%= image_tag @url %>
-
-<br><br>
 
 <h1>Listing locations</h1>
 <table>
@@ -26,7 +67,7 @@
     <th></th>
     <th>Zip</th>
     <th></th>
-    <th>Day</th>
+    <th>Delivery Day</th>
     <th></th>
     <th></th>
     <th></th>
@@ -53,4 +94,7 @@
 
 <br />
 
-<%= link_to 'New Location', new_location_path %>
+<%= image_tag @url %>
+
+<br><br>
+

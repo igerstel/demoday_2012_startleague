@@ -8,6 +8,7 @@ class LocationsController < ApplicationController
       @locations = Location.all
     end
 
+    @location = Location.new
     @farm = User.find_by_id(session["user_id"])
     @loc = @farm.fulladdress
     @temp = Location.new
@@ -42,6 +43,22 @@ class LocationsController < ApplicationController
     @url = @url + "&sensor=false"
 
   end
+
+  def index2
+    @location = Location.new(params[:location])
+    @location.user_id = session["user_id"]
+
+    respond_to do |format|
+      if @location.save
+        format.html { redirect_to locations_url, notice: 'Dropoff was successfully created.' }
+        format.json { render json: @location, status: :created, location: @location }
+      else
+        format.html { redirect_to flocations_url }
+        format.json { render json: @location.errors, status: :unprocessable_entity }
+      end
+    end
+  end  
+
 
   # GET /locations/1
   # GET /locations/1.json

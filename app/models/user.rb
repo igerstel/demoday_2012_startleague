@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   								:city, :email, :favorite, :first_name,
   								:last_name, :password, :password_confirmation,
   								:password_digest, :phone, :state, :tag,
-  								:website, :zip, :latitude, :longitude
+  								:website, :zip, :latitude, :longitude, :photo
   
   has_secure_password
 
