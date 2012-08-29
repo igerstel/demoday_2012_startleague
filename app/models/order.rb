@@ -3,5 +3,9 @@ class Order < ActiveRecord::Base
   								:user_id
   
   has_many :products, :through => :order_items
+  has_many :order_items
+  belongs_to :user
+  
+    
   
 end

@@ -1,6 +1,15 @@
 class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
+  # before_filter :require_admin, :only => [:index, :show]
+  # 
+  # def require_admin
+  #   if session[:user_id].nil? || !User.find_by_id(session[:user_id]).admin? 
+  #     redirect_to root_url, notice: 'You must be an admin to see that!'
+  #   end
+  # end
+  
+  
   def index
     @orders = Order.all
 
@@ -25,6 +34,7 @@ class OrdersController < ApplicationController
   # GET /orders/new.json
   def new
     @order = Order.new
+
 
     respond_to do |format|
       format.html # new.html.erb
