@@ -56,43 +56,41 @@
 
 <%= stylesheet_link_tag 'gmaps4rails' %>
 
-	<div id="container">
-		<header>
-			<h1><%= link_to "From My Farmer", root_url %></h1>
-			<% if logged_in? %>
-  			<nav>
-  				<ul>
-						<li><%= link_to "View My Profile", user_url(current_user) %></li>
-						<li><%= link_to "Dropoff Locations", locations_url(current_user) %></li>
-						<li><%= link_to "Sign Out", signout_url, :method => :delete %></li>
-  				</ul>
-  			</nav>
-				<% else %>		
-				<h4>Log In</h4>
-				<%= form_tag sessions_url do %>
-				  <fieldset>  
-				    <%= label_tag :email %>
-				    <%= text_field_tag :email, nil, :size => 50 %>
-				  </fieldset>
-				  <fieldset>
-				    <%= label_tag :password %>
-				    <%= password_field_tag :password %>
-				  </fieldset>
-				  <%= submit_tag "Login" %>
-				<% end %>
+	<header>
+		<h1><%= link_to "From My Farmer", root_url %></h1>
+		<% if logged_in? %>
+			<nav>
+				<ul>
+					<li><%= link_to "View My Profile", user_url(current_user) %></li>
+					<li><%= link_to "Dropoff Locations", locations_url(current_user) %></li>
+					<li><%= link_to "Sign Out", signout_url, :method => :delete %></li>
+				</ul>
+			</nav>
+			<% else %>		
+			<h4>Log In</h4>
+			<%= form_tag sessions_url do %>
+			  <fieldset>  
+			    <%= label_tag :email %>
+			    <%= text_field_tag :email, nil, :size => 50 %>
+			  </fieldset>
+			  <fieldset>
+			    <%= label_tag :password %>
+			    <%= password_field_tag :password %>
+			  </fieldset>
+			  <%= submit_tag "Login" %>
 			<% end %>
-		</header>
+		<% end %>
+	</header>
 
-		 <div id="content">
-			<!-- <#%= notice %> -->
+	 <section class="main">
+		<!-- <#%= notice %> -->
+		<%= yield %>
+	 </section>
+	
+	<footer>
+		&copy;FMF FOOTER
+		<%= yield :scripts %>
+	</footer>
 
-			<%= yield %>
-		</div>
-		
-		<footer>
-			&copy;FMF FOOTER
-			<%= yield :scripts %>
-		</footer>
-	</div>
 </body>
 </html>
