@@ -1,56 +1,52 @@
-<br><br>
-<h1>New location</h1>
+<h2>New location</h2>
 
 <%= form_tag locations_path, :method => :get do %>
-  <p>
+  <p><!-- Delete? -->
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search Near", :name => nil %>
 <% end %>
 
-<br>
-
 <%= image_tag @url %>
 
-<br><br>
-
-<h1>Listing locations</h1>
+<h2>Listing locations</h2>
 <table>
-  <tr>
-    <th>Street address</th>
-    <th></th>
-    <th>Distance</th>
-    <th></th>
-    <th>City</th>
-    <th></th>
-    <th>State</th>
-    <th></th>
-    <th>Zip</th>
-    <th></th>
-    <th>Day</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<tr>
-  <% for dropoff in @temp.nearbys(10) %>
-    <td><%= link_to dropoff.street_address, dropoff %></td>
-    <td></td>
-    <td><%= dropoff.distance_from(@farm).round(2) %> miles </td>
-    <td><%= dropoff.city %></td>
-    <td></td>
-    <td><%= dropoff.state %></td>
-    <td></td>
-    <td><%= dropoff.zip %></td>
-    <td></td>
-    <td><%= dropoff.day %></td>
-    <td><%= link_to 'Show', dropoff %></td>
-    <td><%= link_to 'Edit', edit_location_path(dropoff) %></td>
-    <td><%= link_to 'Destroy', dropoff, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <thead>
+    <tr>
+      <th>Street address</th>
+      <th></th><!-- Delete? -->
+      <th>Distance</th>
+      <th></th><!-- Delete? -->
+      <th>City</th>
+      <th></th><!-- Delete? -->
+      <th>State</th>
+      <th></th><!-- Delete? -->
+      <th>Zip</th>
+      <th></th><!-- Delete? -->
+      <th>Day</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% for dropoff in @temp.nearbys(10) %>
+        <td data-label="Address"><%= link_to dropoff.street_address, dropoff %></td>
+        <td></td><!-- Delete? -->
+        <td data-label="Distance"><%= dropoff.distance_from(@farm).round(2) %> miles </td>
+        <td data-label="City"><%= dropoff.city %></td>
+        <td></td><!-- Delete? -->
+        <td data-label="State"><%= dropoff.state %></td>
+        <td></td><!-- Delete? -->
+        <td data-label="Zip"><%= dropoff.zip %></td>
+        <td></td><!-- Delete? -->
+        <td data-label="Day"><%= dropoff.day %></td>
+        <td><%= link_to 'Show', dropoff %></td>
+        <td><%= link_to 'Edit', edit_location_path(dropoff) %></td>
+        <td><%= link_to 'Destroy', dropoff, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  </tbody>
 <% end %>
 </table>
-
-<br />
 
 <%= link_to 'New Location', new_location_path %>
