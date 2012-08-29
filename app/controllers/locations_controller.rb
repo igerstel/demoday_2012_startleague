@@ -2,9 +2,13 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
+    if Location.count == 0
+      
+
+
     if params[:search].present?
       @locations = Location.near(params[:search], 50, :order => :distance)
-    else
+    elsif 
       @locations = Location.all
     end
 
