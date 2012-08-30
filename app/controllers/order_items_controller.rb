@@ -41,6 +41,8 @@ class OrderItemsController < ApplicationController
   # POST /order_items.json
   def create
     @order_item = OrderItem.new(params[:order_item])
+    #if @order_item.
+    #@order_item.order_id = 
 
     respond_to do |format|
       if @order_item.save

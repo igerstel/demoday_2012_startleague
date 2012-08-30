@@ -39,7 +39,15 @@
   <b>User:</b>
   <%= @product.user_id %>
 </p>
-
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
+<br>
+<% if session["user_id"] != @product.user_id %>
+  <%= form_tag url_for(:controller => 'order_items', :action => 'create') do %>
+    <%= label_tag "Qty to order:" %>
+    <%= number_field_tag params[:qty_ord] %>
+    <%= hidden_field_tag params[:product_id], @product.id %>
+    <%= submit_tag %>
+  <% end %>
+<% else %>
+  <%= link_to 'Edit', edit_product_path(@product) %> |
+<% end %>  
 <%= link_to 'Back', products_path %>
