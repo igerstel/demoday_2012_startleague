@@ -17,6 +17,8 @@ gem 'faker'
 gem 'kaminari'
 gem 'carrierwave'
 
+gem 'debugger'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
