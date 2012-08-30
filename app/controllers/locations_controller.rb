@@ -2,13 +2,14 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    if Location.count == 0
-      
-
-
+    @lc = Location.count
+    
     if params[:search].present?
       @locations = Location.near(params[:search], 50, :order => :distance)
-    elsif 
+      @locations.inspect
+    elsif @lc == 0
+      @locations = Location.new
+    else
       @locations = Location.all
     end
 
@@ -16,7 +17,10 @@ class LocationsController < ApplicationController
     @farm = User.find_by_id(session["user_id"])
     @loc = @farm.fulladdress
     @temp = Location.new
-    @temp.id = @locations.last.id+1
+    if @lc == 0
+      @temp.id = 1
+    else @temp.id = @locations.last.id+1
+    end
     @temp.latitude = @farm.latitude
     @temp.longitude = @farm.longitude
 
@@ -27,6 +31,7 @@ class LocationsController < ApplicationController
        end  
 
     @url = "http://maps.googleapis.com/maps/api/staticmap?center=#{@loc}&markers=#{@loc}&zoom=11&size=600x600&maptype=roadmap&markers=color:green"
+    if @lc != 0 
     @locations.each do |location|
       if location.day == "Monday"
       @url = @url + "%7Clabel:M%7C#{location.latitude},#{location.longitude}&markers=color:green"
@@ -44,7 +49,8 @@ class LocationsController < ApplicationController
       @url = @url + "%7Clabel:U%7C#{location.latitude},#{location.longitude}&markers=color:green"
       end
     end    
-    @url = @url + "&sensor=false"
+  end
+  @url = @url + "&sensor=false"
 
   end
 
