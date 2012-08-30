@@ -8,6 +8,9 @@ class ProductsController < ApplicationController
     if params[:cat].present?
       @products = @products.find_all_by_product_attribute(params[:cat])
     end
+    if params[:loc].present?
+      @products = @products.find_all_by_user_id(params[:loc])
+    end
 
     respond_to do |format|
       format.html # index.html.erb

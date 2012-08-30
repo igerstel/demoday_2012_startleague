@@ -69,6 +69,8 @@
       <th>Zip</th>
       
       <th>Day</th>
+      <th>Farm</th>
+      <th>Product List</th>
       <th></th>
       <th></th>
       <th></th>
@@ -78,15 +80,13 @@
     <tr>
       <% for dropoff in @temp.nearbys(10) %>
         <td data-label="Address"><%= link_to dropoff.street_address, dropoff %></td>
-        <td></td><!-- Delete? -->
         <td data-label="Distance"><%= dropoff.distance_from(@farm).round(2) %> miles </td>
         <td data-label="City"><%= dropoff.city %></td>
-        <td></td><!-- Delete? -->
         <td data-label="State"><%= dropoff.state %></td>
-        <td></td><!-- Delete? -->
         <td data-label="Zip"><%= dropoff.zip %></td>
-        <td></td><!-- Delete? -->
         <td data-label="Day"><%= dropoff.day %></td>
+        <td data-label="Farm"><%= link_to "#{dropoff.user.business_name}", user_url(dropoff.user.id) %></td>
+        <td data-label="Product List"><%= link_to "Products",products_url(:loc => dropoff.user.id) %></td>
         <td><%= link_to 'Show', dropoff %></td>
         <td><%= link_to 'Edit', edit_location_path(dropoff) %></td>
         <td><%= link_to 'Destroy', dropoff, method: :delete, data: { confirm: 'Are you sure?' } %></td>
