@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   has_many :products
   has_many :orders
   has_many :locations
+  has_many :ratings
 
   mount_uploader :photo, PhotoUploader  
 
@@ -29,5 +30,9 @@ class User < ActiveRecord::Base
   #                        :minimum => 6 }
 
   after_validation :geocode#, :if => :address_changed?
+  
+  def average_rating
+     self.ratings.average(:stars)
+   end
   
 end

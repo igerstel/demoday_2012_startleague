@@ -1,5 +1,7 @@
 Fmf4::Application.routes.draw do
 
+  resources :ratings
+
   root :to => 'users#new'
 
   get "user/list" => 'users#list', :as => :chef_list
