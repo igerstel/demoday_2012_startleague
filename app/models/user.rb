@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
   								:website, :zip, :latitude, :longitude, :photo
   
   has_secure_password
+  
+  scope :admins, where(:admin => true)
+  scope :nonadmins, where(:admin => false)
 
   geocoded_by :fulladdress
 

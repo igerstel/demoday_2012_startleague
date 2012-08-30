@@ -11,6 +11,13 @@
     </div>
   <% end %>
 
+    <%= f.hidden_field :user_id %><br />
+ 
+  <div class="field">
+    <%= f.label :order_item_id %><br />
+  </div>
+
+
   <div class="field">
     <%= f.label :total_price %><br />
     <%= f.text_field :total_price %>
@@ -23,11 +30,9 @@
     <%= f.label :comments %><br />
     <%= f.text_area :comments %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
-  </div>
+mat
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>
