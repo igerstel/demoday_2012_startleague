@@ -17,6 +17,8 @@ Fmf4::Application.routes.draw do
   get "/product/new3" => 'products#new3', :as => :farmer_step3
   post "/product/new3" => 'products#new4', :as => :farmer_step4
   
+  get "/users/homepage" => 'users#homepage'
+
   #get "/user/"     # routes to add drop off.
   #post
 
