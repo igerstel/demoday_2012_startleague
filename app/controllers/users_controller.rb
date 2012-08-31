@@ -112,8 +112,8 @@ class UsersController < ApplicationController
   end
 
   def list
-    @search = Product.search(params[:q])
-    @products = @search.result  
+    @q = Product.search(params[:q])
+    @products = @q.result  
     
     respond_to do |format|
       format.html # index.html.erb

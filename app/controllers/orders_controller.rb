@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
   
   
   def index
-    @orders = Order.all
+    @orders = Order.find_all_by_id(session["user_id"])
 
     respond_to do |format|
       format.html # index.html.erb
