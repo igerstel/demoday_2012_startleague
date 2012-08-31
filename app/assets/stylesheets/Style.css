@@ -325,17 +325,17 @@ header h1 {
   }
 }
 /* line 18, project/header.scss */
-header form.search {
+header form {
   overflow: hidden;
 }
 @media (min-width: 600px) {
   /* line 18, project/header.scss */
-  header form.search {
+  header form {
     float: right;
   }
 }
 /* line 23, project/header.scss */
-header form.search input[type="text"] {
+header form input[type="text"] {
   -moz-border-radius-topright: 0;
   -webkit-border-top-right-radius: 0;
   border-top-right-radius: 0;
@@ -346,7 +346,7 @@ header form.search input[type="text"] {
   width: 75%;
 }
 /* line 29, project/header.scss */
-header form.search input[type="submit"] {
+header form input[type="submit"] {
   -webkit-border-radius: 0 0.25em 0.25em 0;
   -moz-border-radius: 0 0.25em 0.25em 0;
   -ms-border-radius: 0 0.25em 0.25em 0;
@@ -364,6 +364,9 @@ header form.search input[type="submit"] {
 ==================================================================================================== */
 /* line 5, project/main.scss */
 .main {
+  -webkit-box-shadow: 0 0 3px #333333;
+  -moz-box-shadow: 0 0 3px #333333;
+  box-shadow: 0 0 3px #333333;
   width: auto;
   background-color: #e9f0e5;
   border-top: 5px solid white;
@@ -383,30 +386,30 @@ header form.search input[type="submit"] {
     border: 5px solid white;
   }
 }
-/* line 18, project/main.scss */
+/* line 19, project/main.scss */
 .main .full-col,
 .main .major {
   padding: 2em;
 }
-/* line 21, project/main.scss */
+/* line 22, project/main.scss */
 .main .top {
   overflow: hidden;
 }
-/* line 23, project/main.scss */
+/* line 24, project/main.scss */
 .main .top figure {
   float: left;
   width: 30%;
   border: 5px solid #4b663d;
 }
-/* line 27, project/main.scss */
+/* line 28, project/main.scss */
 .main .top figure img {
   vertical-align: bottom;
 }
-/* line 31, project/main.scss */
+/* line 32, project/main.scss */
 .main .top .info {
   margin-left: 35%;
 }
-/* line 35, project/main.scss */
+/* line 36, project/main.scss */
 .main .content {
   position: relative;
   clear: left;
@@ -414,7 +417,7 @@ header form.search input[type="submit"] {
   padding: 1em;
   background-color: white;
 }
-/* line 42, project/main.scss */
+/* line 43, project/main.scss */
 .main .tabs {
   position: absolute;
   top: -3.25em;
@@ -423,11 +426,11 @@ header form.search input[type="submit"] {
   padding: .5em;
   list-style: none;
 }
-/* line 49, project/main.scss */
+/* line 50, project/main.scss */
 .main .tabs li {
   float: left;
 }
-/* line 52, project/main.scss */
+/* line 53, project/main.scss */
 .main .tabs a {
   -webkit-box-shadow: 0 0 3px #333333;
   -moz-box-shadow: 0 0 3px #333333;

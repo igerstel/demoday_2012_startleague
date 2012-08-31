@@ -3,6 +3,7 @@
 ==================================================================================================== */
 
 .main {
+  @include box-shadow(0 0 3px #333);
   width: auto;
   background-color: $main-bg;
   border-top: 5px solid $white;
