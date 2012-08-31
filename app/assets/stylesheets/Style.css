@@ -210,9 +210,10 @@ label {
   text-transform: uppercase;
 }
 
-/* line 16, project/_forms.scss */
+/* line 17, project/_forms.scss */
 input[type="text"],
 input[type="password"],
+input[type="number"],
 textarea {
   -webkit-border-radius: 0.25em;
   -moz-border-radius: 0.25em;
@@ -228,9 +229,10 @@ textarea {
   outline: none;
 }
 
-/* line 26, project/_forms.scss */
+/* line 28, project/_forms.scss */
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="number"] {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -238,10 +240,55 @@ input[type="password"] {
   padding: 0 .5em;
 }
 
-/* line 32, project/_forms.scss */
+/* line 34, project/_forms.scss */
+select {
+  width: 100%;
+}
+
+/* line 38, project/_forms.scss */
 textarea {
   padding: .5em;
   height: 8em;
+}
+
+/* line 43, project/_forms.scss */
+input[type="submit"] {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #4ddb4d), color-stop(100%, #29cc29));
+  background-image: -webkit-linear-gradient(#4ddb4d, #29cc29);
+  background-image: -moz-linear-gradient(#4ddb4d, #29cc29);
+  background-image: -o-linear-gradient(#4ddb4d, #29cc29);
+  background-image: linear-gradient(#4ddb4d, #29cc29);
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  -ms-border-radius: 2em;
+  -o-border-radius: 2em;
+  border-radius: 2em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-shadow: 0 0 3px #333333;
+  -moz-box-shadow: 0 0 3px #333333;
+  box-shadow: 0 0 3px #333333;
+  display: block;
+  width: 100%;
+  padding: .25em .5em;
+  border: 2px solid #20a220;
+  color: white;
+  font-family: "BreeSerif", Rockwell, Georgia, Times, "Times New Roman", serif;
+  font-size: 2.4em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: center;
+  text-shadow: 0 0 3px #333;
+  text-transform: uppercase;
+}
+/* line 61, project/_forms.scss */
+input[type="submit"]:hover, input[type="submit"]:focus {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #77e477), color-stop(100%, #4ddb4d));
+  background-image: -webkit-linear-gradient(#77e477, #4ddb4d);
+  background-image: -moz-linear-gradient(#77e477, #4ddb4d);
+  background-image: -o-linear-gradient(#77e477, #4ddb4d);
+  background-image: linear-gradient(#77e477, #4ddb4d);
 }
 
 /* ====================================================================================================
@@ -334,6 +381,111 @@ tbody td:first-child {
     text-align: right;
   }
 }
+/* ====================================================================================================
+   PROGRESS BAR STYLES
+==================================================================================================== */
+/* line 5, project/_progress-bars.scss */
+.progress {
+  -webkit-box-shadow: inset #e6e6e6 0 0 3px;
+  -moz-box-shadow: inset #e6e6e6 0 0 3px;
+  box-shadow: inset #e6e6e6 0 0 3px;
+  background-color: white;
+  border: 1px solid #cccccc;
+  height: 1.5em;
+  padding: .4em .5em;
+  position: relative;
+  margin-bottom: 4em;
+}
+/* line 35, project/_mixins.scss */
+.progress .bar {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #62df62), color-stop(100%, #29cc29));
+  background-image: -webkit-linear-gradient(#62df62, #29cc29);
+  background-image: -moz-linear-gradient(#62df62, #29cc29);
+  background-image: -o-linear-gradient(#62df62, #29cc29);
+  background-image: linear-gradient(#62df62, #29cc29);
+  border: 1px solid #29cc29;
+  height: 100%;
+}
+/* line 9, project/_progress-bars.scss */
+.progress.completed {
+  -webkit-box-shadow: inset #e6e6e6 0 0 3px;
+  -moz-box-shadow: inset #e6e6e6 0 0 3px;
+  box-shadow: inset #e6e6e6 0 0 3px;
+  background-color: white;
+  border: 1px solid #cccccc;
+  height: 1.5em;
+  padding: .4em .5em;
+}
+/* line 35, project/_mixins.scss */
+.progress.completed .bar {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bfbfbf), color-stop(100%, #999999));
+  background-image: -webkit-linear-gradient(#bfbfbf, #999999);
+  background-image: -moz-linear-gradient(#bfbfbf, #999999);
+  background-image: -o-linear-gradient(#bfbfbf, #999999);
+  background-image: linear-gradient(#bfbfbf, #999999);
+  border: 1px solid #999999;
+  height: 100%;
+}
+/* line 12, project/_progress-bars.scss */
+.progress .progress-marker {
+  position: absolute;
+  top: -0.5em;
+  width: 60px;
+  text-align: center;
+}
+/* line 17, project/_progress-bars.scss */
+.progress .progress-marker.one {
+  left: -5%;
+}
+/* line 20, project/_progress-bars.scss */
+.progress .progress-marker.two {
+  left: 50%;
+  margin-left: -25px;
+}
+/* line 24, project/_progress-bars.scss */
+.progress .progress-marker.three {
+  right: -5%;
+}
+/* line 28, project/_progress-bars.scss */
+.progress .marker {
+  -webkit-box-shadow: 0px 0px 3px #333333;
+  -moz-box-shadow: 0px 0px 3px #333333;
+  box-shadow: 0px 0px 3px #333333;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  background: #999999;
+  display: inline-block;
+  margin-bottom: .5em;
+  padding: 0;
+  border: 4px solid white;
+  height: 2.5em;
+  width: 2.5em;
+}
+/* line 38, project/_progress-bars.scss */
+.progress .marker.current {
+  background: #333333;
+}
+/* line 41, project/_progress-bars.scss */
+.progress .marker.completed {
+  background: #29cc29;
+}
+/* line 45, project/_progress-bars.scss */
+.progress h4 {
+  color: #999999;
+  font-family: Helmet, Freesans, sans-serif;
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+
 /* ====================================================================================================
    PAGE STYLES
 ==================================================================================================== */
@@ -431,11 +583,6 @@ header fieldset input[type="password"] {
 }
 /* line 63, project/header.scss */
 header input[type="submit"] {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #4ddb4d), color-stop(100%, #29cc29));
-  background-image: -webkit-linear-gradient(#4ddb4d, #29cc29);
-  background-image: -moz-linear-gradient(#4ddb4d, #29cc29);
-  background-image: -o-linear-gradient(#4ddb4d, #29cc29);
-  background-image: linear-gradient(#4ddb4d, #29cc29);
   -webkit-border-radius: 0.25em;
   -moz-border-radius: 0.25em;
   -ms-border-radius: 0.25em;
@@ -444,9 +591,20 @@ header input[type="submit"] {
   float: right;
   width: 70%;
   margin-top: .5em;
-  border: none;
-  color: white;
-  text-shadow: 0 0 3px #333;
+  padding: .25em .5em;
+  border: 1px solid #187718;
+  font-family: Helmet, Freesans, sans-serif;
+  font-size: 1.2em;
+  letter-spacing: 0;
+  text-transform: none;
+}
+/* line 75, project/header.scss */
+header input[type="submit"]:hover, header input[type="submit"]:focus {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #77e477), color-stop(100%, #4ddb4d));
+  background-image: -webkit-linear-gradient(#77e477, #4ddb4d);
+  background-image: -moz-linear-gradient(#77e477, #4ddb4d);
+  background-image: -o-linear-gradient(#77e477, #4ddb4d);
+  background-image: linear-gradient(#77e477, #4ddb4d);
 }
 @media (min-width: 600px) {
   /* line 63, project/header.scss */
@@ -545,25 +703,25 @@ header input[type="submit"] {
     width: 40%;
   }
 }
-@media (min-width: 800px) {
-  /* line 6, project/home.scss */
-  #home .minor {
-    width: 30%;
-  }
-}
-/* line 14, project/home.scss */
+/* line 11, project/home.scss */
 #home .minor h2 {
   margin: 0 .5em .5em;
 }
-/* line 17, project/home.scss */
+/* line 14, project/home.scss */
 #home .minor h4 {
   padding-bottom: .5em;
   border-bottom: 1px solid #cccccc;
   margin-bottom: .75em;
 }
-/* line 21, project/home.scss */
+/* line 18, project/home.scss */
 #home .minor h4.create-account {
   margin-top: 2.75em;
+}
+@media (min-width: 600px) and (max-width: 799px) {
+  /* line 18, project/home.scss */
+  #home .minor h4.create-account {
+    margin-top: 0;
+  }
 }
 /* line 25, project/home.scss */
 #home .minor small {
@@ -593,49 +751,83 @@ header input[type="submit"] {
   float: left;
   width: 50%;
 }
-/* line 43, project/home.scss */
+@media (min-width: 600px) and (max-width: 799px) {
+  /* line 38, project/home.scss */
+  #home .minor fieldset.business-type {
+    float: none;
+    width: 100%;
+  }
+}
+/* line 47, project/home.scss */
 #home .minor input[type="radio"] {
   float: left;
   margin-right: 1em;
 }
-/* line 47, project/home.scss */
-#home .minor input[type="submit"] {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #4ddb4d), color-stop(100%, #29cc29));
-  background-image: -webkit-linear-gradient(#4ddb4d, #29cc29);
-  background-image: -moz-linear-gradient(#4ddb4d, #29cc29);
-  background-image: -o-linear-gradient(#4ddb4d, #29cc29);
-  background-image: linear-gradient(#4ddb4d, #29cc29);
-  -webkit-border-radius: 2em;
-  -moz-border-radius: 2em;
-  -ms-border-radius: 2em;
-  -o-border-radius: 2em;
-  border-radius: 2em;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-box-shadow: 0 0 3px #333333;
-  -moz-box-shadow: 0 0 3px #333333;
-  box-shadow: 0 0 3px #333333;
-  display: block;
-  width: 100%;
-  padding: .25em .5em;
-  border: 2px solid #20a220;
-  color: white;
-  font-family: "BreeSerif", Rockwell, Georgia, Times, "Times New Roman", serif;
-  font-size: 2.4em;
-  font-weight: bold;
-  letter-spacing: 1px;
-  text-align: center;
-  text-shadow: 0 0 3px #333;
-  text-transform: uppercase;
+
+/* ====================================================================================================
+   SIGN UP PAGE STYLES
+==================================================================================================== */
+/* line 6, project/sign-up.scss */
+#sign-up .container {
+  -webkit-border-radius: 1.5em;
+  -moz-border-radius: 1.5em;
+  -ms-border-radius: 1.5em;
+  -o-border-radius: 1.5em;
+  border-radius: 1.5em;
+  -webkit-box-shadow: 0px 0px 3px #333333;
+  -moz-box-shadow: 0px 0px 3px #333333;
+  box-shadow: 0px 0px 3px #333333;
+  padding: 2em 5% 3em;
+  background: white;
+  border: 5px solid #40804a;
+  overflow: hidden;
+  max-width: 720px;
+  margin: 0 auto;
 }
-/* line 65, project/home.scss */
-#home .minor input[type="submit"]:hover, #home .minor input[type="submit"]:focus {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #77e477), color-stop(100%, #4ddb4d));
-  background-image: -webkit-linear-gradient(#77e477, #4ddb4d);
-  background-image: -moz-linear-gradient(#77e477, #4ddb4d);
-  background-image: -o-linear-gradient(#77e477, #4ddb4d);
-  background-image: linear-gradient(#77e477, #4ddb4d);
+/* line 11, project/sign-up.scss */
+#sign-up .container h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+/* line 15, project/sign-up.scss */
+#sign-up .container form {
+  margin-bottom: 2em;
+}
+/* line 18, project/sign-up.scss */
+#sign-up .container fieldset {
+  margin-bottom: 1.25em;
+  clear: left;
+}
+@media (min-width: 600px) {
+  /* line 21, project/sign-up.scss */
+  #sign-up .container fieldset.half {
+    float: left;
+    clear: none;
+    width: 48%;
+    margin-right: 4%;
+  }
+}
+/* line 29, project/sign-up.scss */
+#sign-up .container fieldset.quarter {
+  float: left;
+  clear: none;
+  width: 48%;
+  margin-right: 4%;
+  margin-bottom: 3em;
+}
+@media (min-width: 600px) {
+  /* line 29, project/sign-up.scss */
+  #sign-up .container fieldset.quarter {
+    width: 22%;
+  }
+}
+/* line 39, project/sign-up.scss */
+#sign-up .container fieldset.right {
+  margin-right: 0;
+}
+/* line 43, project/sign-up.scss */
+#sign-up .container input[type="submit"] {
+  clear: left;
 }
 
 /* ====================================================================================================

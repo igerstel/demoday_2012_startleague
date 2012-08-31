@@ -13,6 +13,7 @@ label {
 
 input[type="text"], 
 input[type="password"], 
+input[type="number"], 
 textarea {
 	@include border-radius(.25em);
 	@include box-shadow(inset 0 0 3px $med-gray);
@@ -23,13 +24,41 @@ textarea {
 }
 
 input[type="text"], 
-input[type="password"] {
+input[type="password"], 
+input[type="number"] {
   @include box-sizing(border-box);
   width: 100%;
 	padding: 0 .5em;
 }
 
+select {
+  width: 100%;
+}
+
 textarea {
 	padding: .5em;
 	height: 8em;
+}
+
+input[type="submit"] {
+  @include background-image(linear-gradient(adjust-lightness($green, 10%), $green));
+  @include border-radius(2em);
+  @include box-sizing(border-box);
+  @include box-shadow(0 0 3px #333);
+  display: block;
+  width: 100%;
+  padding: .25em .5em;
+  border: 2px solid adjust-lightness($green, -10%);
+  color: $white;
+  font-family: $bree-serif;
+  font-size: 2.4em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: center;
+  text-shadow: 0 0 3px #333;
+  text-transform: uppercase;
+  &:hover, 
+  &:focus {
+    @include background-image(linear-gradient(adjust-lightness($green, 20%), adjust-lightness($green, 10%)));
+  }
 }

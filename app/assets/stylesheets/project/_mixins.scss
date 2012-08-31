@@ -17,3 +17,25 @@
     @include background-image(linear-gradient(adjust-lightness($color, 20%), adjust-lightness($color, 10%)));
   }
 }
+
+@mixin module {
+  @include border-radius(1.5em);
+  @include box-shadow;
+  padding: 2em 5% 3em;
+  background: $white;
+  border: 5px solid $dark-border;
+}
+
+@mixin progress($color: $green) {
+  @include box-shadow(inset #e6e6e6 0 0 3px);
+  background-color: $white;
+  border: 1px solid $light-gray;
+  height: 1.5em;
+  padding: .4em .5em;
+  .bar {
+    @include box-sizing(border-box);
+    @include background-image(linear-gradient(adjust-lightness($color, 15%), $color));
+    border: 1px solid $color;
+    height: 100%;
+  }
+}

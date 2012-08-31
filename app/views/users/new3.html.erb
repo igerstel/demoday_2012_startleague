@@ -1,17 +1,30 @@
-<h1>Step 3 - Get Started</h1>
-<br>
-Check out some of the great farms in your area.
+<% @body_id = "sign-up" %>
 
-<!-- <#%= gmaps4rails(@json) %> -->
+<div class="container">
 
-<br><br>
+  <div class='progress'>
+    <div class='bar' style='width: 100%'></div>
+    <div class='progress-marker one'>
+      <div class='marker completed'></div>
+      <h4>Step 1</h4>
+    </div>
+    <div class='progress-marker two'>
+      <div class='marker completed'></div>
+      <h4>Step 2</h4>
+    </div>
+    <div class='progress-marker three'>
+      <div class='marker current'></div>
+      <h4>Step 3</h4>
+    </div>
+  </div>
+  
+  <h4>Check out some of the great farms in your area.</h4>
 
-<!-- Get coords for chef (exact or approximate). application helper -->
-<!-- Calculate distance -->
+  <!-- <#%= gmaps4rails(@json) %> -->
+  
+  <!-- Get coords for chef (exact or approximate). application helper -->
+  <!-- Calculate distance -->
 
+  <small><%= userhome %></small>
 
-
-
-<br><br>
-<%= userhome %>
-<br><br>
+</div>
