@@ -1,39 +1,43 @@
-<h2>Sign Up</h2>
+<% @body_id = "home" %>
 
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div class="error">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+<div class="minor">
+  <h2>Sign Up</h2>
+  
+  <%= form_for(@user) do |f| %>
+    <% if @user.errors.any? %>
+      <div class="error">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+        <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <fieldset>
+      <%= f.label :business %><br />
+      <%= f.radio_button(:business, "Farm") %>
+      <%= f.label(:business, "My business is a farm")%><br>
+      <%= f.radio_button(:business, "Restaurant")%>
+      <%= f.label(:business, "My business is a restaurant")%>
+    </fieldset>
+    <fieldset>  
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </fieldset>
+    <fieldset>  
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </fieldset>
+    <fieldset>  
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+    </fieldset>
+    <fieldset>
+      <%= f.submit %>
+    </fieldset>
   <% end %>
-
-  <fieldset>
-    <%= f.label :business %><br />
-    <%= f.radio_button(:business, "Farm") %>
-    <%= f.label(:business, "My business is a farm")%><br>
-    <%= f.radio_button(:business, "Restaurant")%>
-    <%= f.label(:business, "My business is a restaurant")%>
-  </fieldset>
-  <fieldset>  
-    <%= f.label :email %>
-    <%= f.text_field :email, :size => 50 %>
-  </fieldset>
-  <fieldset>  
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </fieldset>
-  <fieldset>  
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </fieldset>
-  <fieldset>
-    <%= f.submit %>
-  </fieldset>
-<% end %>
-
+  
 <%= link_to 'Back', users_path %>
+</div>

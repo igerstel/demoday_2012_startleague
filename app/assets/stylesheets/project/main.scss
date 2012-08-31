@@ -4,20 +4,26 @@
 
 .main {
   @include box-shadow(0 0 3px #333);
+  overflow: hidden;
   width: auto;
   background-color: $main-bg;
   border-top: 5px solid $white;
   border-bottom: 5px solid $white;
   @media (min-width: 600px) {
-    @include border-radius(2em);
     width: 90%;
     max-width: 1200px;
-    margin: -2em auto 0;
+    margin: -1em auto 0;
     border: 5px solid $white;
   }
   .full-col, 
   .major {
     padding: 2em;
+  }
+  .minor {
+    @media (min-width: 600px) {
+      float: right;
+      width: 25%;
+    }
   }
   .top {
     overflow: hidden;

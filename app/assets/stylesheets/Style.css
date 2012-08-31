@@ -104,20 +104,15 @@ a {
 }
 
 /* line 18, project/_general.scss */
-.full-col {
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-/* line 23, project/_general.scss */
 body {
   background: #fffcf7 url("../img/background/background-texture.jpg") center top repeat;
   font-size: 62.5%;
 }
 
-/* line 28, project/_general.scss */
-hr {
-  margin: 2em 0;
+/* line 23, project/_general.scss */
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* ====================================================================================================
@@ -322,38 +317,38 @@ header h1 {
   /* line 12, project/header.scss */
   header h1 {
     float: left;
+    width: 60%;
+    text-align: left;
   }
 }
-/* line 18, project/header.scss */
+/* line 20, project/header.scss */
 header form {
   overflow: hidden;
 }
 @media (min-width: 600px) {
-  /* line 18, project/header.scss */
+  /* line 20, project/header.scss */
   header form {
+    width: 40%;
     float: right;
   }
 }
-/* line 23, project/header.scss */
-header form input[type="text"] {
-  -moz-border-radius-topright: 0;
-  -webkit-border-top-right-radius: 0;
-  border-top-right-radius: 0;
-  -moz-border-radius-bottomright: 0;
-  -webkit-border-bottom-right-radius: 0;
-  border-bottom-right-radius: 0;
-  float: left;
-  width: 75%;
+@media (min-width: 600px) {
+  /* line 27, project/header.scss */
+  header fieldset {
+    float: left;
+    width: 35%;
+    margin-right: 5%;
+  }
 }
-/* line 29, project/header.scss */
-header form input[type="submit"] {
-  -webkit-border-radius: 0 0.25em 0.25em 0;
-  -moz-border-radius: 0 0.25em 0.25em 0;
-  -ms-border-radius: 0 0.25em 0.25em 0;
-  -o-border-radius: 0 0.25em 0.25em 0;
-  border-radius: 0 0.25em 0.25em 0;
-  float: left;
-  width: 25%;
+/* line 33, project/header.scss */
+header fieldset input {
+  width: 100%;
+}
+/* line 37, project/header.scss */
+header input[type="submit"] {
+  float: right;
+  width: 20%;
+  margin-top: 1.5em;
 }
 
 /* ====================================================================================================
@@ -367,6 +362,7 @@ header form input[type="submit"] {
   -webkit-box-shadow: 0 0 3px #333333;
   -moz-box-shadow: 0 0 3px #333333;
   box-shadow: 0 0 3px #333333;
+  overflow: hidden;
   width: auto;
   background-color: #e9f0e5;
   border-top: 5px solid white;
@@ -375,14 +371,9 @@ header form input[type="submit"] {
 @media (min-width: 600px) {
   /* line 5, project/main.scss */
   .main {
-    -webkit-border-radius: 2em;
-    -moz-border-radius: 2em;
-    -ms-border-radius: 2em;
-    -o-border-radius: 2em;
-    border-radius: 2em;
     width: 90%;
     max-width: 1200px;
-    margin: -2em auto 0;
+    margin: -1em auto 0;
     border: 5px solid white;
   }
 }
@@ -391,25 +382,32 @@ header form input[type="submit"] {
 .main .major {
   padding: 2em;
 }
-/* line 22, project/main.scss */
+@media (min-width: 600px) {
+  /* line 22, project/main.scss */
+  .main .minor {
+    float: right;
+    width: 25%;
+  }
+}
+/* line 28, project/main.scss */
 .main .top {
   overflow: hidden;
 }
-/* line 24, project/main.scss */
+/* line 30, project/main.scss */
 .main .top figure {
   float: left;
   width: 30%;
   border: 5px solid #4b663d;
 }
-/* line 28, project/main.scss */
+/* line 34, project/main.scss */
 .main .top figure img {
   vertical-align: bottom;
 }
-/* line 32, project/main.scss */
+/* line 38, project/main.scss */
 .main .top .info {
   margin-left: 35%;
 }
-/* line 36, project/main.scss */
+/* line 42, project/main.scss */
 .main .content {
   position: relative;
   clear: left;
@@ -417,7 +415,7 @@ header form input[type="submit"] {
   padding: 1em;
   background-color: white;
 }
-/* line 43, project/main.scss */
+/* line 49, project/main.scss */
 .main .tabs {
   position: absolute;
   top: -3.25em;
@@ -426,11 +424,11 @@ header form input[type="submit"] {
   padding: .5em;
   list-style: none;
 }
-/* line 50, project/main.scss */
+/* line 56, project/main.scss */
 .main .tabs li {
   float: left;
 }
-/* line 53, project/main.scss */
+/* line 59, project/main.scss */
 .main .tabs a {
   -webkit-box-shadow: 0 0 3px #333333;
   -moz-box-shadow: 0 0 3px #333333;
@@ -444,6 +442,22 @@ header form input[type="submit"] {
   display: block;
   padding: 1em;
   background-color: #999999;
+}
+
+/* ====================================================================================================
+   HOME PAGE STYLES
+==================================================================================================== */
+@media (min-width: 600px) {
+  /* line 6, project/home.scss */
+  #home .minor {
+    float: right;
+    width: 30%;
+    padding: 1em 5%;
+  }
+}
+/* line 12, project/home.scss */
+#home .minor form {
+  background-color: white;
 }
 
 /* ====================================================================================================

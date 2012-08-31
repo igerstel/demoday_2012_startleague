@@ -13,23 +13,30 @@ header {
   	text-align: center;
   	@media (min-width: 600px) {
     	float: left;
+    	width: 60%;
+    	text-align: left;
   	}
 	}
 	form {
   	overflow: hidden;
   	@media (min-width: 600px) {
+    	width: 40%;
     	float: right;
   	}
-  	input[type="text"] {
-      @include border-top-right-radius(0);
-      @include border-bottom-right-radius(0);
+  }
+	fieldset {
+    @media (min-width: 600px) {
       float: left;
-      width: 75%;
+      width: 35%;
+      margin-right: 5%;
     }
-    input[type="submit"] {
-      @include border-radius(0 .25em .25em 0);
-      float: left;
-      width: 25%;
+    input {
+      width: 100%;
     }
-	}
+  }
+  input[type="submit"] {
+    float: right;
+    width: 20%;
+    margin-top: 1.5em;
+  }
 }

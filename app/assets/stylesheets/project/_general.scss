@@ -15,16 +15,12 @@ a {
 	@include transition;
 }
 
-.full-col {
-	max-width: 960px;
-	margin: 0 auto;
-}
-
 body {
 	background: #fffcf7 url('../img/background/background-texture.jpg') center top repeat;
   font-size: 62.5%;
 }
 
-hr {
-  margin: 2em 0;
+.inner {
+	max-width: 1200px;
+	margin: 0 auto;
 }
