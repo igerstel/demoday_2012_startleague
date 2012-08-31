@@ -40,10 +40,12 @@ class OrderItemsController < ApplicationController
   # POST /order_items
   # POST /order_items.json
   def create
-    # debugger
     @order_item = OrderItem.new(params[:order_item])
-    #if @order_item.
-    #@order_item.order_id = 
+    if Order.last == nil
+      @order_item.order_id = 1
+    else @order_item.order_id = Order.last.id + 1
+    end
+    @order_item.qty_ordered_price = @order_item.product.price
 
     respond_to do |format|
       if @order_item.save

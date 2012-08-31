@@ -1,4 +1,7 @@
 <br><br>
+
+
+<% if @farm.business == "Farm" %>
 <h2>New Location</h2>
 
 <%= form_for @location, :url => { :action => 'index2'} do |f| %>
@@ -42,6 +45,7 @@
 </table>
 <% end %>
 
+<% end %>
 <br><br>
 
 <h1>Find location</h1>

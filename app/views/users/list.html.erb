@@ -1,12 +1,8 @@
 <h1>Search</h1>
 
-<%= search_form_for @search do |f| %>
-    <div class="field">
-        <%= f.label :name_cont, "Product Name" %>
-        <%= f.text_field :name_cont %>
-    <div class="field">
-        <%= f.label :product_attribute_cont, "Variety" %>
-        <%= f.text_field :product_attribute_cont %>
+<%= search_form_for @q do |f| %>
+    <%= f.label :product_attribute_or_name_cont, "Product Name" %>
+    <%= f.text_field :product_attribute_or_name_cont %> 
 <!--     <div class="field">
         <#%= f.label :amount_lteq, "Distance <" %>
         <#%= f.select :amount_lteq, options_for_select(maxdist) %><br />

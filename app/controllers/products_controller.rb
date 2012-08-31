@@ -30,8 +30,8 @@ class ProductsController < ApplicationController
       @start_date = params[:start_date]
       @end_date = params[:end_date]
     else
-      @start_date = (Date.today-6).to_s
-      @end_date = (Date.today+1).to_s
+      @start_date = (Date.today.beginning_of_week).to_s#today-6).to_s
+      @end_date = (Date.today.end_of_week).to_s#today+1).to_s
     end
 
     @products = @user.products.where("created_at >= ? and created_at <= ?", @start_date, @end_date)
