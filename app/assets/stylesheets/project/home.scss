@@ -6,11 +6,40 @@
   .minor {
     @media (min-width: 600px) {
       float: right;
+      width: 40%;
+    }
+    @media (min-width: 800px) {
       width: 30%;
-      padding: 1em 5%;
     }
     form {
+      @include border-radius(1em);
+      @include box-shadow;
+      padding: 2em;
       background-color: $white;
+      border: 5px solid $dark-border;
+    }
+    fieldset {
+      margin-bottom: 1em;
+    }
+    input[type="submit"] {
+      @include background-image(linear-gradient(adjust-lightness($green, 10%), $green));
+      @include border-radius(2em);
+      @include box-sizing(border-box);
+      @include box-shadow(0 0 3px #333);
+      display: block;
+      width: 100%;
+      padding: 0 .5em;
+      border: 5px solid adjust-lightness($green, -10%);
+      color: $white;
+      font-family: $bree-serif;
+      font-size: 3em;
+      font-weight: bold;
+      text-align: center;
+      text-shadow: 0 0 3px #333;
+      &:hover, 
+      &:focus {
+        @include background-image(linear-gradient(adjust-lightness($green, 20%), adjust-lightness($green, 10%)));
+      }
     }
   }
 }

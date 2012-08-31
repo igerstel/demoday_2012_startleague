@@ -16,9 +16,9 @@
     <% end %>
   
     <fieldset>
-      <%= f.label :business %><br />
+      <%= f.label :business, "Select Business Type" %>
       <%= f.radio_button(:business, "Farm") %>
-      <%= f.label(:business, "My business is a farm")%><br>
+      <%= f.label(:business, "My business is a farm")%>
       <%= f.radio_button(:business, "Restaurant")%>
       <%= f.label(:business, "My business is a restaurant")%>
     </fieldset>
@@ -34,9 +34,7 @@
       <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation %>
     </fieldset>
-    <fieldset>
-      <%= f.submit %>
-    </fieldset>
+    <%= f.submit %>
   <% end %>
   
 <%= link_to 'Back', users_path %>

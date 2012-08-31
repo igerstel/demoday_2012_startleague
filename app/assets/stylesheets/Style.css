@@ -109,11 +109,20 @@ body {
   font-size: 62.5%;
 }
 
-/* line 24, project/_general.scss */
-.inner,
-.main {
+/* line 23, project/_general.scss */
+.inner {
   max-width: 1000px;
   margin: 0 auto;
+}
+
+/* line 29, project/_general.scss */
+.main,
+footer {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-right: 5%;
+  padding-left: 5%;
 }
 
 /* ====================================================================================================
@@ -153,7 +162,7 @@ body {
   background-image: linear-gradient(#7ba366, #628650);
 }
 
-/* ====================================================================================================
+ /* ====================================================================================================
    FORM STYLES
 ==================================================================================================== */
 /* line 5, project/_forms.scss */
@@ -187,10 +196,14 @@ textarea {
 /* line 26, project/_forms.scss */
 input[type="text"],
 input[type="password"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
   padding: 0 .5em;
 }
 
-/* line 30, project/_forms.scss */
+/* line 32, project/_forms.scss */
 textarea {
   padding: .5em;
   height: 8em;
@@ -294,22 +307,16 @@ tbody td:first-child {
 ==================================================================================================== */
 /* line 5, project/header.scss */
 header {
+  overflow: hidden;
   background-color: #4b663d;
+  padding: 2em 5%;
 }
-@media (min-width: 600px) {
-  /* line 5, project/header.scss */
-  header {
-    padding: 3em 5%;
-    overflow: hidden;
-  }
-}
-/* line 11, project/header.scss */
+/* line 9, project/header.scss */
 header h1 {
   text-align: center;
-  padding: .5em 5%;
 }
 @media (min-width: 600px) {
-  /* line 11, project/header.scss */
+  /* line 9, project/header.scss */
   header h1 {
     float: left;
     width: 60%;
@@ -317,14 +324,14 @@ header h1 {
     text-align: left;
   }
 }
-/* line 21, project/header.scss */
+/* line 18, project/header.scss */
 header form {
   overflow: hidden;
   background-color: #333333;
   padding: 1.5em 5%;
 }
 @media (min-width: 600px) {
-  /* line 21, project/header.scss */
+  /* line 18, project/header.scss */
   header form {
     float: right;
     width: 40%;
@@ -332,12 +339,12 @@ header form {
     background-color: transparent;
   }
 }
-/* line 32, project/header.scss */
+/* line 29, project/header.scss */
 header fieldset {
   margin-bottom: .5em;
 }
 @media (min-width: 600px) {
-  /* line 32, project/header.scss */
+  /* line 29, project/header.scss */
   header fieldset {
     float: left;
     width: 35%;
@@ -345,7 +352,7 @@ header fieldset {
     margin-bottom: 0;
   }
 }
-/* line 40, project/header.scss */
+/* line 37, project/header.scss */
 header fieldset label {
   float: left;
   width: 25%;
@@ -354,26 +361,26 @@ header fieldset label {
   text-align: right;
 }
 @media (min-width: 600px) {
-  /* line 40, project/header.scss */
+  /* line 37, project/header.scss */
   header fieldset label {
     float: none;
     width: auto;
     text-align: left;
   }
 }
-/* line 52, project/header.scss */
+/* line 49, project/header.scss */
 header fieldset input {
   float: right;
   width: 70%;
 }
 @media (min-width: 600px) {
-  /* line 52, project/header.scss */
+  /* line 49, project/header.scss */
   header fieldset input {
     float: none;
     width: 100%;
   }
 }
-/* line 61, project/header.scss */
+/* line 58, project/header.scss */
 header input[type="submit"] {
   -webkit-border-radius: 0.25em;
   -moz-border-radius: 0.25em;
@@ -387,7 +394,7 @@ header input[type="submit"] {
   border: none;
 }
 @media (min-width: 600px) {
-  /* line 61, project/header.scss */
+  /* line 58, project/header.scss */
   header input[type="submit"] {
     width: 20%;
     margin-top: 1.75em;
@@ -402,56 +409,39 @@ header input[type="submit"] {
 ==================================================================================================== */
 /* line 5, project/main.scss */
 .main {
-  -webkit-box-shadow: 0 0 3px #333333;
-  -moz-box-shadow: 0 0 3px #333333;
-  box-shadow: 0 0 3px #333333;
   overflow: hidden;
-  width: auto;
-  background-color: #e9f0e5;
-  border-top: 5px solid white;
-  border-bottom: 5px solid white;
-  padding: 0 5%;
 }
-@media (min-width: 600px) {
-  /* line 5, project/main.scss */
-  .main {
-    width: 80%;
-    max-width: 900px;
-    margin: -1em auto 0;
-    border: 5px solid white;
-  }
-}
-/* line 20, project/main.scss */
+/* line 8, project/main.scss */
 .main .full-col,
 .main .major {
   padding: 2em;
 }
 @media (min-width: 600px) {
-  /* line 23, project/main.scss */
+  /* line 11, project/main.scss */
   .main .minor {
     float: right;
     width: 25%;
   }
 }
-/* line 29, project/main.scss */
+/* line 17, project/main.scss */
 .main .top {
   overflow: hidden;
 }
-/* line 31, project/main.scss */
+/* line 19, project/main.scss */
 .main .top figure {
   float: left;
   width: 30%;
   border: 5px solid #4b663d;
 }
-/* line 35, project/main.scss */
+/* line 23, project/main.scss */
 .main .top figure img {
   vertical-align: bottom;
 }
-/* line 39, project/main.scss */
+/* line 27, project/main.scss */
 .main .top .info {
   margin-left: 35%;
 }
-/* line 43, project/main.scss */
+/* line 31, project/main.scss */
 .main .content {
   position: relative;
   clear: left;
@@ -459,7 +449,7 @@ header input[type="submit"] {
   padding: 1em;
   background-color: white;
 }
-/* line 50, project/main.scss */
+/* line 38, project/main.scss */
 .main .tabs {
   position: absolute;
   top: -3.25em;
@@ -468,15 +458,15 @@ header input[type="submit"] {
   padding: .5em;
   list-style: none;
 }
-/* line 57, project/main.scss */
+/* line 45, project/main.scss */
 .main .tabs li {
   float: left;
 }
-/* line 60, project/main.scss */
+/* line 48, project/main.scss */
 .main .tabs a {
-  -webkit-box-shadow: 0 0 3px #333333;
-  -moz-box-shadow: 0 0 3px #333333;
-  box-shadow: 0 0 3px #333333;
+  -webkit-box-shadow: 0px 0px 3px #333333;
+  -moz-box-shadow: 0px 0px 3px #333333;
+  box-shadow: 0px 0px 3px #333333;
   -moz-border-radius-topleft: 0.5em;
   -webkit-border-top-left-radius: 0.5em;
   border-top-left-radius: 0.5em;
@@ -495,13 +485,69 @@ header input[type="submit"] {
   /* line 6, project/home.scss */
   #home .minor {
     float: right;
-    width: 30%;
-    padding: 1em 5%;
+    width: 40%;
   }
 }
-/* line 12, project/home.scss */
+@media (min-width: 800px) {
+  /* line 6, project/home.scss */
+  #home .minor {
+    width: 30%;
+  }
+}
+/* line 14, project/home.scss */
 #home .minor form {
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -o-border-radius: 1em;
+  border-radius: 1em;
+  -webkit-box-shadow: 0px 0px 3px #333333;
+  -moz-box-shadow: 0px 0px 3px #333333;
+  box-shadow: 0px 0px 3px #333333;
+  padding: 2em;
   background-color: white;
+  border: 5px solid #4b663d;
+}
+/* line 21, project/home.scss */
+#home .minor fieldset {
+  margin-bottom: 1em;
+}
+/* line 24, project/home.scss */
+#home .minor input[type="submit"] {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #628650), color-stop(100%, #4b663d));
+  background-image: -webkit-linear-gradient(#628650, #4b663d);
+  background-image: -moz-linear-gradient(#628650, #4b663d);
+  background-image: -o-linear-gradient(#628650, #4b663d);
+  background-image: linear-gradient(#628650, #4b663d);
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  -ms-border-radius: 2em;
+  -o-border-radius: 2em;
+  border-radius: 2em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-shadow: 0 0 3px #333333;
+  -moz-box-shadow: 0 0 3px #333333;
+  box-shadow: 0 0 3px #333333;
+  display: block;
+  width: 100%;
+  padding: 0 .5em;
+  border: 5px solid #34462a;
+  color: white;
+  font-family: "BreeSerif", Rockwell, Georgia, Times, "Times New Roman", serif;
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 0 3px #333;
+}
+/* line 40, project/home.scss */
+#home .minor input[type="submit"]:hover, #home .minor input[type="submit"]:focus {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7ba366), color-stop(100%, #628650));
+  background-image: -webkit-linear-gradient(#7ba366, #628650);
+  background-image: -moz-linear-gradient(#7ba366, #628650);
+  background-image: -o-linear-gradient(#7ba366, #628650);
+  background-image: linear-gradient(#7ba366, #628650);
 }
 
 /* ====================================================================================================

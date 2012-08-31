@@ -15,8 +15,11 @@ $green: #4b663d;
 
 $header-bg: $green;
 $main-bg: adjust-lightness($green, 60%);
+$content-bg: $white;
 
-$border-color: adjust-lightness($green, -10%);
+$light-border: $white;
+$med-border: $green;
+$dark-border: $green;
 
 $heading-color: $green;
 $link-color: $green;
