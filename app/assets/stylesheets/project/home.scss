@@ -11,15 +11,38 @@
     @media (min-width: 800px) {
       width: 30%;
     }
+    h2 {
+      margin: 0 .5em .5em;
+    }
+    h4 {
+      padding-bottom: .5em;
+      border-bottom: 1px solid $light-gray;
+      margin-bottom: .75em;
+      &.create-account {
+        margin-top: 2.75em;
+      }
+    }
+    small {
+      display: block;
+      margin-bottom: 2em;
+    }
     form {
-      @include border-radius(1em);
+      @include border-radius(1.5em);
       @include box-shadow;
-      padding: 2em;
+      padding: 2em 2em 3em;
       background-color: $white;
       border: 5px solid $dark-border;
     }
     fieldset {
       margin-bottom: 1em;
+      &.business-type {
+        float: left;
+        width: 50%;
+      }
+    }
+    input[type="radio"] {
+      float: left;
+      margin-right: 1em;
     }
     input[type="submit"] {
       @include background-image(linear-gradient(adjust-lightness($green, 10%), $green));
@@ -28,14 +51,16 @@
       @include box-shadow(0 0 3px #333);
       display: block;
       width: 100%;
-      padding: 0 .5em;
-      border: 5px solid adjust-lightness($green, -10%);
+      padding: .25em .5em;
+      border: 2px solid adjust-lightness($green, -10%);
       color: $white;
       font-family: $bree-serif;
-      font-size: 3em;
+      font-size: 2.4em;
       font-weight: bold;
+      letter-spacing: 1px;
       text-align: center;
       text-shadow: 0 0 3px #333;
+      text-transform: uppercase;
       &:hover, 
       &:focus {
         @include background-image(linear-gradient(adjust-lightness($green, 20%), adjust-lightness($green, 10%)));

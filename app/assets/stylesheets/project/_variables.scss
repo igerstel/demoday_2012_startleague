@@ -2,26 +2,40 @@
    GLOBAL COLORS
 ==================================================================================================== */
 
+/* Brand Colors */
+$dark-red: #b3364a;
+$green: #29cc29;
+$dark-green: #40804A;
+$dark-blue: #597980;
+
+$light-brown: #ffefbf;
+
+/* Other Colors */
 $white: #ffffff;
 $black: #1a1a1a;
-$light-gray: #999;
+$light-gray: #ccc;
+$med-gray: #999;
 $dark-gray: #333;
-
-$green: #4b663d;
+$red: #e61739;
 
 /* ====================================================================================================
    COLOR USES
 ==================================================================================================== */
 
-$header-bg: $green;
+$header-bg: $dark-green;
 $main-bg: adjust-lightness($green, 60%);
 $content-bg: $white;
 
 $light-border: $white;
 $med-border: $green;
-$dark-border: $green;
+$dark-border: $dark-green;
 
-$heading-color: $green;
-$link-color: $green;
+$heading-color: $dark-green;
+$sub-heading-color: $dark-gray;
+
+$link-color: $dark-green;
+$link-hover: adjust-lightness($link-color, -20%);
+
 $text-color: $dark-gray;
 $label-color: $dark-gray;
+$small-color: $med-gray;

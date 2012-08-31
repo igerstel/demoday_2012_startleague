@@ -14,14 +14,16 @@
         </ul>
       </div>
     <% end %>
-  
-    <fieldset>
-      <%= f.label :business, "Select Business Type" %>
+    <h4 class="select-type">Select Account Type</h4>
+    <fieldset class="business-type">
       <%= f.radio_button(:business, "Farm") %>
-      <%= f.label(:business, "My business is a farm")%>
-      <%= f.radio_button(:business, "Restaurant")%>
-      <%= f.label(:business, "My business is a restaurant")%>
+      <%= f.label(:business, "Farmer")%>
     </fieldset>
+    <fieldset class="business-type">
+      <%= f.radio_button(:business, "Restaurant")%>
+      <%= f.label(:business, "Restaurant")%>
+    </fieldset>
+    <h4 class="create-account">Create Account</h4>
     <fieldset>  
       <%= f.label :email %>
       <%= f.text_field :email %>
@@ -34,6 +36,7 @@
       <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation %>
     </fieldset>
+    <small>By clicking Sign Up, you agree to our <a href="#">Terms &amp; Conditions</a></small>
     <%= f.submit %>
   <% end %>
   

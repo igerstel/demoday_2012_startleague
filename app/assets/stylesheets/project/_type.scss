@@ -36,7 +36,21 @@ h2 {
   margin-bottom: .5em;
   color: $heading-color;
   font-family: $bree-serif;
-  font-size: 3em;
+  font-size: 3.6em;
+  font-weight: bold;
+}
+
+h3 {
+  color: $heading-color;
+  font-family: $sans-serif;
+  font-size: 2.4em;
+  font-weight: bold;
+}
+
+h4 {
+  color: $sub-heading-color;
+  font-family: $sans-serif;
+  font-size: 1.8em;
   font-weight: bold;
 }
 
@@ -48,10 +62,26 @@ p {
   line-height: 1.5em;
 }
 
+small {
+  color: $small-color;
+  font-family: $sans-serif;
+  font-size: 1.1em;
+  font-weight: 500;
+  line-height: 1.4em;
+}
+
 a {
 	color: $link-color;
 	text-decoration: none;
+	&:hover, 
+	&:focus {
+  	color: $link-hover;
+	}
 	header & {
 		color: $white;
+	}
+	p &, 
+	small & {
+  	white-space: nowrap;
 	}
 }

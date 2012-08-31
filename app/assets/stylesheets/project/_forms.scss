@@ -15,7 +15,7 @@ input[type="text"],
 input[type="password"], 
 textarea {
 	@include border-radius(.25em);
-	@include box-shadow(inset 0 0 3px $light-gray);
+	@include box-shadow(inset 0 0 3px $med-gray);
 	display: block;
 	background: $white;
 	border: none;

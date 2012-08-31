@@ -10,6 +10,8 @@
 /* ====================================================================================================
    GLOBAL COLORS
 ==================================================================================================== */
+/* Brand Colors */
+/* Other Colors */
 /* ====================================================================================================
    COLOR USES
 ==================================================================================================== */
@@ -41,13 +43,29 @@ h1 {
 /* line 35, project/_type.scss */
 h2 {
   margin-bottom: .5em;
-  color: #4b663d;
+  color: #40804a;
   font-family: "BreeSerif", Rockwell, Georgia, Times, "Times New Roman", serif;
-  font-size: 3em;
+  font-size: 3.6em;
   font-weight: bold;
 }
 
 /* line 43, project/_type.scss */
+h3 {
+  color: #40804a;
+  font-family: Helmet, Freesans, sans-serif;
+  font-size: 2.4em;
+  font-weight: bold;
+}
+
+/* line 50, project/_type.scss */
+h4 {
+  color: #333333;
+  font-family: Helmet, Freesans, sans-serif;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+/* line 57, project/_type.scss */
 p {
   color: #333333;
   font-family: Helmet, Freesans, sans-serif;
@@ -56,14 +74,31 @@ p {
   line-height: 1.5em;
 }
 
-/* line 51, project/_type.scss */
+/* line 65, project/_type.scss */
+small {
+  color: #999999;
+  font-family: Helmet, Freesans, sans-serif;
+  font-size: 1.1em;
+  font-weight: 500;
+  line-height: 1.4em;
+}
+
+/* line 73, project/_type.scss */
 a {
-  color: #4b663d;
+  color: #40804a;
   text-decoration: none;
 }
-/* line 54, project/_type.scss */
+/* line 77, project/_type.scss */
+a:hover, a:focus {
+  color: #1e3c23;
+}
+/* line 80, project/_type.scss */
 header a {
   color: white;
+}
+/* line 84, project/_type.scss */
+p a, small a {
+  white-space: nowrap;
 }
 
 /* ====================================================================================================
@@ -130,11 +165,11 @@ footer {
 ==================================================================================================== */
 /* line 5, project/_buttons.scss */
 .btn {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #628650), color-stop(100%, #4b663d));
-  background-image: -webkit-linear-gradient(#628650, #4b663d);
-  background-image: -moz-linear-gradient(#628650, #4b663d);
-  background-image: -o-linear-gradient(#628650, #4b663d);
-  background-image: linear-gradient(#628650, #4b663d);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #4ddb4d), color-stop(100%, #29cc29));
+  background-image: -webkit-linear-gradient(#4ddb4d, #29cc29);
+  background-image: -moz-linear-gradient(#4ddb4d, #29cc29);
+  background-image: -o-linear-gradient(#4ddb4d, #29cc29);
+  background-image: linear-gradient(#4ddb4d, #29cc29);
   -webkit-border-radius: 2em;
   -moz-border-radius: 2em;
   -ms-border-radius: 2em;
@@ -145,7 +180,7 @@ footer {
   box-shadow: 0 0 3px #333333;
   display: block;
   padding: .5em;
-  border: 5px solid #34462a;
+  border: 5px solid #20a220;
   color: white;
   font-family: "BreeSerif", Rockwell, Georgia, Times, "Times New Roman", serif;
   font-size: 3em;
@@ -155,11 +190,11 @@ footer {
 }
 /* line 16, project/_mixins.scss */
 .btn:hover, .btn:focus {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7ba366), color-stop(100%, #628650));
-  background-image: -webkit-linear-gradient(#7ba366, #628650);
-  background-image: -moz-linear-gradient(#7ba366, #628650);
-  background-image: -o-linear-gradient(#7ba366, #628650);
-  background-image: linear-gradient(#7ba366, #628650);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #77e477), color-stop(100%, #4ddb4d));
+  background-image: -webkit-linear-gradient(#77e477, #4ddb4d);
+  background-image: -moz-linear-gradient(#77e477, #4ddb4d);
+  background-image: -o-linear-gradient(#77e477, #4ddb4d);
+  background-image: linear-gradient(#77e477, #4ddb4d);
 }
 
  /* ====================================================================================================
@@ -220,7 +255,7 @@ table {
 
 /* line 10, project/_tables.scss */
 thead th {
-  background-color: #4b663d;
+  background-color: #29cc29;
   border-left: 1px solid white;
   padding: .5em;
   color: white;
@@ -308,43 +343,55 @@ tbody td:first-child {
 /* line 5, project/header.scss */
 header {
   overflow: hidden;
-  background-color: #4b663d;
-  padding: 2em 5%;
+  background-color: #40804a;
+  padding: 1em 5%;
 }
 /* line 9, project/header.scss */
 header h1 {
   text-align: center;
+  margin-bottom: .25em;
 }
 @media (min-width: 600px) {
   /* line 9, project/header.scss */
   header h1 {
     float: left;
     width: 60%;
+    margin-bottom: 0;
     padding: 0;
     text-align: left;
   }
 }
-/* line 18, project/header.scss */
+/* line 20, project/header.scss */
 header form {
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -o-border-radius: 1em;
+  border-radius: 1em;
   overflow: hidden;
-  background-color: #333333;
+  background-color: #1e3c23;
   padding: 1.5em 5%;
 }
 @media (min-width: 600px) {
-  /* line 18, project/header.scss */
+  /* line 20, project/header.scss */
   header form {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
     float: right;
     width: 40%;
     padding: 0;
     background-color: transparent;
   }
 }
-/* line 29, project/header.scss */
+/* line 33, project/header.scss */
 header fieldset {
   margin-bottom: .5em;
 }
 @media (min-width: 600px) {
-  /* line 29, project/header.scss */
+  /* line 33, project/header.scss */
   header fieldset {
     float: left;
     width: 35%;
@@ -352,7 +399,7 @@ header fieldset {
     margin-bottom: 0;
   }
 }
-/* line 37, project/header.scss */
+/* line 41, project/header.scss */
 header fieldset label {
   float: left;
   width: 25%;
@@ -361,27 +408,34 @@ header fieldset label {
   text-align: right;
 }
 @media (min-width: 600px) {
-  /* line 37, project/header.scss */
+  /* line 41, project/header.scss */
   header fieldset label {
     float: none;
     width: auto;
     text-align: left;
   }
 }
-/* line 49, project/header.scss */
-header fieldset input {
+/* line 54, project/header.scss */
+header fieldset input[type="text"],
+header fieldset input[type="password"] {
   float: right;
   width: 70%;
 }
 @media (min-width: 600px) {
-  /* line 49, project/header.scss */
-  header fieldset input {
+  /* line 54, project/header.scss */
+  header fieldset input[type="text"],
+  header fieldset input[type="password"] {
     float: none;
     width: 100%;
   }
 }
-/* line 58, project/header.scss */
+/* line 63, project/header.scss */
 header input[type="submit"] {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #4ddb4d), color-stop(100%, #29cc29));
+  background-image: -webkit-linear-gradient(#4ddb4d, #29cc29);
+  background-image: -moz-linear-gradient(#4ddb4d, #29cc29);
+  background-image: -o-linear-gradient(#4ddb4d, #29cc29);
+  background-image: linear-gradient(#4ddb4d, #29cc29);
   -webkit-border-radius: 0.25em;
   -moz-border-radius: 0.25em;
   -ms-border-radius: 0.25em;
@@ -390,11 +444,12 @@ header input[type="submit"] {
   float: right;
   width: 70%;
   margin-top: .5em;
-  background: white;
   border: none;
+  color: white;
+  text-shadow: 0 0 3px #333;
 }
 @media (min-width: 600px) {
-  /* line 58, project/header.scss */
+  /* line 63, project/header.scss */
   header input[type="submit"] {
     width: 20%;
     margin-top: 1.75em;
@@ -410,38 +465,40 @@ header input[type="submit"] {
 /* line 5, project/main.scss */
 .main {
   overflow: hidden;
+  padding-top: 4em;
+  padding-bottom: 4em;
 }
-/* line 8, project/main.scss */
+/* line 10, project/main.scss */
 .main .full-col,
 .main .major {
   padding: 2em;
 }
 @media (min-width: 600px) {
-  /* line 11, project/main.scss */
+  /* line 13, project/main.scss */
   .main .minor {
     float: right;
     width: 25%;
   }
 }
-/* line 17, project/main.scss */
+/* line 19, project/main.scss */
 .main .top {
   overflow: hidden;
 }
-/* line 19, project/main.scss */
+/* line 21, project/main.scss */
 .main .top figure {
   float: left;
   width: 30%;
-  border: 5px solid #4b663d;
+  border: 5px solid #40804a;
 }
-/* line 23, project/main.scss */
+/* line 25, project/main.scss */
 .main .top figure img {
   vertical-align: bottom;
 }
-/* line 27, project/main.scss */
+/* line 29, project/main.scss */
 .main .top .info {
   margin-left: 35%;
 }
-/* line 31, project/main.scss */
+/* line 33, project/main.scss */
 .main .content {
   position: relative;
   clear: left;
@@ -449,7 +506,7 @@ header input[type="submit"] {
   padding: 1em;
   background-color: white;
 }
-/* line 38, project/main.scss */
+/* line 40, project/main.scss */
 .main .tabs {
   position: absolute;
   top: -3.25em;
@@ -458,11 +515,11 @@ header input[type="submit"] {
   padding: .5em;
   list-style: none;
 }
-/* line 45, project/main.scss */
+/* line 47, project/main.scss */
 .main .tabs li {
   float: left;
 }
-/* line 48, project/main.scss */
+/* line 50, project/main.scss */
 .main .tabs a {
   -webkit-box-shadow: 0px 0px 3px #333333;
   -moz-box-shadow: 0px 0px 3px #333333;
@@ -475,7 +532,7 @@ header input[type="submit"] {
   border-top-right-radius: 0.5em;
   display: block;
   padding: 1em;
-  background-color: #999999;
+  background-color: #cccccc;
 }
 
 /* ====================================================================================================
@@ -495,30 +552,59 @@ header input[type="submit"] {
   }
 }
 /* line 14, project/home.scss */
+#home .minor h2 {
+  margin: 0 .5em .5em;
+}
+/* line 17, project/home.scss */
+#home .minor h4 {
+  padding-bottom: .5em;
+  border-bottom: 1px solid #cccccc;
+  margin-bottom: .75em;
+}
+/* line 21, project/home.scss */
+#home .minor h4.create-account {
+  margin-top: 2.75em;
+}
+/* line 25, project/home.scss */
+#home .minor small {
+  display: block;
+  margin-bottom: 2em;
+}
+/* line 29, project/home.scss */
 #home .minor form {
-  -webkit-border-radius: 1em;
-  -moz-border-radius: 1em;
-  -ms-border-radius: 1em;
-  -o-border-radius: 1em;
-  border-radius: 1em;
+  -webkit-border-radius: 1.5em;
+  -moz-border-radius: 1.5em;
+  -ms-border-radius: 1.5em;
+  -o-border-radius: 1.5em;
+  border-radius: 1.5em;
   -webkit-box-shadow: 0px 0px 3px #333333;
   -moz-box-shadow: 0px 0px 3px #333333;
   box-shadow: 0px 0px 3px #333333;
-  padding: 2em;
+  padding: 2em 2em 3em;
   background-color: white;
-  border: 5px solid #4b663d;
+  border: 5px solid #40804a;
 }
-/* line 21, project/home.scss */
+/* line 36, project/home.scss */
 #home .minor fieldset {
   margin-bottom: 1em;
 }
-/* line 24, project/home.scss */
+/* line 38, project/home.scss */
+#home .minor fieldset.business-type {
+  float: left;
+  width: 50%;
+}
+/* line 43, project/home.scss */
+#home .minor input[type="radio"] {
+  float: left;
+  margin-right: 1em;
+}
+/* line 47, project/home.scss */
 #home .minor input[type="submit"] {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #628650), color-stop(100%, #4b663d));
-  background-image: -webkit-linear-gradient(#628650, #4b663d);
-  background-image: -moz-linear-gradient(#628650, #4b663d);
-  background-image: -o-linear-gradient(#628650, #4b663d);
-  background-image: linear-gradient(#628650, #4b663d);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #4ddb4d), color-stop(100%, #29cc29));
+  background-image: -webkit-linear-gradient(#4ddb4d, #29cc29);
+  background-image: -moz-linear-gradient(#4ddb4d, #29cc29);
+  background-image: -o-linear-gradient(#4ddb4d, #29cc29);
+  background-image: linear-gradient(#4ddb4d, #29cc29);
   -webkit-border-radius: 2em;
   -moz-border-radius: 2em;
   -ms-border-radius: 2em;
@@ -532,22 +618,24 @@ header input[type="submit"] {
   box-shadow: 0 0 3px #333333;
   display: block;
   width: 100%;
-  padding: 0 .5em;
-  border: 5px solid #34462a;
+  padding: .25em .5em;
+  border: 2px solid #20a220;
   color: white;
   font-family: "BreeSerif", Rockwell, Georgia, Times, "Times New Roman", serif;
-  font-size: 3em;
+  font-size: 2.4em;
   font-weight: bold;
+  letter-spacing: 1px;
   text-align: center;
   text-shadow: 0 0 3px #333;
+  text-transform: uppercase;
 }
-/* line 40, project/home.scss */
+/* line 65, project/home.scss */
 #home .minor input[type="submit"]:hover, #home .minor input[type="submit"]:focus {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7ba366), color-stop(100%, #628650));
-  background-image: -webkit-linear-gradient(#7ba366, #628650);
-  background-image: -moz-linear-gradient(#7ba366, #628650);
-  background-image: -o-linear-gradient(#7ba366, #628650);
-  background-image: linear-gradient(#7ba366, #628650);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #77e477), color-stop(100%, #4ddb4d));
+  background-image: -webkit-linear-gradient(#77e477, #4ddb4d);
+  background-image: -moz-linear-gradient(#77e477, #4ddb4d);
+  background-image: -o-linear-gradient(#77e477, #4ddb4d);
+  background-image: linear-gradient(#77e477, #4ddb4d);
 }
 
 /* ====================================================================================================
