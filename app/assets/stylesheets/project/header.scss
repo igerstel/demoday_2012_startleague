@@ -4,39 +4,70 @@
 
 header {
 	background-color: $header-bg;
-	border-bottom: 5px solid $border-color;
-	padding: 3em 5%;
 	@media (min-width: 600px) {
+  	padding: 3em 5%;
   	overflow: hidden;
 	}
 	h1 {
   	text-align: center;
+  	padding: .5em 5%;
   	@media (min-width: 600px) {
     	float: left;
     	width: 60%;
+    	padding: 0;
     	text-align: left;
   	}
 	}
 	form {
   	overflow: hidden;
+  	background-color: $dark-gray;
+  	padding: 1.5em 5%;
   	@media (min-width: 600px) {
-    	width: 40%;
     	float: right;
+    	width: 40%;
+    	padding: 0;
+    	background-color: transparent;
   	}
   }
 	fieldset {
+    margin-bottom: .5em;
     @media (min-width: 600px) {
       float: left;
       width: 35%;
       margin-right: 5%;
+      margin-bottom: 0;
+    }
+    label {
+      float: left;
+      width: 25%;
+      margin-top: .25em;
+      color: $white;
+      text-align: right;
+      @media (min-width: 600px) {
+        float: none;
+        width: auto;
+        text-align: left;
+      }
     }
     input {
-      width: 100%;
+      float: right;
+      width: 70%;
+      @media (min-width: 600px) {
+        float: none;
+        width: 100%;
+      }
     }
   }
   input[type="submit"] {
+    @include border-radius(.25em);
     float: right;
-    width: 20%;
-    margin-top: 1.5em;
+    width: 70%;
+    margin-top: .5em;
+    background: $white;
+    border: none;
+    @media (min-width: 600px) {
+      width: 20%;
+      margin-top: 1.75em;
+    }
   }
 }
