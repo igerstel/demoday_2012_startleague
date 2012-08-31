@@ -1,0 +1,30 @@
+/* ====================================================================================================
+   VANITY STYLES
+==================================================================================================== */
+
+::selection { background: rgba(220,60,40,.75); text-shadow: none; color: #fff; }
+::-moz-selection { background: #c80000; text-shadow: none; }
+img::selection { background: transparent; }
+img::-moz-selection { background: transparent; }
+
+/* ====================================================================================================
+   GLOBAL STYLES
+==================================================================================================== */
+
+a {
+	@include transition;
+}
+
+.full-col {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+body {
+	background: #fffcf7 url('../img/background/background-texture.jpg') center top repeat;
+  font-size: 62.5%;
+}
+
+hr {
+  margin: 2em 0;
+}

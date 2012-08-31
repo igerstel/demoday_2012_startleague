@@ -47,3 +47,7 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+group :assets do
+  gem 'compass-rails'
+end

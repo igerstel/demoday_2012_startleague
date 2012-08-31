@@ -1,0 +1,57 @@
+/* ====================================================================================================
+   WEB FONTS
+==================================================================================================== */
+
+@font-face {
+  font-family: 'BreeSerif';
+  src: url('../fonts/bree-serif/BreeSerif-Regular-webfont.eot');
+  src: url('../fonts/bree-serif/BreeSerif-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/bree-serif/BreeSerif-Regular-webfont.woff') format('woff'),
+       url('../fonts/bree-serif/BreeSerif-Regular-webfont.ttf') format('truetype'),
+       url('../fonts/bree-serif/BreeSerif-Regular-webfont.svg#BreeSerifRegular') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* ====================================================================================================
+   FONT STACKS
+==================================================================================================== */
+
+$bree-serif: 'BreeSerif', Rockwell, Georgia, Times, "Times New Roman", serif;;
+$sans-serif: Helmet, Freesans, sans-serif;
+$serif: Georgia, Times, "Times New Roman", serif;
+
+/* ====================================================================================================
+   GLOBAL TYPE STYLES
+==================================================================================================== */
+
+h1 {
+	font-family: $bree-serif;
+	font-size: 4.8em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+h2 {
+  margin-bottom: .5em;
+  color: $heading-color;
+  font-family: $bree-serif;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+p {
+  color: $text-color;
+  font-family: $sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 1.5em;
+}
+
+a {
+	color: $link-color;
+	text-decoration: none;
+	header & {
+		color: $white;
+	}
+}
