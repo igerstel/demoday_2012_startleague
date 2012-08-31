@@ -4,11 +4,11 @@
 
 @font-face {
   font-family: 'BreeSerif';
-  src: url('../fonts/bree-serif/BreeSerif-Regular-webfont.eot');
-  src: url('../fonts/bree-serif/BreeSerif-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/bree-serif/BreeSerif-Regular-webfont.woff') format('woff'),
-       url('../fonts/bree-serif/BreeSerif-Regular-webfont.ttf') format('truetype'),
-       url('../fonts/bree-serif/BreeSerif-Regular-webfont.svg#BreeSerifRegular') format('svg');
+  src: url('/assets/bree-serif/BreeSerif-Regular-webfont.eot');
+  src: url('/assets/bree-serif/BreeSerif-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('/assets/bree-serif/BreeSerif-Regular-webfont.woff') format('woff'),
+       url('/assets/bree-serif/BreeSerif-Regular-webfont.ttf') format('truetype'),
+       url('/assets/bree-serif/BreeSerif-Regular-webfont.svg#BreeSerifRegular') format('svg');
   font-weight: bold;
   font-style: normal;
 }
