@@ -1,0 +1,35 @@
+/* ====================================================================================================
+   HEADER SECTION STYLES
+==================================================================================================== */
+
+header {
+	background-color: $header-bg;
+	border-bottom: 5px solid $border-color;
+	padding: 3em 5%;
+	@media (min-width: 600px) {
+  	overflow: hidden;
+	}
+	h1 {
+  	text-align: center;
+  	@media (min-width: 600px) {
+    	float: left;
+  	}
+	}
+	form.search{
+  	overflow: hidden;
+  	@media (min-width: 600px) {
+    	float: right;
+  	}
+  	input[type="text"] {
+      @include border-top-right-radius(0);
+      @include border-bottom-right-radius(0);
+      float: left;
+      width: 75%;
+    }
+    input[type="submit"] {
+      @include border-radius(0 .25em .25em 0);
+      float: left;
+      width: 25%;
+    }
+	}
+}

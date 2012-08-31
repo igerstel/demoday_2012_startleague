@@ -1,0 +1,19 @@
+
+@mixin button($color: $green) {
+  @include background-image(linear-gradient(adjust-lightness($color, 10%), $color));
+  @include border-radius(2em);
+  @include box-shadow(0 0 3px #333);
+  display: block;
+  padding: .5em;
+  border: 5px solid adjust-lightness($color, -10%);
+  color: $white;
+  font-family: $bree-serif;
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 0 3px #333;
+  &:hover, 
+  &:focus {
+    @include background-image(linear-gradient(adjust-lightness($color, 20%), adjust-lightness($color, 10%)));
+  }
+}

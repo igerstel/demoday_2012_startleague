@@ -1,0 +1,61 @@
+/* ====================================================================================================
+   MAIN SECTION STYLES
+==================================================================================================== */
+
+.main {
+  width: auto;
+  background-color: $main-bg;
+  border-top: 5px solid $white;
+  border-bottom: 5px solid $white;
+  @media (min-width: 600px) {
+    @include border-radius(2em);
+    width: 90%;
+    max-width: 1200px;
+    margin: -2em auto 0;
+    border: 5px solid $white;
+  }
+  .full-col, 
+  .major {
+    padding: 2em;
+  }
+  .top {
+    overflow: hidden;
+    figure {
+      float: left;
+      width: 30%;
+      border: 5px solid $green;
+      img {
+        vertical-align: bottom;
+      }
+    }
+    .info {
+      margin-left: 35%;
+    }
+  }
+  .content {
+    position: relative;
+    clear: left;
+    margin-top: 4em;
+    padding: 1em;
+    background-color: $white;
+  }
+  .tabs {
+    position: absolute;
+    top: -3.25em;
+    left: 0;
+    overflow: hidden;
+    padding: .5em;
+    list-style: none;
+    li {
+      float: left;
+    }
+    a {
+      @include box-shadow(0 0 3px #333);
+      @include border-top-left-radius(.5em);
+      @include border-top-right-radius(.5em);
+      display: block;
+      padding: 1em;
+      background-color: $light-gray;
+    }
+  }
+}

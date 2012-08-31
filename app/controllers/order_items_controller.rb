@@ -40,7 +40,6 @@ class OrderItemsController < ApplicationController
   # POST /order_items
   # POST /order_items.json
   def create
-    #debugger
     @order_item = OrderItem.new(params[:order_item])
     if Order.last == nil
       @order_item.order_id = 1
