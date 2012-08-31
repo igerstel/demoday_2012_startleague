@@ -21,7 +21,8 @@
   src: url("../fonts/bree-serif/BreeSerif-Regular-webfont.eot");
   src: url("../fonts/bree-serif/BreeSerif-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/bree-serif/BreeSerif-Regular-webfont.woff") format("woff"), url("../fonts/bree-serif/BreeSerif-Regular-webfont.ttf") format("truetype"), url("../fonts/bree-serif/BreeSerif-Regular-webfont.svg#BreeSerifRegular") format("svg");
   font-weight: bold;
-  font-style: normal; }
+  font-style: normal;
+}
 
 /* ====================================================================================================
    FONT STACKS
@@ -34,7 +35,8 @@ h1 {
   font-family: "BreeSerif", Rockwell, Georgia, Times, "Times New Roman", serif;
   font-size: 4.8em;
   font-weight: bold;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+}
 
 /* line 35, project/_type.scss */
 h2 {
@@ -42,7 +44,8 @@ h2 {
   color: #4b663d;
   font-family: "BreeSerif", Rockwell, Georgia, Times, "Times New Roman", serif;
   font-size: 3em;
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 /* line 43, project/_type.scss */
 p {
@@ -50,15 +53,18 @@ p {
   font-family: Helmet, Freesans, sans-serif;
   font-size: 1.5em;
   font-weight: 300;
-  line-height: 1.5em; }
+  line-height: 1.5em;
+}
 
 /* line 51, project/_type.scss */
 a {
   color: #4b663d;
-  text-decoration: none; }
-  /* line 54, project/_type.scss */
-  header a {
-    color: white; }
+  text-decoration: none;
+}
+/* line 54, project/_type.scss */
+header a {
+  color: white;
+}
 
 /* ====================================================================================================
    VANITY STYLES
@@ -67,45 +73,52 @@ a {
 ::selection {
   background: rgba(220, 60, 40, 0.75);
   text-shadow: none;
-  color: #fff; }
+  color: #fff;
+}
 
 /* line 6, project/_general.scss */
 ::-moz-selection {
   background: #c80000;
-  text-shadow: none; }
+  text-shadow: none;
+}
 
 /* line 7, project/_general.scss */
 img::selection {
-  background: transparent; }
+  background: transparent;
+}
 
 /* line 8, project/_general.scss */
 img::-moz-selection {
-  background: transparent; }
+  background: transparent;
+}
 
 /* ====================================================================================================
    GLOBAL STYLES
 ==================================================================================================== */
 /* line 14, project/_general.scss */
 a {
-  -webkit-transition: all, 0.2s;
+  -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
-  -ms-transition: all 0.2s;
   -o-transition: all 0.2s;
-  transition: all, 0.2s; }
+  transition: all 0.2s;
+}
 
 /* line 18, project/_general.scss */
 .full-col {
   max-width: 960px;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 /* line 23, project/_general.scss */
 body {
   background: #fffcf7 url("../img/background/background-texture.jpg") center top repeat;
-  font-size: 62.5%; }
+  font-size: 62.5%;
+}
 
 /* line 28, project/_general.scss */
 hr {
-  margin: 2em 0; }
+  margin: 2em 0;
+}
 
 /* ====================================================================================================
    BUTTON STYLES
@@ -116,7 +129,6 @@ hr {
   background-image: -webkit-linear-gradient(#628650, #4b663d);
   background-image: -moz-linear-gradient(#628650, #4b663d);
   background-image: -o-linear-gradient(#628650, #4b663d);
-  background-image: -ms-linear-gradient(#628650, #4b663d);
   background-image: linear-gradient(#628650, #4b663d);
   -webkit-border-radius: 2em;
   -moz-border-radius: 2em;
@@ -134,15 +146,16 @@ hr {
   font-size: 3em;
   font-weight: bold;
   text-align: center;
-  text-shadow: 0 0 3px #333; }
-  /* line 16, project/_mixins.scss */
-  .btn:hover, .btn:focus {
-    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7ba366), color-stop(100%, #628650));
-    background-image: -webkit-linear-gradient(#7ba366, #628650);
-    background-image: -moz-linear-gradient(#7ba366, #628650);
-    background-image: -o-linear-gradient(#7ba366, #628650);
-    background-image: -ms-linear-gradient(#7ba366, #628650);
-    background-image: linear-gradient(#7ba366, #628650); }
+  text-shadow: 0 0 3px #333;
+}
+/* line 16, project/_mixins.scss */
+.btn:hover, .btn:focus {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7ba366), color-stop(100%, #628650));
+  background-image: -webkit-linear-gradient(#7ba366, #628650);
+  background-image: -moz-linear-gradient(#7ba366, #628650);
+  background-image: -o-linear-gradient(#7ba366, #628650);
+  background-image: linear-gradient(#7ba366, #628650);
+}
 
 /* ====================================================================================================
    FORM STYLES
@@ -154,7 +167,8 @@ label {
   color: #333333;
   font-family: Georgia, Times, "Times New Roman", serif;
   font-size: 1.2em;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+}
 
 /* line 16, project/_forms.scss */
 input[type="text"],
@@ -171,22 +185,26 @@ textarea {
   display: block;
   background: white;
   border: none;
-  outline: none; }
-  /* line 23, project/_forms.scss */
-  input[type="text"]:focus,
-  input[type="password"]:focus,
-  textarea:focus {
-    background-color: #f00; }
+  outline: none;
+}
+/* line 23, project/_forms.scss */
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  background-color: #f00;
+}
 
 /* line 29, project/_forms.scss */
 input[type="text"],
 input[type="password"] {
-  padding: 0 .5em; }
+  padding: 0 .5em;
+}
 
 /* line 33, project/_forms.scss */
 textarea {
   padding: .5em;
-  height: 8em; }
+  height: 8em;
+}
 
 /* ====================================================================================================
    TABLE STYLES
@@ -194,7 +212,8 @@ textarea {
 /* line 5, project/_tables.scss */
 table {
   width: 100%;
-  line-height: 1.4; }
+  line-height: 1.4;
+}
 
 /* line 10, project/_tables.scss */
 thead th {
@@ -206,63 +225,77 @@ thead th {
   font-size: 1.2em;
   font-weight: normal;
   text-align: center;
-  text-transform: uppercase; }
-  /* line 20, project/_tables.scss */
-  thead th:first-child {
-    border-left: none; }
+  text-transform: uppercase;
+}
+/* line 20, project/_tables.scss */
+thead th:first-child {
+  border-left: none;
+}
 
 /* line 26, project/_tables.scss */
 tbody tr {
   background-color: #eee;
-  border-bottom: 1px solid #fff; }
-  /* line 29, project/_tables.scss */
-  tbody tr:nth-child(even) {
-    background-color: #ccc; }
+  border-bottom: 1px solid #fff;
+}
+/* line 29, project/_tables.scss */
+tbody tr:nth-child(even) {
+  background-color: #ccc;
+}
 /* line 33, project/_tables.scss */
 tbody td {
   color: #333333;
   font-family: Helmet, Freesans, sans-serif;
   font-size: 1.2em;
-  font-weight: 300; }
-  @media (min-width: 600px) {
-    /* line 33, project/_tables.scss */
-    tbody td {
-      padding: .75em .5em;
-      border-left: 1px solid white; } }
-  /* line 42, project/_tables.scss */
-  tbody td:first-child {
-    border-left: none; }
+  font-weight: 300;
+}
+@media (min-width: 600px) {
+  /* line 33, project/_tables.scss */
+  tbody td {
+    padding: .75em .5em;
+    border-left: 1px solid white;
+  }
+}
+/* line 42, project/_tables.scss */
+tbody td:first-child {
+  border-left: none;
+}
 
 @media (max-width: 599px) {
   /* line 48, project/_tables.scss */
   table, thead, tbody, th, td, tr {
-    display: block; }
+    display: block;
+  }
 
   /* line 51, project/_tables.scss */
   thead tr {
     position: absolute;
     top: -9999px;
-    left: -9999px; }
+    left: -9999px;
+  }
 
   /* line 56, project/_tables.scss */
   tr {
-    padding: .75em 0; }
+    padding: .75em 0;
+  }
 
   /* line 59, project/_tables.scss */
   td {
     border: none;
     position: relative;
     height: 1.5em;
-    padding: 0 5% 0 10.5em; }
-    /* line 64, project/_tables.scss */
-    td:before {
-      content: attr(data-heading) "\00a0\003a";
-      position: absolute;
-      left: 0;
-      width: 10em;
-      white-space: nowrap;
-      color: #666;
-      text-align: right; } }
+    padding: 0 5% 0 10.5em;
+  }
+  /* line 64, project/_tables.scss */
+  td:before {
+    content: attr(data-heading) "\00a0\003a";
+    position: absolute;
+    left: 0;
+    width: 10em;
+    white-space: nowrap;
+    color: #666;
+    text-align: right;
+  }
+}
 /* ====================================================================================================
    PAGE STYLES
 ==================================================================================================== */
@@ -273,48 +306,55 @@ tbody td {
 header {
   background-color: #4b663d;
   border-bottom: 5px solid #34462a;
-  padding: 3em 5%; }
-  @media (min-width: 600px) {
-    /* line 5, project/header.scss */
-    header {
-      overflow: hidden; } }
+  padding: 3em 5%;
+}
+@media (min-width: 600px) {
+  /* line 5, project/header.scss */
+  header {
+    overflow: hidden;
+  }
+}
+/* line 12, project/header.scss */
+header h1 {
+  text-align: center;
+}
+@media (min-width: 600px) {
   /* line 12, project/header.scss */
   header h1 {
-    text-align: center; }
-    @media (min-width: 600px) {
-      /* line 12, project/header.scss */
-      header h1 {
-        float: left; } }
+    float: left;
+  }
+}
+/* line 18, project/header.scss */
+header form.search {
+  overflow: hidden;
+}
+@media (min-width: 600px) {
   /* line 18, project/header.scss */
   header form.search {
-    overflow: hidden; }
-    @media (min-width: 600px) {
-      /* line 18, project/header.scss */
-      header form.search {
-        float: right; } }
-    /* line 23, project/header.scss */
-    header form.search input[type="text"] {
-      -moz-border-radius-topright: 0;
-      -webkit-border-top-right-radius: 0;
-      -ms-border-top-right-radius: 0;
-      -o-border-top-right-radius: 0;
-      border-top-right-radius: 0;
-      -moz-border-radius-bottomright: 0;
-      -webkit-border-bottom-right-radius: 0;
-      -ms-border-bottom-right-radius: 0;
-      -o-border-bottom-right-radius: 0;
-      border-bottom-right-radius: 0;
-      float: left;
-      width: 75%; }
-    /* line 29, project/header.scss */
-    header form.search input[type="submit"] {
-      -webkit-border-radius: 0 0.25em 0.25em 0;
-      -moz-border-radius: 0 0.25em 0.25em 0;
-      -ms-border-radius: 0 0.25em 0.25em 0;
-      -o-border-radius: 0 0.25em 0.25em 0;
-      border-radius: 0 0.25em 0.25em 0;
-      float: left;
-      width: 25%; }
+    float: right;
+  }
+}
+/* line 23, project/header.scss */
+header form.search input[type="text"] {
+  -moz-border-radius-topright: 0;
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+  -moz-border-radius-bottomright: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+  float: left;
+  width: 75%;
+}
+/* line 29, project/header.scss */
+header form.search input[type="submit"] {
+  -webkit-border-radius: 0 0.25em 0.25em 0;
+  -moz-border-radius: 0 0.25em 0.25em 0;
+  -ms-border-radius: 0 0.25em 0.25em 0;
+  -o-border-radius: 0 0.25em 0.25em 0;
+  border-radius: 0 0.25em 0.25em 0;
+  float: left;
+  width: 25%;
+}
 
 /* ====================================================================================================
    NAVIGATION STYLES
@@ -324,79 +364,84 @@ header {
 ==================================================================================================== */
 /* line 5, project/main.scss */
 .main {
-  -webkit-box-shadow: 0 0 3px #1a1a1a;
-  -moz-box-shadow: 0 0 3px #1a1a1a;
-  box-shadow: 0 0 3px #1a1a1a;
   width: auto;
   background-color: #e9f0e5;
   border-top: 5px solid white;
-  border-bottom: 5px solid white; }
-  @media (min-width: 600px) {
-    /* line 5, project/main.scss */
-    .main {
-      -webkit-border-radius: 2em;
-      -moz-border-radius: 2em;
-      -ms-border-radius: 2em;
-      -o-border-radius: 2em;
-      border-radius: 2em;
-      width: 90%;
-      max-width: 1200px;
-      margin: -2em auto 0;
-      border: 5px solid white; } }
-  /* line 19, project/main.scss */
-  .main .full-col,
-  .main .major {
-    padding: 2em; }
-  /* line 22, project/main.scss */
-  .main .top {
-    overflow: hidden; }
-    /* line 24, project/main.scss */
-    .main .top figure {
-      float: left;
-      width: 30%;
-      border: 5px solid #4b663d; }
-      /* line 28, project/main.scss */
-      .main .top figure img {
-        vertical-align: bottom; }
-    /* line 32, project/main.scss */
-    .main .top .info {
-      margin-left: 35%; }
-  /* line 36, project/main.scss */
-  .main .content {
-    position: relative;
-    clear: left;
-    margin-top: 4em;
-    padding: 1em;
-    background-color: white; }
-  /* line 43, project/main.scss */
-  .main .tabs {
-    position: absolute;
-    top: -3.25em;
-    left: 0;
-    overflow: hidden;
-    padding: .5em;
-    list-style: none; }
-    /* line 50, project/main.scss */
-    .main .tabs li {
-      float: left; }
-    /* line 53, project/main.scss */
-    .main .tabs a {
-      -webkit-box-shadow: 0 0 3px #333333;
-      -moz-box-shadow: 0 0 3px #333333;
-      box-shadow: 0 0 3px #333333;
-      -moz-border-radius-topleft: 0.5em;
-      -webkit-border-top-left-radius: 0.5em;
-      -ms-border-top-left-radius: 0.5em;
-      -o-border-top-left-radius: 0.5em;
-      border-top-left-radius: 0.5em;
-      -moz-border-radius-topright: 0.5em;
-      -webkit-border-top-right-radius: 0.5em;
-      -ms-border-top-right-radius: 0.5em;
-      -o-border-top-right-radius: 0.5em;
-      border-top-right-radius: 0.5em;
-      display: block;
-      padding: 1em;
-      background-color: #999999; }
+  border-bottom: 5px solid white;
+}
+@media (min-width: 600px) {
+  /* line 5, project/main.scss */
+  .main {
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    -ms-border-radius: 2em;
+    -o-border-radius: 2em;
+    border-radius: 2em;
+    width: 90%;
+    max-width: 1200px;
+    margin: -2em auto 0;
+    border: 5px solid white;
+  }
+}
+/* line 18, project/main.scss */
+.main .full-col,
+.main .major {
+  padding: 2em;
+}
+/* line 21, project/main.scss */
+.main .top {
+  overflow: hidden;
+}
+/* line 23, project/main.scss */
+.main .top figure {
+  float: left;
+  width: 30%;
+  border: 5px solid #4b663d;
+}
+/* line 27, project/main.scss */
+.main .top figure img {
+  vertical-align: bottom;
+}
+/* line 31, project/main.scss */
+.main .top .info {
+  margin-left: 35%;
+}
+/* line 35, project/main.scss */
+.main .content {
+  position: relative;
+  clear: left;
+  margin-top: 4em;
+  padding: 1em;
+  background-color: white;
+}
+/* line 42, project/main.scss */
+.main .tabs {
+  position: absolute;
+  top: -3.25em;
+  left: 0;
+  overflow: hidden;
+  padding: .5em;
+  list-style: none;
+}
+/* line 49, project/main.scss */
+.main .tabs li {
+  float: left;
+}
+/* line 52, project/main.scss */
+.main .tabs a {
+  -webkit-box-shadow: 0 0 3px #333333;
+  -moz-box-shadow: 0 0 3px #333333;
+  box-shadow: 0 0 3px #333333;
+  -moz-border-radius-topleft: 0.5em;
+  -webkit-border-top-left-radius: 0.5em;
+  border-top-left-radius: 0.5em;
+  -moz-border-radius-topright: 0.5em;
+  -webkit-border-top-right-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  display: block;
+  padding: 1em;
+  background-color: #999999;
+}
 
 /* ====================================================================================================
    FOOTER SECTION STYLES
