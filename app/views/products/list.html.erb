@@ -1,14 +1,27 @@
-<h3>My Product List</h3>
+<h2>My Product List</h2>
 
-Week of <br>
-<%= @start_date %> - <%= @end_date %>
-<br><br>
-<%= link_to 'Previous Year', farmer_list_url(:start_date => Date.parse(@start_date) - 365, :end_date => Date.parse(@end_date) - 365)
- %>. . .
- <%= link_to 'Previous Month', farmer_list_url(:start_date => Date.parse(@start_date) - 30, :end_date => Date.parse(@end_date) - 30) %>. . .
- <%= link_to 'Previous Week', farmer_list_url(:start_date => Date.parse(@start_date) - 7, :end_date => Date.parse(@end_date) - 7) %>. . .
- <%= link_to 'This Week', farmer_list_url %>. . .
- <%= link_to 'Next Week', farmer_list_url(:start_date => Date.parse(@start_date) + 7, :end_date => Date.parse(@end_date) + 7) %>
+<h4>Week of <%= @start_date %> - <%= @end_date %></h4>
+
+<ul>
+  <li>
+    <%= link_to 'Previous Year', farmer_list_url(:start_date => Date.parse(@start_date) - 365, :end_date => Date.parse(@end_date) - 365) %>
+  </li>
+  <li>
+    <%= link_to 'Previous Year', farmer_list_url(:start_date => Date.parse(@start_date) - 365, :end_date => Date.parse(@end_date) - 365) %>
+  </li>
+  <li>
+    <%= link_to 'Previous Month', farmer_list_url(:start_date => Date.parse(@start_date) - 30, :end_date => Date.parse(@end_date) - 30) %>
+  </li>
+  <li>
+    <%= link_to 'Previous Week', farmer_list_url(:start_date => Date.parse(@start_date) - 7, :end_date => Date.parse(@end_date) - 7) %>
+  </li>
+  <li>
+    <%= link_to 'This Week', farmer_list_url %>
+  </li>
+  <li>
+    <%= link_to 'Next Week', farmer_list_url(:start_date => Date.parse(@start_date) + 7, :end_date => Date.parse(@end_date) + 7) %>    
+  </li>
+</ul>
 
 <%= form_for(@product, :url => { :action => "list2" }) do |f| %>
   <% if @product.errors.any? %>
@@ -22,67 +35,56 @@ Week of <br>
       </ul>
     </div>
   <% end %>
-<br><br>
-<table>
-  <tr>
- <td class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </dtd>
-  <td class="field">
-    <%= f.label :product_attribute, "Category" %><br />
-    <%= f.text_field :product_attribute %>
-  </td>
-  <td class="field">
-    <%= f.label :packaging %><br />
-    <%= f.text_field :packaging %>
-  </td>
-  </tr><tr>
-  <td class="field">
-    <%= f.label :uom, "Unit of Measurement" %><br />
-    <%= f.text_field :uom %>
-  </td>
-  <td class="field">
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
-  </td>
-  <td class="field">
-    <%= f.label :qty_avail, "Quantity Available" %><br />
-    <%= f.text_field :qty_avail %>
-  </td><td class="field">
-    <%= f.label :description, "Product Description" %><br />
-    <%= f.text_area :description, :rows => "3" %>
-  </td>
 
-</tr>
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Variety</th>
+      <th>Packaging</th>
+      <th>Pkg. Qty.</th>
+      <th>Price</th>
+      <th>Qty. Avail.</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-heading="Product"><%= f.text_field :name %></td>
+      <td data-heading="Variety"><%= f.text_field :product_attribute %></td>
+      <td data-heading="Packaging"><%= f.text_field :packaging %></td>
+      <td data-heading="Pkg. Qty."><%= f.text_field :uom %></td>
+      <td data-heading="Price"><%= f.text_field :price %></td>
+      <td data-heading="Qty. Avail."><%= f.text_field :qty_avail %></td>
+      <td data-heading="Description"><%= f.text_area :description %></td>
+    </tr>
+  </tbody>
 </table>
-  <div class="actions">
-    <%= f.submit "Add this item" %>
-  </div>
+<%= f.submit "Add this item" %>
 <% end %>
 
-<br>
 <table>
-  <tr>
-    <th>Product Name</th>
-    <th>Variety</th>
-    <th>Units/Pkg.</th>
-    <th>Qty Avail.</th>
-    <th>Unit Price.</th>
-    <th>Photo</th>
-  </tr>
-
-<% @products.each do |product| %>
-  <tr>
-    <td><%= product.name %></td>
-    <td><%= product.product_attribute %></td>
-    <td><%= product.packaging %></td>
-    <td><%= product.qty_avail %> <%= product.uom %></td>
-    <td><%= number_to_currency(product.price) %></td>
-    <td><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td><%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>    
-  </tr>
-<% end %>
+  <thead>
+    <tr>
+      <th>Product Name</th>
+      <th>Variety</th>
+      <th>Units/Pkg.</th>
+      <th>Qty Avail.</th>
+      <th>Unit Price.</th>
+      <th>Photo</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= product.product_attribute %></td>
+      <td><%= product.packaging %></td>
+      <td><%= product.qty_avail %> <%= product.uom %></td>
+      <td><%= number_to_currency(product.price) %></td>
+      <td><%= link_to 'Edit', edit_product_path(product) %></td>
+      <td><%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>    
+    </tr>
+  <% end %>
+  </tbody>
 </table>
-
-<br><br><br>
