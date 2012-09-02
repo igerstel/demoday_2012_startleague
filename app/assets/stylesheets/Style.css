@@ -296,11 +296,15 @@ input[type="submit"]:hover, input[type="submit"]:focus {
 ==================================================================================================== */
 /* line 5, project/_tables.scss */
 table {
+  -webkit-box-shadow: 0px 0px 3px #333333;
+  -moz-box-shadow: 0px 0px 3px #333333;
+  box-shadow: 0px 0px 3px #333333;
   width: 100%;
   line-height: 1.4;
+  border: 5px solid white;
 }
 
-/* line 10, project/_tables.scss */
+/* line 12, project/_tables.scss */
 thead th {
   background-color: #29cc29;
   border-left: 1px solid white;
@@ -312,21 +316,21 @@ thead th {
   text-align: center;
   text-transform: uppercase;
 }
-/* line 20, project/_tables.scss */
+/* line 22, project/_tables.scss */
 thead th:first-child {
   border-left: none;
 }
 
-/* line 26, project/_tables.scss */
+/* line 28, project/_tables.scss */
 tbody tr {
   background-color: #eee;
   border-bottom: 1px solid #fff;
 }
-/* line 29, project/_tables.scss */
+/* line 31, project/_tables.scss */
 tbody tr:nth-child(even) {
   background-color: #ccc;
 }
-/* line 33, project/_tables.scss */
+/* line 35, project/_tables.scss */
 tbody td {
   color: #333333;
   font-family: Helmet, Freesans, sans-serif;
@@ -334,43 +338,43 @@ tbody td {
   font-weight: 300;
 }
 @media (min-width: 600px) {
-  /* line 33, project/_tables.scss */
+  /* line 35, project/_tables.scss */
   tbody td {
     padding: .75em .5em;
     border-left: 1px solid white;
   }
 }
-/* line 42, project/_tables.scss */
+/* line 44, project/_tables.scss */
 tbody td:first-child {
   border-left: none;
 }
 
 @media (max-width: 599px) {
-  /* line 48, project/_tables.scss */
+  /* line 50, project/_tables.scss */
   table, thead, tbody, th, td, tr {
     display: block;
   }
 
-  /* line 51, project/_tables.scss */
+  /* line 53, project/_tables.scss */
   thead tr {
     position: absolute;
     top: -9999px;
     left: -9999px;
   }
 
-  /* line 56, project/_tables.scss */
+  /* line 58, project/_tables.scss */
   tr {
     padding: .75em 0;
   }
 
-  /* line 59, project/_tables.scss */
+  /* line 61, project/_tables.scss */
   td {
     border: none;
     position: relative;
-    height: 1.5em;
+    margin-bottom: .5em;
     padding: 0 5% 0 10.5em;
   }
-  /* line 64, project/_tables.scss */
+  /* line 66, project/_tables.scss */
   td:before {
     content: attr(data-heading) "\00a0\003a";
     position: absolute;
@@ -394,7 +398,7 @@ tbody td:first-child {
   height: 1.5em;
   padding: .4em .5em;
   position: relative;
-  margin-bottom: 4em;
+  margin: 1em 5% 6em;
 }
 /* line 35, project/_mixins.scss */
 .progress .bar {
@@ -441,7 +445,7 @@ tbody td:first-child {
 }
 /* line 17, project/_progress-bars.scss */
 .progress .progress-marker.one {
-  left: -5%;
+  left: -30px;
 }
 /* line 20, project/_progress-bars.scss */
 .progress .progress-marker.two {
@@ -450,7 +454,7 @@ tbody td:first-child {
 }
 /* line 24, project/_progress-bars.scss */
 .progress .progress-marker.three {
-  right: -5%;
+  right: -30px;
 }
 /* line 28, project/_progress-bars.scss */
 .progress .marker {
@@ -484,6 +488,10 @@ tbody td:first-child {
   font-family: Helmet, Freesans, sans-serif;
   font-size: 1.2em;
   text-transform: uppercase;
+}
+/* line 51, project/_progress-bars.scss */
+.progress small {
+  text-align: right;
 }
 
 /* ====================================================================================================
@@ -790,16 +798,25 @@ header input[type="submit"]:hover, header input[type="submit"]:focus {
   margin-bottom: 1em;
 }
 /* line 15, project/sign-up.scss */
+#sign-up .container h4 {
+  font-size: 1.8em;
+  margin-bottom: 1em;
+}
+/* line 18, project/sign-up.scss */
+#sign-up .container h4 span {
+  color: #40804a;
+}
+/* line 22, project/sign-up.scss */
 #sign-up .container form {
   margin-bottom: 2em;
 }
-/* line 18, project/sign-up.scss */
+/* line 25, project/sign-up.scss */
 #sign-up .container fieldset {
   margin-bottom: 1.25em;
   clear: left;
 }
 @media (min-width: 600px) {
-  /* line 21, project/sign-up.scss */
+  /* line 28, project/sign-up.scss */
   #sign-up .container fieldset.half {
     float: left;
     clear: none;
@@ -807,7 +824,7 @@ header input[type="submit"]:hover, header input[type="submit"]:focus {
     margin-right: 4%;
   }
 }
-/* line 29, project/sign-up.scss */
+/* line 36, project/sign-up.scss */
 #sign-up .container fieldset.quarter {
   float: left;
   clear: none;
@@ -816,18 +833,22 @@ header input[type="submit"]:hover, header input[type="submit"]:focus {
   margin-bottom: 3em;
 }
 @media (min-width: 600px) {
-  /* line 29, project/sign-up.scss */
+  /* line 36, project/sign-up.scss */
   #sign-up .container fieldset.quarter {
     width: 22%;
   }
 }
-/* line 39, project/sign-up.scss */
+/* line 46, project/sign-up.scss */
 #sign-up .container fieldset.right {
   margin-right: 0;
 }
-/* line 43, project/sign-up.scss */
+/* line 50, project/sign-up.scss */
 #sign-up .container input[type="submit"] {
   clear: left;
+}
+/* line 53, project/sign-up.scss */
+#sign-up .container table {
+  margin-bottom: 2em;
 }
 
 /* ====================================================================================================

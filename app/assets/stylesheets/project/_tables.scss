@@ -3,8 +3,10 @@
 ==================================================================================================== */
 
 table {
+  @include box-shadow;
   width: 100%;
   line-height: 1.4;
+  border: 5px solid $light-border;
 }
 thead {
   th {
@@ -59,7 +61,7 @@ tbody {
   td {
     border: none;
     position: relative;
-    height: 1.5em;
+    margin-bottom: .5em;
     padding: 0 5% 0 10.5em;
     &:before {
       content: attr(data-heading) "\00a0\003a";
