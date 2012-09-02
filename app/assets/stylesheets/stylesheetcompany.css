@@ -1,0 +1,160 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* =============================================================================
+   NEW STYLES START HERE
+   ========================================================================== */
+
+
+body {
+  background: #ddd;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+
+.container {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+  margin: 30px auto 100px auto;
+  width: 960px;
+}
+
+header {
+  background: #662D91;
+  border-bottom: 1px solid #ddd;
+/*  height: 175px;
+*/
+  overflow: hidden;
+}
+
+header h1 {
+  float: left;
+}
+header form {
+  float: right;
+  padding-top: 138px;
+}
+
+.primary {
+  float: left;
+  padding: 20px;
+  width: 500px;
+}
+.primary figure {
+  background: #ddd;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+.primary img {
+  margin-bottom: 20px;
+  width: 100%;
+}
+.team_page p {
+  margin-bottom: 18px;
+}
+.team_page h1, h2 {
+  margin-top: 18px;
+}
+#dan, #kenton, #ian, #laura {
+  border: 1px solid gray;
+  margin: 10px 10px 10px;
+  padding: 10px;
+  height: 400px;
+  clear: both;
+ }
+.portrait {
+  float: left;  
+  margin-right: 15px;
+}
+.fun_photo {
+  float: right;
+  margin: 5px;
+}
+aside {
+  float: right;
+  padding: 20px;
+  width: 260px;
+}
+aside figure {
+  margin-bottom: 20px;
+}
+aside img {
+  width: 100%;
+}
+aside form {
+  background: #1C75BC;
+  padding: 20px;
+}
+aside h2 {
+  margin-bottom: 20px;
+}
+aside label, aside input {
+  display: block;
+}
+footer {
+  border-top: 1px solid #ddd;
+  clear: both;
+  height: 40px;
+  padding: 20px;
+}
+footer .copyright {
+  float: left;
+}
+footer ul {
+  margin: 0 auto;
+  width: 300px;
+}
+footer li {
+  float: left;
+  list-style: none;
+  margin: 0 5px;
+}
+
+
+
+
+
+
+
+
+
