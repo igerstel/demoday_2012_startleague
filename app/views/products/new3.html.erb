@@ -1,8 +1,27 @@
-<%= form_for(@product, :url => { :action => "new4" }) do |f| %>
+<% @body_id = "sign-up" %>
+
+<div class="container">
+
+  <div class='progress'>
+    <div class='bar' style='width: 100%'></div>
+    <div class='progress-marker one'>
+      <div class='marker completed'></div>
+      <h4>Step 1</h4>
+    </div>
+    <div class='progress-marker two'>
+      <div class='marker completed'></div>
+      <h4>Step 2</h4>
+    </div>
+    <div class='progress-marker three'>
+      <div class='marker current'></div>
+      <h4>Step 3</h4>
+    </div>
+  </div>
+
+  <%= form_for(@product, :url => { :action => "new4" }) do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
       <ul>
       <% @product.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -11,44 +30,34 @@
     </div>
   <% end %>
 
-<br>
-Adding Items for the week of <br>
-<%= @start_date %> - <%= @end_date %>
-<br><br>
-<table>
-  <tr>
- <td class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </dtd>
-  <td class="field">
-    <%= f.label :product_attribute %><br />
-    <%= f.text_field :product_attribute %>
-  </td>
-  <td class="field">
-    <%= f.label :packaging %><br />
-    <%= f.text_field :packaging %>
-  </td>
-  <td class="field">
-    <%= f.label :uom %><br />
-    <%= f.text_field :uom %>
-  </td>
-  <td class="field">
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
-  </td>
-  <td class="field">
-    <%= f.label :qty_avail %><br />
-    <%= f.text_field :qty_avail %>
-  </td>
-</tr>
-</table>
+  <h4>Adding Items for the week of <%= @start_date %> - <%= @end_date %></h4>
 
-  <div class="actions">
-    <%= f.submit "Add this item" %>
-  </div>
-<% end %>
-
-<br><br>
-<%= userhome %>
-<br><br>
+  <table>
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Variety</th>
+        <th>Packaging</th>
+        <th>Pkg. Qty.</th>
+        <th>Price</th>
+        <th>Qty. Avail.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-heading="Product"><%= f.text_field :name %></td>
+        <td data-heading="Variety"><%= f.text_field :product_attribute %></td>
+        <td data-heading="Packaging"><%= f.text_field :packaging %></td>
+        <td data-heading="Pkg. Qty."><%= f.text_field :uom %></td>
+        <td data-heading="Price"><%= f.text_field :price %></td>
+        <td data-heading="Qty. Avail."><%= f.text_field :qty_avail %></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <%= f.submit "Add this item" %>
+  <% end %>
+  
+  <small><%= userhome %></small>
+  
+</div>
