@@ -40,4 +40,7 @@ Fmf4::Application.routes.draw do
   
   resources :sessions, :only => [:new, :create, :destroy]
 
+get "about" => 'fmfcompanies#fmf_about', :as => :about
+get "team" => 'fmfcompanies#fmf_team', :as => :team
+
 end
