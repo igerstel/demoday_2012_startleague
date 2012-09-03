@@ -25,6 +25,13 @@ body {
 	margin: 0 auto;
 }
 
+.major {
+  @media (min-width: 600px) {
+    float: right;
+    width: 75%;
+  }
+}
+
 .main,
 footer {
   width: 90%;
