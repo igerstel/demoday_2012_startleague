@@ -129,3 +129,11 @@ footer li {
   margin: 0 5px;
 }
 
+
+/*Dan's sytle sheet - home*/
+
+#home .top {
+  max-height: 450px;
+
+}
+
