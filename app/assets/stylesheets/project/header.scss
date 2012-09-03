@@ -5,14 +5,16 @@
 header {
   overflow: hidden;
 	background-color: $header-bg;
-	padding: 1em 5%;
+	@media (min-width: 600px) {
+  	padding: 1em 5%;
+	}
 	h1 {
   	text-align: center;
-  	margin-bottom: .25em;
+  	margin: .25em 5%;
   	@media (min-width: 600px) {
     	float: left;
     	width: 60%;
-    	margin-bottom: 0;
+    	margin: 0;
     	padding: 0;
     	text-align: left;
   	}
@@ -78,6 +80,35 @@ header {
     @media (min-width: 600px) {
       width: 20%;
       margin-top: 1.75em;
+    }
+  }
+  nav {
+    background-color: adjust-lightness($header-bg, -20%);
+    padding: 1em 5%;
+    text-align: right;
+    @media (min-width: 600px) {
+      background-color: transparent;
+      padding-right: 0;
+      padding-left: 0;
+    }
+    li {
+      display: inline;
+      font-family: $sans-serif;
+      font-size: 1.1em;
+      @media (min-width: 600px) {
+        display: block;
+        margin-bottom: .25em;
+      }
+      @media (max-width: 599px) {
+        &:before {
+          content: '\007c';
+          color: $header-bg;
+          margin: 0 .5em;
+        }
+        &:first-child:before {
+          display: none;
+        }        
+      }
     }
   }
 }
