@@ -25,11 +25,16 @@ body {
 	margin: 0 auto;
 }
 
-.main,
+.major {
+  @media (min-width: 600px) {
+    float: right;
+    width: 75%;
+  }
+}
+
+section,
 footer {
   width: 90%;
-  max-width: 1000px;
-  margin: 0 auto;
   padding-right: 5%;
   padding-left: 5%;
 }

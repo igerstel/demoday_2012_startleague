@@ -3,7 +3,13 @@
 ==================================================================================================== */
 
 #home {
-  .minor {
+  .major {
+    @media (min-width: 600px) {
+      float: left;
+      width: 50%;
+    }
+  }
+  aside {
     @media (min-width: 600px) {
       float: right;
       width: 40%;

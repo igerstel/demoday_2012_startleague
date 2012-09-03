@@ -1,78 +1,67 @@
 <% @body_id = "home" %>
+
 <section class="top">
-  <img src="assets/images/background/greenfieldbackground.jpg" atl="Green Field">
-<div class="inner">
-  <div class="major">
-    <h2>Better relationships. Better food.</h2>
-    <figure>
-      <img src="assets/images/robbutcher.jpg" alt="Butcher and Larder"> 
-      <figcaption>Rob and Alle, Butcher and Larder</figcaption>
-    </figure>
-  </div> <!-- major -->
-  <aside class="minor">
-    <h2>Sign Up</h2>
-    <%= form_for(@user) do |f| %>
-      <% if @user.errors.any? %>
-        <div class="error">
-          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-          <ul>
-          <% @user.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-          </ul>
-        </div>
+  <div class="inner group">
+    <div class="major">
+      <h2>Better relationships. Better food.</h2>
+      <figure>
+        <img src="assets/images/robbutcher.jpg" alt="Butcher and Larder"> 
+        <figcaption>Rob and Alle, Butcher and Larder</figcaption>
+      </figure>
+    </div> <!-- major -->
+    <aside class="minor">
+      <h2>Sign Up</h2>
+      <%= form_for(@user) do |f| %>
+        <% if @user.errors.any? %>
+          <div class="error">
+            <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+            <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <h4 class="select-type">Select Account Type</h4>
+        <fieldset class="business-type">
+          <%= f.radio_button(:business, "Farm") %>
+          <%= f.label(:business, "Farmer")%>
+        </fieldset>
+        <fieldset class="business-type">
+          <%= f.radio_button(:business, "Restaurant")%>
+          <%= f.label(:business, "Restaurant")%>
+        </fieldset>
+        <h4 class="create-account">Create Account</h4>
+        <fieldset>  
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+        </fieldset>
+        <fieldset>  
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+        </fieldset>
+        <fieldset>  
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation %>
+        </fieldset>
+        <small>By clicking Sign Up, you agree to our <a href="#">Terms &amp; Conditions</a></small>
+        <%= f.submit %>
       <% end %>
-      <h4 class="select-type">Select Account Type</h4>
-      <fieldset class="business-type">
-        <%= f.radio_button(:business, "Farm") %>
-        <%= f.label(:business, "Farmer")%>
-      </fieldset>
-      <fieldset class="business-type">
-        <%= f.radio_button(:business, "Restaurant")%>
-        <%= f.label(:business, "Restaurant")%>
-      </fieldset>
-      <h4 class="create-account">Create Account</h4>
-      <fieldset>  
-        <%= f.label :email %>
-        <%= f.text_field :email %>
-      </fieldset>
-      <fieldset>  
-        <%= f.label :password %>
-        <%= f.password_field :password %>
-      </fieldset>
-      <fieldset>  
-        <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation %>
-      </fieldset>
-      <small>By clicking Sign Up, you agree to our <a href="#">Terms &amp; Conditions</a></small>
-      <%= f.submit %>
-    <% end %>
-    
-  <%= link_to 'Back', users_path %>
-  </aside> <!-- Signup -->
-  </div> <!-- inner top -->
-</section> <!-- Top -->
+    <%= link_to 'Back', users_path %>
+    </aside> <!-- Signup -->
+  </div>
+  <img src="assets/images/background/greenfieldbackground.jpg" atl="Green Field">
+</section><!-- END TOP -->
+
 <section class="bottom">
-  <div class="inner">
+  <div class="inner group">
     <form>
       <h3>Chefs, order for free from a farmers near you.</h3>
-        <label>Where are you?</label>
-       <input type="search" placeholder="Street Address, City, State">
-       <label>What would you like? <em>(optional)</em><label>
-       <input type="search" placeholder="tomatos, Henry's Farm, grass-fed beef">
-   </form>
+      <label>Where are you?</label>
+      <input type="search" placeholder="Street Address, City, State">
+      <label>What would you like? <em>(optional)</em><label>
+      <input type="search" placeholder="tomatos, Henry's Farm, grass-fed beef">
+    </form>
   </div> <!-- innner bottom -->
 </section> <!-- bottom -->
-<footer>
-  <div class="inner">
-        <p class="copyright">&copy; 2012 From My Farmer</p>
-        <ul>
-          <li><%= link_to "About", about_path %> </li>
-          <li><a href="#">Farmers</a></li>
-          <li><a href="#">Chefs</a></li>
-          <li><a href="#">Media</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <div> <!-- innner -->
-      </footer>  
       
