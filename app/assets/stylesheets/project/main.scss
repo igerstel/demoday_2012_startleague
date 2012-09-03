@@ -6,12 +6,6 @@
   overflow: hidden;
   padding-top: 4em;
   padding-bottom: 4em;
-  .minor {
-    @media (min-width: 600px) {
-      float: right;
-      width: 25%;
-    }
-  }
   aside {
     @include box-sizing(border-box);
     height: 10em;

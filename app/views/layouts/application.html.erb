@@ -85,15 +85,23 @@
 		</div>
 	</header>
 
-	 <section class="main">
-		<!-- <#%= notice %> -->
-		<%= yield %>
-	 </section>
+
+	<!-- <#%= notice %> -->
+	<%= yield %>
+
 	
-	<footer>
-		&copy;FMF FOOTER
-		<%= yield :scripts %>
-	</footer>
+  <footer>
+    <div class="inner">
+      <p class="copyright">&copy; 2012 From My Farmer</p>
+      <ul>
+        <li><%= link_to "About", about_path %> </li>
+        <li><a href="#">Farmers</a></li>
+        <li><a href="#">Chefs</a></li>
+        <li><a href="#">Media</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    <div><!-- innner -->
+  </footer>
 
 </body>
 </html>
