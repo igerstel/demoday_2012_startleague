@@ -58,7 +58,11 @@
 		<div class="inner">
   		<h1><%= link_to "From My Farmer", root_url %></h1>
   		<% if logged_in? %>
-  			<nav>
+        <form class="search">
+          <input type="search" placeholder="search">
+          <input type="Submit" >
+        </form>
+   			<nav>
   				<ul>
   					<li><%= link_to "View My Profile", user_url(current_user) %></li>
   					<li><%= link_to "Dropoff Locations", locations_url(current_user) %></li>
@@ -66,7 +70,7 @@
   				</ul>
   			</nav>
   			<% else %>		
-  			<%= form_tag sessions_url do %>
+  			<%= form_tag sessions_url, :class => "Login" do %>
   			  <fieldset>  
   			    <%= label_tag :email %>
   			    <%= text_field_tag :email, nil %>
