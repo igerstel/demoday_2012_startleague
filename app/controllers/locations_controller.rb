@@ -3,12 +3,16 @@ class LocationsController < ApplicationController
   # GET /locations.json
   def index
     @lc = Location.count
-    
-    if params[:search].present?
-      @locations = Location.near(params[:search], 50, :order => :distance)
-      @locations.inspect
-    elsif @lc == 0
+    @q = Location.search(params[:q])
+#debugger
+    # if params[:search].present?
+    #   @locations = Location.near(params[:search], 50, :order => :distance)
+    #   @locations.inspect
+    # elsif @lc == 0
+    if @lc == 0
       @locations = Location.new
+    elsif params[:q].present?
+      @locations = @q.result(:distinct => true)
     else
       @locations = Location.all
     end
@@ -17,7 +21,7 @@ class LocationsController < ApplicationController
     @farm = User.find_by_id(session["user_id"])
     @loc = @farm.fulladdress
     @temp = Location.new
-    if @lc == 0
+    if (@lc == 0) || (!@locations.present?)
       @temp.id = 1
     else @temp.id = @locations.last.id+1
     end
@@ -26,9 +30,9 @@ class LocationsController < ApplicationController
 
     @dist = []
     
-       for dropoff in @farm.nearbys(10)
-         @dist << dropoff.distance.round(2)
-       end  
+    for dropoff in @farm.nearbys(10)
+      @dist << dropoff.distance.round(2)
+    end  
 
     @url = "http://maps.googleapis.com/maps/api/staticmap?center=#{@loc}&markers=#{@loc}&zoom=11&size=600x600&maptype=roadmap&markers=color:green"
     if @lc != 0 

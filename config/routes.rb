@@ -1,7 +1,5 @@
 Fmf4::Application.routes.draw do
 
-  resources :ratings
-
   root :to => 'users#new'
 
   get "user/list" => 'users#list', :as => :chef_list
@@ -19,28 +17,21 @@ Fmf4::Application.routes.draw do
   
   get "/users/homepage" => 'users#homepage'
 
-  #get "/user/"     # routes to add drop off.
-  #post
-
   get "/user/new3" => 'users#new3', :as => :chef_step3
 
   get "session/newlogin" => 'sessions#newlogin', :as => :newlogin
 
   delete "/logout" => 'sessions#destroy', :as => :signout
 
+  resources :ratings
   resources :locations
-
   resources :order_items
-
   resources :orders
-
   resources :products
-
-  resources :users
-  
+  resources :users 
   resources :sessions, :only => [:new, :create, :destroy]
 
-get "about" => 'fmfcompanies#fmf_about', :as => :about
-get "team" => 'fmfcompanies#fmf_team', :as => :team
+  get "about" => 'fmfcompanies#fmf_about', :as => :about
+  get "team" => 'fmfcompanies#fmf_team', :as => :team
 
 end

@@ -50,10 +50,9 @@
 
 <h1>Find location</h1>
 
-<%= form_tag locations_path, :method => :get do %>
-  <p><!-- Delete? -->
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search Near", :name => nil %>
+<%= search_form_for @q do |f| %>
+  <%= f.text_field :street_address_or_city_or_state_or_zip_cont %>
+  <%= f.submit "Search Near" %>
 <% end %>
 
 <%= image_tag @url %>
@@ -93,7 +92,7 @@
         <td data-label="Product List"><%= link_to "Products",products_url(:loc => dropoff.user.id) %></td>
         <td><%= link_to 'Show', dropoff %></td>
         <td><%= link_to 'Edit', edit_location_path(dropoff) %></td>
-        <td><%= link_to 'Destroy', dropoff, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Remove', dropoff, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
   </tbody>
 <% end %>
