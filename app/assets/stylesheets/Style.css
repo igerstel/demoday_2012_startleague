@@ -249,9 +249,10 @@ select {
 textarea {
   padding: .5em;
   height: 8em;
+  resize: y;
 }
 
-/* line 43, project/_forms.scss */
+/* line 44, project/_forms.scss */
 input[type="submit"] {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #4ddb4d), color-stop(100%, #29cc29));
   background-image: -webkit-linear-gradient(#4ddb4d, #29cc29);
@@ -282,7 +283,7 @@ input[type="submit"] {
   text-shadow: 0 0 3px #333;
   text-transform: uppercase;
 }
-/* line 61, project/_forms.scss */
+/* line 62, project/_forms.scss */
 input[type="submit"]:hover, input[type="submit"]:focus {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #77e477), color-stop(100%, #4ddb4d));
   background-image: -webkit-linear-gradient(#77e477, #4ddb4d);
@@ -504,24 +505,29 @@ tbody td:first-child {
 header {
   overflow: hidden;
   background-color: #40804a;
-  padding: 1em 5%;
-}
-/* line 9, project/header.scss */
-header h1 {
-  text-align: center;
-  margin-bottom: .25em;
 }
 @media (min-width: 600px) {
-  /* line 9, project/header.scss */
+  /* line 5, project/header.scss */
+  header {
+    padding: 1em 5%;
+  }
+}
+/* line 11, project/header.scss */
+header h1 {
+  text-align: center;
+  margin: .25em 5%;
+}
+@media (min-width: 600px) {
+  /* line 11, project/header.scss */
   header h1 {
     float: left;
     width: 60%;
-    margin-bottom: 0;
+    margin: 0;
     padding: 0;
     text-align: left;
   }
 }
-/* line 20, project/header.scss */
+/* line 22, project/header.scss */
 header form {
   -webkit-border-radius: 1em;
   -moz-border-radius: 1em;
@@ -533,7 +539,7 @@ header form {
   padding: 1.5em 5%;
 }
 @media (min-width: 600px) {
-  /* line 20, project/header.scss */
+  /* line 22, project/header.scss */
   header form {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -546,12 +552,12 @@ header form {
     background-color: transparent;
   }
 }
-/* line 33, project/header.scss */
+/* line 35, project/header.scss */
 header fieldset {
   margin-bottom: .5em;
 }
 @media (min-width: 600px) {
-  /* line 33, project/header.scss */
+  /* line 35, project/header.scss */
   header fieldset {
     float: left;
     width: 35%;
@@ -559,7 +565,7 @@ header fieldset {
     margin-bottom: 0;
   }
 }
-/* line 41, project/header.scss */
+/* line 43, project/header.scss */
 header fieldset label {
   float: left;
   width: 25%;
@@ -568,28 +574,28 @@ header fieldset label {
   text-align: right;
 }
 @media (min-width: 600px) {
-  /* line 41, project/header.scss */
+  /* line 43, project/header.scss */
   header fieldset label {
     float: none;
     width: auto;
     text-align: left;
   }
 }
-/* line 54, project/header.scss */
+/* line 56, project/header.scss */
 header fieldset input[type="text"],
 header fieldset input[type="password"] {
   float: right;
   width: 70%;
 }
 @media (min-width: 600px) {
-  /* line 54, project/header.scss */
+  /* line 56, project/header.scss */
   header fieldset input[type="text"],
   header fieldset input[type="password"] {
     float: none;
     width: 100%;
   }
 }
-/* line 63, project/header.scss */
+/* line 65, project/header.scss */
 header input[type="submit"] {
   -webkit-border-radius: 0.25em;
   -moz-border-radius: 0.25em;
@@ -606,7 +612,7 @@ header input[type="submit"] {
   letter-spacing: 0;
   text-transform: none;
 }
-/* line 75, project/header.scss */
+/* line 77, project/header.scss */
 header input[type="submit"]:hover, header input[type="submit"]:focus {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #77e477), color-stop(100%, #4ddb4d));
   background-image: -webkit-linear-gradient(#77e477, #4ddb4d);
@@ -615,10 +621,49 @@ header input[type="submit"]:hover, header input[type="submit"]:focus {
   background-image: linear-gradient(#77e477, #4ddb4d);
 }
 @media (min-width: 600px) {
-  /* line 63, project/header.scss */
+  /* line 65, project/header.scss */
   header input[type="submit"] {
     width: 20%;
     margin-top: 1.75em;
+  }
+}
+/* line 85, project/header.scss */
+header nav {
+  background-color: #1e3c23;
+  padding: 1em 5%;
+  text-align: right;
+}
+@media (min-width: 600px) {
+  /* line 85, project/header.scss */
+  header nav {
+    background-color: transparent;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+/* line 94, project/header.scss */
+header nav li {
+  display: inline;
+  font-family: Helmet, Freesans, sans-serif;
+  font-size: 1.1em;
+}
+@media (min-width: 600px) {
+  /* line 94, project/header.scss */
+  header nav li {
+    display: block;
+    margin-bottom: .25em;
+  }
+}
+@media (max-width: 599px) {
+  /* line 103, project/header.scss */
+  header nav li:before {
+    content: '\007c';
+    color: #40804a;
+    margin: 0 .5em;
+  }
+  /* line 108, project/header.scss */
+  header nav li:first-child:before {
+    display: none;
   }
 }
 
@@ -849,6 +894,14 @@ header input[type="submit"]:hover, header input[type="submit"]:focus {
 /* line 53, project/sign-up.scss */
 #sign-up .container table {
   margin-bottom: 2em;
+}
+
+/* ====================================================================================================
+   USER STYLES
+==================================================================================================== */
+/* line 10, project/user.scss */
+.weekly-nav li {
+  display: inline;
 }
 
 /* ====================================================================================================
