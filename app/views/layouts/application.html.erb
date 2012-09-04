@@ -28,7 +28,6 @@
 
 <%= stylesheet_link_tag "reset" %>
 <%= stylesheet_link_tag "style" %>
-<%= javascript_include_tag "application" %>
 
 <%= csrf_meta_tags %>
 
@@ -104,4 +103,29 @@
   </footer>
 
 </body>
+
+  <script src="/assets/jquery-1.8.1.min.js"></script>
+  <script src="/assets/plugins.js"></script>
+  <script src="/assets/responsiveslides.min.js"></script>
+  <script src="/assets/functions.js"></script>
+  <script src="/assets/ios-orientationchange-fix.js"></script>
+  
+  <%= javascript_include_tag "gmaps4rails" %>
+  
+  <!--[if (lt IE 9) & (!IEMobile)]>
+    <script src="/assets/selectivizr.js"></script>
+    <script src="/assets/respond.js"></script>
+  <![endif]-->
+  <!--[if (lt IE 8) & (!IEMobile)]>
+    <script src="/assets/imgsizer.js"></script>
+    <script>
+      addLoadEvent(function() {
+      if (document.getElementById && document.getElementsByTagName) {
+      var aImgs = document.getElementById("content").getElementsByTagName("img");
+      imgSizer.collate(aImgs);
+      }
+      });
+    </script>
+  <![endif]-->
+
 </html>
