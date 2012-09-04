@@ -14,7 +14,7 @@ var Site = window.Site || {};
       speed: 800,
       maxwidth: 600
     });
-		  
+    
   //END FUNCTIONS  
 	});
 })(jQuery);
