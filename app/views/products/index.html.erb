@@ -17,6 +17,7 @@
     <th><%= sort_link @q, :price, "Price" %></th>
     <th>Qty avail</th>
     <th><%= sort_link @q, :user_id, "Farm Name" %></th>
+	<td><%= label_tag "Qty to order:" %></td>
     <th></th>
     <th></th>
     <th></th>
@@ -31,6 +32,9 @@
     <td><%= product.uom %></td>
     <td><%= number_to_currency(product.price) %></td>
     <td><%= product.qty_avail %></td>
+	<td><%= product.user.business_name %>
+    <td><%= number_field_tag :qty_ordered %></td>
+ 	<td><%= button_to 'Add to Cart', order_items_path(product_id: product) %>
     <td><%= product.user.business_name %></td>
     <% if @user.business == 'Farm' %>
     <td><%= link_to 'Show', product %></td>

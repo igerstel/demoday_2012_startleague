@@ -4,7 +4,22 @@ class Product < ActiveRecord::Base
   								:user_id
   
   belongs_to :user
+  has_many :order_items
   has_many :orders, :through => :order_items
+  
+  before_destroy :ensure_not_referenced_by_any_order_item
+
+
+  private
+  
+  def ensure_not_referenced_by_any_order_item 
+    if order_items.empty?
+      return true
+      else
+        errors.add(:base, 'Order Items present')
+        return false 
+        end
+    end
   
   #validates :user_id, :numericality  => { :only_integer => true,
   # 	 							 	 :greater_than_or_equal_to => 0 }

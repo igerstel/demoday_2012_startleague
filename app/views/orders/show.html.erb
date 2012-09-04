@@ -1,9 +1,15 @@
 <p id="notice"><%= notice %></p>
-
+<h2>Your From My Farmer Order:</h2> 
+<ul>
+<% @order.order_items.each do |item| %> 
+	<%= item.qty_ordered %> &times; <%= item.product.name %> <br>
+	<b>Total price:</b>
+	<li><%= number_to_currency(item.product.price) %></li>
+	<!-- <b>Total qty:</b> -->
+	<!-- <#%= @order.total_qty %> -->
+	<% end %> 
+</ul>
 <p>
-  <b>Total price:</b>
-  <%= @order.total_price %>
-</p>
 
 <p>
   <b>Total qty:</b>

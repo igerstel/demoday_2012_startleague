@@ -40,16 +40,20 @@ class OrderItemsController < ApplicationController
   # POST /order_items
   # POST /order_items.json
   def create
-    @order_item = OrderItem.new(params[:order_item])
-    if Order.last == nil
-      @order_item.order_id = 1
-    else @order_item.order_id = Order.last.id + 1
-    end
-    @order_item.qty_ordered_price = @order_item.product.price
+    @order = current_order
+    product = Product.find(params[:product_id])
+    # @order_item = OrderItem.new(params[:order_item]) Ian's line
+    @order_item = @order.add_product(product.id)
+    
+    # if Order.last == nil
+    #     @order_item.order_id = 1
+    #   else @order_item.order_id = Order.last.id + 1
+    #   end
+    #   @order_item.qty_ordered_price = @order_item.product.price
 
     respond_to do |format|
       if @order_item.save
-        format.html { redirect_to @order_item, notice: 'Order item was successfully created.' }
+        format.html { redirect_to @order_item.order, notice: 'Order item was successfully created.' }
         format.json { render json: @order_item, status: :created, location: @order_item }
       else
         format.html { render action: "new" }
