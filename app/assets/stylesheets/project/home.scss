@@ -60,7 +60,10 @@
 /*----- Dan's styles ----- */ 
 
 #home .top {
-  height-max: 450px
+  background: url('/assets/background/green_wheat_field.jpg') no-repeat;
+  height-max: 450px;
+  clear: fix;
+  fix: clear
 }
 
 
