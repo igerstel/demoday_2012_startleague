@@ -110,7 +110,11 @@
   <script src="/assets/functions.js"></script>
   <script src="/assets/ios-orientationchange-fix.js"></script>
   
-  <%= javascript_include_tag "gmaps4rails" %>
+  <%= javascript_include_tag "gmaps4rails.base" %>
+  <%= javascript_include_tag "gmaps4rails.bing" %>
+  <%= javascript_include_tag "gmaps4rails.googlemaps" %>
+  <%= javascript_include_tag "gmaps4rails.mapquest" %>
+  <%= javascript_include_tag "gmaps4rails.openlayers" %>
   
   <!--[if (lt IE 9) & (!IEMobile)]>
     <script src="/assets/selectivizr.js"></script>
