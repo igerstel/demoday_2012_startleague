@@ -3,8 +3,12 @@
 ==================================================================================================== */
 
 header {
+  @include box-shadow;
+  position: relative;
+  z-index: 2;
   overflow: hidden;
 	background-color: $header-bg;
+	border-bottom: 1px solid adjust-lightness($header-bg, -10%);
 	@media (min-width: 600px) {
   	padding: 1em 5%;
 	}

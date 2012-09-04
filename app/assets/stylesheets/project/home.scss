@@ -3,6 +3,17 @@
 ==================================================================================================== */
 
 #home {
+  .top {
+    height: 420px;
+    background: $dark-green url('/assets/background/home-top-bg.jpg') center top no-repeat;
+    .inner {
+      padding-top: 3em;
+    }
+    h2 {
+      color: $white;
+      text-shadow: 0 0 3px #333;
+    }
+  }
   .major {
     @media (min-width: 600px) {
       float: left;
@@ -56,14 +67,3 @@
     }
   }
 }
-
-/*----- Dan's styles ----- */ 
-
-#home .top {
-  background: url('/assets/background/green_wheat_field.jpg') no-repeat;
-  height-max: 450px;
-  clear: fix;
-  fix: clear
-}
-
-

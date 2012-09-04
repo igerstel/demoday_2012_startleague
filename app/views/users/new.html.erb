@@ -4,14 +4,18 @@
   <div class="inner group">
     <div class="major">
       <h2>Better relationships. Better food.</h2>
-      <figure>
-        <img src="assets/robbutcher.jpg" alt="Butcher and Larder"> 
-        <figcaption>Rob and Alle, Butcher and Larder</figcaption>
-      </figure>
-<!--       <figure>
-        <img src="assets/MontalbanoTheFarmers.jpg" alt="Montalbano Farms"> 
-        <figcaption>Rob and Christine, Montalbano Farms</figcaption>
-      </figure> -->
+      
+      <ul class="rslides" id="slider1">
+        <li>
+          <figure><img src="assets/robbutcher.jpg" alt="" /></figure>
+          <figcaption>Rob and Alle, Butcher and Larder</figcaption>
+        </li>
+        <li>
+          <figure><img src="assets/MontalbanoTheFarmers.jpg" alt="" /></figure>
+          <figcaption>Rob and Christine, Montalbano Farms</figcaption>
+        </li>
+      </ul>
+      
     </div> <!-- major -->
     <aside class="minor">
       <h2>Sign Up</h2>
@@ -51,13 +55,12 @@
         <small>By clicking Sign Up, you agree to our <a href="#">Terms &amp; Conditions</a></small>
         <%= f.submit %>
       <% end %>
-    <%= link_to 'Back', users_path %>
     </aside> <!-- Signup -->
   </div>
 </section><!-- END TOP -->
 
 <section class="bottom">
-  <div class="inner group">
+  <div class="inner">
     <p>Local farmers and chefs who buy from them are a part of something special...they are the leaders who will change norms and make our food system better.</p>
 <!--     <form>
       <h3>Chefs, order for free from a farmer near you.</h3>
@@ -68,7 +71,3 @@
     </form> -->
   </div> <!-- innner bottom -->
 </section> <!-- bottom -->
-// <script type="text/javascript">
-//   $.backstretch("/assets/background/green_wheat_field.jpg"); 
-// </script>
-</html>      
