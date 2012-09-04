@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     #@products = Product.all
+    @user = User.find_by_id(session["user_id"])
     @q = Product.search(params[:q])
     @products = @q.result(:distinct => true)
     if params[:cat].present?

@@ -36,8 +36,8 @@
 </p>
 
 <p>
-  <b>User:</b>
-  <%= @product.user_id %>
+  <b>Farm:</b>
+  <%= @product.user.business_name %>
 </p>
 <br>
 <% if session["user_id"] != @product.user_id %>
