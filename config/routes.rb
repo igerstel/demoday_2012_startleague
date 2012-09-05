@@ -21,7 +21,7 @@ Fmf4::Application.routes.draw do
 
   get "session/newlogin" => 'sessions#newlogin', :as => :newlogin
 
-  delete "/logout" => 'sessions#destroy', :as => :signout
+  get "session/logout" => 'sessions#destroy', :as => :signout
 
   resources :ratings
   resources :locations
@@ -35,5 +35,6 @@ Fmf4::Application.routes.draw do
   get "team" => 'fmfcompanies#fmf_team', :as => :team
   get "media" => 'fmfcompanies#fmf_media', :as => :media
   get "contact" => 'fmfcompanies#fmf_contact', :as => :fmf_contact
+
 
 end

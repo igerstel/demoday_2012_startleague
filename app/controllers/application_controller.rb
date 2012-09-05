@@ -1,10 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+    
+    private
 
-	class Cart < ActiveRecord::Base
-	  acts_as_shopping_cart_using :product
-	end
-
-
-
-end
+      def current_order
+        Order.find(session[:order_id])
+      rescue ActiveRecord::RecordNotFound
+        order = Order.create
+        session[:order_id] = order.id
+        order
+      end
+  end

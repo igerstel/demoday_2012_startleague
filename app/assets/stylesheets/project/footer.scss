@@ -3,8 +3,28 @@
 ==================================================================================================== */
 
 footer {
-  width: 90%;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2em 0;
+  padding: 2em 5%;
+  background-color: $dark-gray;
+  nav {
+    li {
+      display: block;
+      margin-right: .5em;
+      margin-bottom: .5em;
+      float: left;
+      font-family: $sans-serif;
+      font-size: 1.2em;
+      a {
+        color: $white;
+        &:hover, 
+        &:focus {
+          color: $white;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  small {
+    display: block;
+    clear: both;
+  }
 }

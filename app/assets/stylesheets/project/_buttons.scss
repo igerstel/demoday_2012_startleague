@@ -5,3 +5,10 @@
 .btn {
   @include button;
 }
+
+.long-btn {
+	@include background-image(linear-gradient(adjust-lightness($dark-green, 10%), $dark-green));
+	display: block;
+	padding: .5em 1em .25em;
+	color: $white;
+}

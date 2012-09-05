@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <br><br>
 
 <%= stylesheet_link_tag 'gmaps4rails' %>
@@ -104,4 +105,108 @@
 <br><br>
 
 <%= link_to 'New Location', new_location_path %>
+=======
+<% @body_id = "locations" %>
+>>>>>>> 84441ba48df2fde9f19bacaad927208a15034dda
 
+<section class="main">
+<div class="inner group">	
+	
+	<aside>
+	  <h4 class="toggler"><a href="#">Navigation</a></h4>
+	  <nav>
+		  <h4><a href="#">Messages</a></h4>
+		  <h4><a href="#">Orders <span>3</span></a></h4>
+		  <ul>
+		  	<li><a href="#">New Orders</a></li>
+		  	<li><a href="#">Existing Orders</a></li>
+		  	<li><a href="#">Past Orders</a></li>
+		  </ul>
+		  <h4><a href="#">My Account</a></h4>
+		  <ul>
+		  	<li><a href="#">Product List</a></li>
+		  	<li><a href="#">Dropoff Locations</a></li>
+		  	<li><a href="#">Edit Profile</a></li>
+		  	<li><a href="#">View Profile</a></li>
+		  </ul>
+		</nav>
+	</aside>
+	
+	<div class="major">
+		<h2>Dropoff Locations</h2>
+		<div class="content">
+		<% if @farm.business == "Farm" %>
+			<div class="add-location">
+			<h3><a href="#" class="long-btn">Add New Location</a></h3>
+			<%= form_for @location, :url => { :action => 'index2'} do |f| %>
+		  	<% if @location.errors.any? %>
+		    <div id="error_explanation">
+		    	<h2><%= pluralize(@location.errors.count, "error") %> prohibited this location from being saved:</h2>
+		      <ul>
+		      	<% @location.errors.full_messages.each do |msg| %>
+		        <li><%= msg %></li>
+		        <% end %>
+		      </ul>
+		    </div>
+		    <% end %>
+		    <%= f.label :street_address %><br />
+		    <%= f.text_field :street_address %>
+		    <%= f.label :city %><br />
+		    <%= f.text_field :city %>
+		    <%= f.label :state %><br />
+		    <%= f.select :state, states %>
+		    <%= f.label :zip %><br />
+		    <%= f.number_field :zip %>
+		    <%= f.label :day, "Delivery Day" %><br />
+		    <%= f.select :day, dropoff_day %>
+		    <%= f.submit %>
+		  <% end %>
+			</div><!-- END ADD-LOCATION -->
+		<% end %>
+		<% if @farm.business == "Chef" %>
+			<h3>Find location</h3>
+			<%= search_form_for @q do |f| %>
+			  <%= f.text_field :street_address_or_city_or_state_or_zip_cont %>
+			  <%= f.submit "Search Near" %>
+			<% end %>
+		<% end %>
+		<%= image_tag @url %>
+		<h2>Listing locations</h2>
+		<table>
+		  <thead>
+		    <tr>
+		      <th>Street address</th>
+		      <th>Distance</th>
+		      <th>City</th>
+		      <th>State</th>
+		      <th>Zip</th>
+		      <th>Day</th>
+		      <th>Farm</th>
+		      <th>Product List</th>
+		      <th></th>
+		      <th></th>
+		      <th></th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <% for dropoff in @temp.nearbys(10) %>
+		        <td data-label="Address"><%= link_to dropoff.street_address, dropoff %></td>
+		        <td data-label="Distance"><%= dropoff.distance_from(@farm).round(2) %> miles </td>
+		        <td data-label="City"><%= dropoff.city %></td>
+		        <td data-label="State"><%= dropoff.state %></td>
+		        <td data-label="Zip"><%= dropoff.zip %></td>
+		        <td data-label="Day"><%= dropoff.day %></td>
+		        <td data-label="Farm"><%= link_to "#{dropoff.user.business_name}", user_url(dropoff.user.id) %></td>
+		        <td data-label="Product List"><%= link_to "Products",products_url(:loc => dropoff.user.id) %></td>
+		        <td><%= link_to 'Show', dropoff %></td>
+		        <td><%= link_to 'Edit', edit_location_path(dropoff) %></td>
+		        <td><%= link_to 'Remove', dropoff, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		      </tr>
+		  </tbody>
+		<% end %>
+		</table>
+	</div><!-- END CONTENT -->
+		
+</div>
+</section>

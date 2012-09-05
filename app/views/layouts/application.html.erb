@@ -28,7 +28,6 @@
 
 <%= stylesheet_link_tag "reset" %>
 <%= stylesheet_link_tag "style" %>
-<%= javascript_include_tag "application" %>
 
 <%= csrf_meta_tags %>
 
@@ -58,14 +57,11 @@
 		<div class="inner">
   		<h1><%= link_to "From My Farmer", root_url %></h1>
   		<% if logged_in? %>
-        <form class="search">
-          <input type="search" placeholder="search">
-          <input type="Submit" >
-        </form>
    			<nav>
   				<ul>
   					<li><%= link_to "View My Profile", user_url(current_user) %></li>
   					<li><%= link_to "Dropoff Locations", locations_url(current_user) %></li>
+					<li><%= link_to "Products", products_url %></li>
   					<li><%= link_to "Sign Out", signout_url, :method => :delete %></li>
   				</ul>
   			</nav>
@@ -92,18 +88,50 @@
 	
   <footer>
     <div class="inner">
-      <p class="copyright">&copy; 2012 From My Farmer</p>
-      <ul>
-        <li><%= link_to "About", about_path %> </li>
-        <li><a href="#">Farmers</a></li>
-        <li><a href="#">Chefs</a></li>
-        <li><a href="#">Media</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+      <nav>
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><%= link_to "About", about_path %> </li>
+          <li><a href="#">Farmers</a></li>
+          <li><a href="#">Chefs</a></li>
+          <li><a href="#">Media</a></li>
+          <li><a href="#">Contact</a></li>
+        </ol>
+      </nav>
+      <small>&copy; 2012 From My Farmer</small>
     <div><!-- innner -->
 
     <%= yield :scripts %>
   </footer>
 
 </body>
+
+  <script src="/assets/jquery-1.8.1.min.js"></script>
+  <script src="/assets/plugins.js"></script>
+  <script src="/assets/responsiveslides.min.js"></script>
+  <script src="/assets/functions.js"></script>
+  <script src="/assets/ios-orientationchange-fix.js"></script>
+  
+  <%= javascript_include_tag "gmaps4rails.base" %>
+  <%= javascript_include_tag "gmaps4rails.bing" %>
+  <%= javascript_include_tag "gmaps4rails.googlemaps" %>
+  <%= javascript_include_tag "gmaps4rails.mapquest" %>
+  <%= javascript_include_tag "gmaps4rails.openlayers" %>
+  
+  <!--[if (lt IE 9) & (!IEMobile)]>
+    <script src="/assets/selectivizr.js"></script>
+    <script src="/assets/respond.js"></script>
+  <![endif]-->
+  <!--[if (lt IE 8) & (!IEMobile)]>
+    <script src="/assets/imgsizer.js"></script>
+    <script>
+      addLoadEvent(function() {
+      if (document.getElementById && document.getElementsByTagName) {
+      var aImgs = document.getElementById("content").getElementsByTagName("img");
+      imgSizer.collate(aImgs);
+      }
+      });
+    </script>
+  <![endif]-->
+
 </html>

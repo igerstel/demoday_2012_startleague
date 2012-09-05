@@ -130,7 +130,6 @@ input[type="button"][disabled] {
 }
 
 textarea,
-select,
 input[type="date"],
 input[type="datetime"],
 input[type="datetime-local"],
