@@ -1,6 +1,13 @@
-<h1>Editing user</h1>
+<section class="main">
+<div class="inner group">
 
-<%= render 'form' %>
+	<div class="major">
+		<h2>Editing user</h2>
+		<div class="content">
+			<%= render 'form' %>
+			<%= link_to 'View Profile', @user %>
+		</div>
+	</div>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+</div>
+</section>
