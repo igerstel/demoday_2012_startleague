@@ -29,7 +29,10 @@ class LocationsController < ApplicationController
     end
     if session["user_id"] != nil
       @farm = User.find_by_id(session["user_id"])
-    else redirect_to root_url
+    else 
+      @farm = User.new
+      @farm.latitude = 41.8865
+      @farm.longitude = 87.638
     end
     @temp.latitude = @farm.latitude
     @temp.longitude = @farm.longitude
