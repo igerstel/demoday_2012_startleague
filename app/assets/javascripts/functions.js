@@ -15,9 +15,13 @@ var Site = window.Site || {};
       maxwidth: 600
     });
     
-    // ANY STRETCH
+    // SLIDE TOGGLE
     
-    $('#home .top').anystretch("/assets/background/home-top-bg.jpg");
+    var slideTrigger = $('aside h3 a');
+    
+    $(slideTrigger).click(function() {
+	    $('aside nav').slideToggle();
+    });
     
   // END FUNCTIONS  
 	});

@@ -3,10 +3,8 @@
 ==================================================================================================== */
 
 table {
-  @include box-shadow;
   width: 100%;
   line-height: 1.4;
-  border: 5px solid $light-border;
 }
 thead {
   th {

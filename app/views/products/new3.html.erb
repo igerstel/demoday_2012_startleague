@@ -1,65 +1,60 @@
 <% @body_id = "sign-up" %>
 
-<div class="container">
-
-  <div class='progress'>
-    <div class='bar' style='width: 100%'></div>
-    <div class='progress-marker one'>
-      <div class='marker completed'></div>
-      <h4>Step 1</h4>
-    </div>
-    <div class='progress-marker two'>
-      <div class='marker completed'></div>
-      <h4>Step 2</h4>
-    </div>
-    <div class='progress-marker three'>
-      <div class='marker current'></div>
-      <h4>Step 3</h4>
-    </div>
-  </div>
-  
-  <h2>Get Started</h2>
-
-  <%= form_for(@product, :url => { :action => "new4" }) do |f| %>
-  <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
-      <ul>
-      <% @product.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <h4>Adding Items for the week of <span><%= @start_date %></span> to <span><%= @end_date %></span></h4>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Product</th>
-        <th>Variety</th>
-        <th>Packaging</th>
-        <th>Pkg. Qty.</th>
-        <th>Price</th>
-        <th>Qty. Avail.</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td data-heading="Product"><%= f.text_field :name %></td>
-        <td data-heading="Variety"><%= f.text_field :product_attribute %></td>
-        <td data-heading="Packaging"><%= f.text_field :packaging %></td>
-        <td data-heading="Pkg. Qty."><%= f.text_field :uom %></td>
-        <td data-heading="Price"><%= f.text_field :price %></td>
-        <td data-heading="Qty. Avail."><%= f.text_field :qty_avail %></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  <%= f.submit "Add this item" %>
-  <% end %>
-  
-  <small><%= userhome %></small>
-  
-</div>
+<section class="main">
+	<div class="container">
+	  <div class='progress'>
+	    <div class='bar' style='width: 100%'></div>
+	    <div class='progress-marker one'>
+	      <div class='marker completed'></div>
+	      <h4>Step 1</h4>
+	    </div>
+	    <div class='progress-marker two'>
+	      <div class='marker completed'></div>
+	      <h4>Step 2</h4>
+	    </div>
+	    <div class='progress-marker three'>
+	      <div class='marker current'></div>
+	      <h4>Step 3</h4>
+	    </div>
+	  </div>
+	  <h2>Get Started</h2>
+	  <%= form_for(@product, :url => { :action => "new4" }) do |f| %>
+	  <% if @product.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+	      <ul>
+	      <% @product.errors.full_messages.each do |msg| %>
+	        <li><%= msg %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+	  <p>Adding Items for the week of</p>
+	  <h4><span><%= @start_date %></span> to <span><%= @end_date %></span></h4>
+	  <table>
+	    <thead>
+	      <tr>
+	        <th>Product</th>
+	        <th>Variety</th>
+	        <th>Packaging</th>
+	        <th>Pkg. Qty.</th>
+	        <th>Price</th>
+	        <th>Qty. Avail.</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <tr>
+	        <td data-heading="Product"><%= f.text_field :name %></td>
+	        <td data-heading="Variety"><%= f.text_field :product_attribute %></td>
+	        <td data-heading="Packaging"><%= f.text_field :packaging %></td>
+	        <td data-heading="Pkg. Qty."><%= f.text_field :uom %></td>
+	        <td data-heading="Price"><%= f.text_field :price %></td>
+	        <td data-heading="Qty. Avail."><%= f.text_field :qty_avail %></td>
+	      </tr>
+	    </tbody>
+	  </table>
+	  <%= f.submit "Add this item" %>
+	  <% end %>
+	  <small><%= userhome %> &raquo;</small>
+	</div>
+</section>

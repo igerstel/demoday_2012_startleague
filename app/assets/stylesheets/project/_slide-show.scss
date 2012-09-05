@@ -32,3 +32,27 @@
     font-family: $sans-serif;
   }
 }
+
+.rslides_tabs {
+	margin-top: 1em;
+	li {
+		float: left;
+		margin-right: .5em;
+		a {
+			@include border-radius(50%);
+			@include box-shadow;
+			display: block;
+			height: 12px;
+			width: 12px;
+			background: $light-gray;
+			border: 3px solid $white;
+			text-indent: -9999px;
+			&:hover {
+				background-color: $med-gray;
+			}
+		}
+		&.rslides_here a {
+			background-color: $dark-green;
+		}
+	}
+}

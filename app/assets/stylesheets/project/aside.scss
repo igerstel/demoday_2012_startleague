@@ -1,0 +1,41 @@
+/* ====================================================================================================
+   ASIDE STYLES
+==================================================================================================== */
+
+aside {
+	.main & {
+	  @include box-sizing(border-box);
+	  margin-bottom: 2em;
+	  background-color: $white;
+	  @media (min-width: 600px) {
+	    float: left;
+	    width: 20%;
+	    padding: 2em;
+	  }
+	  h3 {
+		  margin-bottom: 0;
+		  @media (min-width: 600px) {
+			  display: none;
+		  }
+		  a {
+			  display: block;
+			  padding: .5em 5%;
+			  background-color: $dark-blue;
+			  color: $white;
+		  }
+	  }
+	}
+	nav {
+		display: none;
+		h4 {
+			border-bottom: 1px solid $light-gray;
+			a {
+				display: block;
+				padding: .5em 5%;
+			}
+		}
+		@media (min-width: 600px) {
+			display: block !important;
+		}
+	}
+}

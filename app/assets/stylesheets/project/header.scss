@@ -24,7 +24,6 @@ header {
   	}
 	}
 	form {
-  	@include border-radius(1em);
   	overflow: hidden;
   	background-color: adjust-lightness($header-bg, -20%);
   	padding: 1.5em 5%;

@@ -4,17 +4,15 @@
 
 .main {
   overflow: hidden;
-  padding-top: 4em;
-  padding-bottom: 4em;
-  aside {
-    @include box-sizing(border-box);
-    height: 10em;
-    padding: 2em;
-    background-color: $dark-blue;
-    @media (min-width: 600px) {
-      float: left;
-      width: 20%;
-    }
+  @media (min-width: 600px) {
+	  margin: 2em 5%;
+  }
+  #home &, 
+  #sign-up & {
+	  margin: 0;
+  }
+  h2 {
+	  text-align: center;
   }
   .top {
     overflow: hidden;
@@ -34,8 +32,9 @@
     position: relative;
     clear: left;
     margin-top: 4em;
-    padding: 1em;
     background-color: $content-bg;
+    border-top: 5px solid $dark-border;
+    border-bottom: 5px solid $dark-border;
   }
   .tabs {
     position: absolute;
