@@ -80,10 +80,15 @@
 		  @media (min-width: 480px) {
 			  &.half {
 				  float: left;
+				  clear: both;
 				  width: 48%;
 				  &.right {
 					  float: right;
+					  clear: none;
 				  }
+			  }
+			  &.full {
+				  clear: both;
 			  }
 		  }
 	  }

@@ -1,0 +1,31 @@
+/* ====================================================================================================
+   PROFILE PAGE STYLES
+==================================================================================================== */
+
+#profile {
+	.top {
+		padding: 2em 5%;
+		figure {
+			@include box-shadow;
+			float: none;
+			width: auto;
+			margin-bottom: 2em;
+			background-color: $white;
+			border: 5px solid $white;
+		}
+		h4 {
+			margin-bottom: .25em;
+		}
+		address {
+			margin-bottom: 1em;
+			font-size: 1.4em;
+			line-height: 1.4em;
+		}
+		.small-btn {
+			display: block;
+			margin-bottom: 1em;
+			font-size: 1.8em;
+			text-align: center;
+		}
+	}
+}

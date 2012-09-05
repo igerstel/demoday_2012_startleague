@@ -1,83 +1,42 @@
-<p>
-  <b>Photo:</b>
-  <%= image_tag @user.photo, :height => 200 %>
-</p>
+<% @body_id = "profile" %>
 
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
+<section class="main">
+<div class="inner group">
 
-<p>
-  <b>First Name:</b>
-  <%= @user.first_name %>
-</p>
+	<div class="major">
+		<div class="top">
+			<figure>
+				<%= image_tag @user.photo %>
+			</figure>
+			<h2><%= @user.first_name %> <%= @user.last_name %></h2>
+			<div class="rating">
+				<%= @user.ratings.average(:stars) %>
+			</div>
+			<h4><%= @user.business_name %></h4>
+			<address>
+				<%= @user.address %><br />
+				<%= @user.city %> <%= @user.state %> <%= @user.zip %>
+				<% if @user.phone %>
+					<br />
+					<strong>Phone :</strong> <%= @user.phone %>
+				<% end %>
+			</address>
+			<a href="<%= @user.website %>" class="website"><%= @user.website %></a>
+			<ul class="tags">
+				<li><%= @user.tag %></li>
+			</ul>
+			<a href="mailto:<%= @user.email %>" class="small-btn">Contact</a>
+			<h4>About Me</h4>
+			<p><%= @user.about %></p>
+		</div><!-- END TOP -->
+		<div class="content">
+		</div><!-- END CONTENT -->
+	</div><!-- END MAJOR -->
+	
+	<aside>
+		<h3>My Favorite Farms</h3>
+		<%= @user.favorite %>
+	</aside>
 
-<p>
-  <b>Last Name:</b>
-  <%= @user.last_name %>
-</p>
-
-<p>
-  <b>Business name:</b>
-  <%= @user.business_name %>
-</p>
-
-<p>
-  <b>Address:</b>
-  <%= @user.address %>
-</p>
-
-<p>
-  <b>City:</b>
-  <%= @user.city %>
-</p>
-
-<p>
-  <b>State:</b>
-  <%= @user.state %>
-</p>
-
-<p>
-  <b>Zip:</b>
-  <%= @user.zip %>
-</p>
-
-<p>
-  <b>Website:</b>
-  <%= @user.website %>
-</p>
-
-<p>
-  <b>Phone:</b>
-  <%= @user.phone %>
-</p>
-
-<p>
-  <b>About:</b>
-  <%= @user.about %>
-</p>
-
-<p>
-  <b>Business:</b>
-  <%= @user.business %>
-</p>
-
-<p>
-  <b>Tag:</b>
-  <%= @user.tag %>
-</p>
-
-<p>
-  <b>Favorite:</b>
-  <%= @user.favorite %>
-</p>
-
-<p>
-  <b>Average Rating:</b>
-  <%= @user.ratings.average(:stars) %>
-</p>
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+</div>
+</section>
