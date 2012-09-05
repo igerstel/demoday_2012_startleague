@@ -8,7 +8,7 @@ table {
 }
 thead {
   th {
-    background-color: $green;
+    background-color: $dark-green;
     border-left: 1px solid $white;
     padding: .5em;
     color: $white;
@@ -24,10 +24,10 @@ thead {
 }
 tbody {
   tr {
-    background-color: #eee;
+    background-color: $light-gray-2;
     border-bottom: 1px solid #fff;
     &:nth-child(even) {
-      background-color: #ccc;
+      background-color: $light-gray-1;
     }
   }
   td{
@@ -54,18 +54,22 @@ tbody {
     left: -9999px;
   }
   tr {
-    padding: .75em 0;
+    padding: 2em 5%;
+    tbody & {
+	    border-bottom: 5px solid $white;
+    }
   }
-  td {
+  tbody td {
     border: none;
     position: relative;
-    margin-bottom: .5em;
-    padding: 0 5% 0 10.5em;
+    margin-bottom: .25em;
+    padding: 0 5% 0 6.5em;
+    font-size: 1.4em;
     &:before {
       content: attr(data-heading) "\00a0\003a";
       position: absolute;
       left: 0;
-      width: 10em;
+      width: 6em;
       white-space: nowrap;
       color: #666;
       text-align: right;
