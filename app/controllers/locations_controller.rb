@@ -36,13 +36,16 @@ class LocationsController < ApplicationController
     if @temp.latitude == nil
       @temp.latitude = 41.8865
       @temp.longitude = 87.638
-    end    
+    end  
+
+    @markers = []
+    @markers << {lat: @location.latitude, lng: @location.longitude}  
 
 
-    @json = Location.all.to_gmaps4rails
+    # @json = Location.all.to_gmaps4rails
 
-    @json << @temp.to_gmaps4rails
-    @dist = []
+    # @json << @temp.to_gmaps4rails
+    # @dist = []
     
     for dropoff in @temp.nearbys(10)
       @dist << dropoff.distance.round(2)

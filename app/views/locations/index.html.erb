@@ -100,7 +100,7 @@
 </table>
 
 <br><br>
-<%= gmaps4rails(@json) %>
+
 <br><br>
 
 <%= link_to 'New Location', new_location_path %>
@@ -208,4 +208,5 @@
 	</div><!-- END CONTENT -->
 		
 </div>
+<%= gmaps("markers" => {"data" => @markers.to_json}) %>
 </section>
