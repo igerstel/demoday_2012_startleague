@@ -1,6 +1,34 @@
-<h1>Editing product</h1>
+<% @body_id = "products" %>
 
-<%= render 'form' %>
+<section class="main">
+<div class="inner group">
 
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>
+	<aside>
+	  <h4 class="toggler"><a href="#">Navigation</a></h4>
+	  <nav>
+		  <h4><a href="#">Messages</a></h4>
+		  <h4><a href="#">Orders <span>3</span></a></h4>
+		  <ul>
+		  	<li><a href="#">New Orders</a></li>
+		  	<li><a href="#">Existing Orders</a></li>
+		  	<li><a href="#">Past Orders</a></li>
+		  </ul>
+		  <h4><a href="#">My Account</a></h4>
+		  <ul>
+		  	<li><a href="#">Product List</a></li>
+		  	<li><a href="#">Dropoff Locations</a></li>
+		  	<li><a href="#">Edit Profile</a></li>
+		  	<li><a href="#">View Profile</a></li>
+		  </ul>
+		</nav>
+	</aside>
+
+	<h2>Editing product</h2>
+	<div class="content">
+		<%= render 'form' %>
+		<%= link_to 'Show', @product %> |
+		<%= link_to 'Back', products_path %>
+	</div>
+	
+</div>
+</section>

@@ -1,30 +1,27 @@
 <% @body_id = "sign-up" %>
 
-<div class="container">
-
-  <div class='progress'>
-    <div class='bar' style='width: 100%'></div>
-    <div class='progress-marker one'>
-      <div class='marker completed'></div>
-      <h4>Step 1</h4>
-    </div>
-    <div class='progress-marker two'>
-      <div class='marker completed'></div>
-      <h4>Step 2</h4>
-    </div>
-    <div class='progress-marker three'>
-      <div class='marker current'></div>
-      <h4>Step 3</h4>
-    </div>
-  </div>
-  
-  <h4>Check out some of the great farms in your area.</h4>
-
-  <!-- <#%= gmaps4rails(@json) %> -->
-  
-  <!-- Get coords for chef (exact or approximate). application helper -->
-  <!-- Calculate distance -->
-
-  <small><%= userhome %></small>
-
-</div>
+<section class="main">
+	<div class="container">
+	  <div class='progress'>
+	    <div class='bar' style='width: 100%'></div>
+	    <div class='progress-marker one'>
+	      <div class='marker completed'></div>
+	      <h4>Step 1</h4>
+	    </div>
+	    <div class='progress-marker two'>
+	      <div class='marker completed'></div>
+	      <h4>Step 2</h4>
+	    </div>
+	    <div class='progress-marker three'>
+	      <div class='marker current'></div>
+	      <h4>Step 3</h4>
+	    </div>
+	  </div>
+	  <h2>Get Started</h2>
+	  <h4>Check out some of the great farms in your area.</h4>
+	  <!-- <#%= gmaps4rails(@json) %> -->
+	  <!-- Get coords for chef (exact or approximate). application helper -->
+	  <!-- Calculate distance -->
+	  <small><%= userhome %></small>
+	</div>
+</section>

@@ -1,5 +1,3 @@
-<br><br>
-
 <%= stylesheet_link_tag 'gmaps4rails' %>
 
 <% if @farm.business == "Farm" %>
@@ -45,19 +43,13 @@
 </tr>
 </table>
 <% end %>
-
 <% end %>
-<br><br>
-
 <h1>Find location</h1>
-
 <%= search_form_for @q do |f| %>
   <%= f.text_field :street_address_or_city_or_state_or_zip_cont %>
   <%= f.submit "Search Near" %>
 <% end %>
-
 <%= image_tag @url %>
-
 <h2>Listing locations</h2>
 <table>
   <thead>
@@ -98,10 +90,6 @@
   </tbody>
 <% end %>
 </table>
-
-<br><br>
-
-<br><br>
 
 <%= link_to 'New Location', new_location_path %>
 
@@ -206,7 +194,6 @@
 		<% end %>
 		</table>
 	</div><!-- END CONTENT -->
-		
 </div>
 <%= gmaps("markers" => {"data" => @markers.to_json}) %>
 </section>

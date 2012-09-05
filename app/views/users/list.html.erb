@@ -1,22 +1,56 @@
-<h1>Search</h1>
+<% @body_id = "products" %>
 
-<%= search_form_for @q do |f| %>
-    <%= f.label :product_attribute_or_name_cont, "Product Name" %>
-    <%= f.text_field :product_attribute_or_name_cont %> 
-<!--     <div class="field">
-        <#%= f.label :amount_lteq, "Distance <" %>
-        <#%= f.select :amount_lteq, options_for_select(maxdist) %><br />
- -->    <!-- <#%= f.text_field :state %> -->
-  </div>
-    <div class="actions"><%= f.submit "Search" %>
-    </div>
-<% end %>
+<section class="main">
+<div class="inner group">
 
-<table>
-	<tr>
-		<td>Product Name</td>
-		<td>Variety</td>
-		<td>Dropoff Within</td>
-		<td></td>
-	</tr>
-</table>
+	<aside>
+	  <h4 class="toggler"><a href="#">Navigation</a></h4>
+	  <nav>
+		  <h4><a href="#">Messages</a></h4>
+		  <h4><a href="#">Orders</h4>
+		  <ul>
+		  	<li><a href="#">Current Orders</a></li>
+		  	<li><a href="#">Past Orders</a></li>
+		  </ul>
+		  <h4><a href="#">My Account</a></h4>
+		  <ul>
+		  	<li><%= link_to 'Find Farms', locations_path %></li>
+		  	<li><%= link_to 'Shopping List', new_product_path %></li>
+		  	<li><a href="#">Edit Profile</a></li>
+		  	<li><a href="#">View Profile</a></li>
+		  </ul>
+		</nav>
+	</aside>
+	
+	<div class="major">
+		<h2>Search for Products</h2>
+		<div class="content">
+			<%= search_form_for @q do |f| %>
+				<%= f.label :product_attribute_or_name_cont, "Product Name" %>
+				<%= f.text_field :product_attribute_or_name_cont %> 
+				<!--
+				<div class="field">
+					<#%= f.label :amount_lteq, "Distance <" %>
+					<#%= f.select :amount_lteq, options_for_select(maxdist) %>
+					<#%= f.text_field :state %>
+				</div>
+				-->
+				<%= f.submit "Search" %>
+			<% end %>		
+			<!--
+			<table>
+				<thead>
+					<tr>
+						<th>Product Name</td>
+						<th>Variety</td>
+						<th>Dropoff Within</td>
+						<th></td>
+					</tr>
+				</thead>
+			</table>
+			-->
+		</div>
+	</div>
+	
+</div>
+</section>
