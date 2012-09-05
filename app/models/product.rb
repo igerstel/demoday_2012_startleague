@@ -6,6 +6,8 @@ class Product < ActiveRecord::Base
   belongs_to :user
   has_many :orders, :through => :order_items
   
+  acts_as_shopping_cart_item_for :cart
+
   #validates :user_id, :numericality  => { :only_integer => true,
   # 	 							 	 :greater_than_or_equal_to => 0 }
   #validates :qty_avail, :numericality => { :only_integer => true,

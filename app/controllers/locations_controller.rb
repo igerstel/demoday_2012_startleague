@@ -2,59 +2,64 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
+
+#@markers = '[
+#             {"description": "", "title": "", "sidebar": "", "lng": "", "lat": "", "picture": "", "width": "", "height": ""},
+ #            {"lng": "", "lat": "" }
+  #          ]'
+
+    @json = Location.all.to_gmaps4rails
+    
     @lc = Location.count
     @q = Location.search(params[:q])
-#debugger
-    # if params[:search].present?
-    #   @locations = Location.near(params[:search], 50, :order => :distance)
-    #   @locations.inspect
-    # elsif @lc == 0
+    if params[:q].present?
+      @json = @q.to_gmaps4rails
+    end
     if @lc == 0
       @locations = Location.new
     elsif params[:q].present?
       @locations = @q.result(:distinct => true)
     else
-      @locations = Location.all
+      @locations = @json
     end
-
     @location = Location.new
     @farm = User.find_by_id(session["user_id"])
     @loc = @farm.fulladdress
     @temp = Location.new
-    if (@lc == 0) || (!@locations.present?)
+    if (@lc == 0) || (!@json.present?)
       @temp.id = 1
-    else @temp.id = @locations.last.id+1
+    else @temp.id = @json.last["id"]
     end
     @temp.latitude = @farm.latitude
     @temp.longitude = @farm.longitude
-
+    @json << @temp.to_gmaps4rails
     @dist = []
     
     for dropoff in @farm.nearbys(10)
       @dist << dropoff.distance.round(2)
-    end  
+    end
 
-    @url = "http://maps.googleapis.com/maps/api/staticmap?center=#{@loc}&markers=#{@loc}&zoom=11&size=600x600&maptype=roadmap&markers=color:green"
-    if @lc != 0 
-    @locations.each do |location|
-      if location.day == "Monday"
-      @url = @url + "%7Clabel:M%7C#{location.latitude},#{location.longitude}&markers=color:green"
-      elsif location.day == "Tuesday"
-      @url = @url + "%7Clabel:T%7C#{location.latitude},#{location.longitude}&markers=color:green"
-      elsif location.day == "Wednesday"
-      @url = @url + "%7Clabel:W%7C#{location.latitude},#{location.longitude}&markers=color:green"
-      elsif location.day == "Thursday"
-      @url = @url + "%7Clabel:R%7C#{location.latitude},#{location.longitude}&markers=color:green"
-      elsif location.day == "Friday"
-      @url = @url + "%7Clabel:F%7C#{location.latitude},#{location.longitude}&markers=color:green"
-      elsif location.day == "Saturday"
-      @url = @url + "%7Clabel:S%7C#{location.latitude},#{location.longitude}&markers=color:green"
-      elsif location.day == "Sunday"
-      @url = @url + "%7Clabel:U%7C#{location.latitude},#{location.longitude}&markers=color:green"
-      end
-    end    
-  end
-  @url = @url + "&sensor=false"
+  #   @url = "http://maps.googleapis.com/maps/api/staticmap?center=#{@loc}&markers=#{@loc}&zoom=11&size=600x600&maptype=roadmap&markers=color:green"
+  #   if @lc != 0 
+  #   JSON.parse(@json).each do |location|
+  #     if location["day"] == "Monday"
+  #     @url = @url + "%7Clabel:M%7C#{location.latitude},#{location.longitude}&markers=color:green"
+  #     elsif location["day"] == "Tuesday"
+  #     @url = @url + "%7Clabel:T%7C#{location.latitude},#{location.longitude}&markers=color:green"
+  #     elsif location["day"] == "Wednesday"
+  #     @url = @url + "%7Clabel:W%7C#{location.latitude},#{location.longitude}&markers=color:green"
+  #     elsif location["day"] == "Thursday"
+  #     @url = @url + "%7Clabel:R%7C#{location.latitude},#{location.longitude}&markers=color:green"
+  #     elsif location["day"] == "Friday"
+  #     @url = @url + "%7Clabel:F%7C#{location.latitude},#{location.longitude}&markers=color:green"
+  #     elsif location["day"] == "Saturday"
+  #     @url = @url + "%7Clabel:S%7C#{location.latitude},#{location.longitude}&markers=color:green"
+  #     elsif location["day"] == "Sunday"
+  #     @url = @url + "%7Clabel:U%7C#{location.latitude},#{location.longitude}&markers=color:green"
+  #     end
+  #   end    
+  # end
+  # @url = @url + "&sensor=false"
 
   end
 

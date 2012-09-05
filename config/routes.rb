@@ -33,7 +33,7 @@ Fmf4::Application.routes.draw do
 
   get "about" => 'fmfcompanies#fmf_about', :as => :about
   get "team" => 'fmfcompanies#fmf_team', :as => :team
-  get "media" => 'fmfcompanies#fmf_media' :as => :media
-  get "contact" => 'fmfcompanies#fmf_contact' :as=> :fmf_contact
+  get "media" => 'fmfcompanies#fmf_media', :as => :media
+  get "contact" => 'fmfcompanies#fmf_contact', :as => :fmf_contact
 
 end

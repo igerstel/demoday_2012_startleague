@@ -1,5 +1,6 @@
 <br><br>
 
+<%= stylesheet_link_tag 'gmaps4rails' %>
 
 <% if @farm.business == "Farm" %>
 <h2>New Location</h2>
@@ -97,6 +98,10 @@
   </tbody>
 <% end %>
 </table>
+
+<br><br>
+<%= gmaps4rails(@json) %>
+<br><br>
 
 <%= link_to 'New Location', new_location_path %>
 
