@@ -21,7 +21,7 @@ Fmf4::Application.routes.draw do
 
   get "session/newlogin" => 'sessions#newlogin', :as => :newlogin
 
-  delete "/logout" => 'sessions#destroy', :as => :signout
+  get "session/logout" => 'sessions#destroy', :as => :signout
 
   resources :ratings
   resources :locations

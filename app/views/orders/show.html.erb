@@ -27,6 +27,6 @@
 </p>
 <%= button_to 'Cancel Order', @Order, :method => :delete, :confirm => 'Are you sure you want to cancel your order and remove all items?' %>
 
-
+<%= link_to 'Keep Shopping', products_path %> |
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>
