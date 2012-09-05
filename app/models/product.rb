@@ -1,7 +1,7 @@
 class Product < ActiveRecord::Base
   attr_accessible :description, :name, :packaging, :price,
   								:product_attribute, :qty_avail, :uom,
-  								:user_id
+  								:user_id, :image
   
   belongs_to :user
   has_many :order_items
@@ -9,6 +9,7 @@ class Product < ActiveRecord::Base
   
   before_destroy :ensure_not_referenced_by_any_order_item
 
+  mount_uploader :image, PhotoUploader  
 
   private
   
@@ -21,6 +22,7 @@ class Product < ActiveRecord::Base
         end
     end
   
+
   #validates :user_id, :numericality  => { :only_integer => true,
   # 	 							 	 :greater_than_or_equal_to => 0 }
   #validates :qty_avail, :numericality => { :only_integer => true,

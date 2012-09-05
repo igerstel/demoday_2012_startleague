@@ -56,6 +56,10 @@
 			          </ul>
 			        </div>
 			      <% end %>
+				   <fieldset class="half">
+				   <label>Product Image</label>
+			       <%= f.file_field :image %>
+				   </fieldset>
 			      <fieldset class="half">
 			      	<label>Product</label>
 		          <%= f.text_field :name %>
@@ -97,7 +101,7 @@
 			          <th>Units/Pkg.</th>
 			          <th>Qty Avail.</th>
 			          <th>Unit Price</th>
-			          <th>Photo</th>
+			          <!-- <th>Photo</th> -->
 			          <th>&nbsp;</th>
 			        </tr>
 			      </thead>
@@ -106,8 +110,8 @@
 			        <tr>
 			          <td data-heading="Product"><%= product.name %></td>
 			          <td data-heading="Variety"><%= product.product_attribute %></td>
-			          <td data-heading="Units/Pkg."><%= product.packaging %></td>
-			          <td data-heading="Qty Avail."><%= product.qty_avail %> <%= product.uom %></td>
+			          <td data-heading="Units/Pkg."><%= product.uom %> / <%= product.packaging %></td>
+			          <td data-heading="Qty Avail."><%= product.qty_avail %></td>
 			          <td data-heading="Unit Price"><%= number_to_currency(product.price) %></td>
 			          <td data-heading="Photo"><%= link_to 'Edit', edit_product_path(product) %></td>
 			          <td data-heading=""><%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>    

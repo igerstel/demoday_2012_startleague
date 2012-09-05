@@ -1,4 +1,112 @@
+<br><br>
+
+<%= stylesheet_link_tag 'gmaps4rails' %>
+
+<% if @farm.business == "Farm" %>
+<h2>New Location</h2>
+
+<%= form_for @location, :url => { :action => 'index2'} do |f| %>
+  <% if @location.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@location.errors.count, "error") %> prohibited this location from being saved:</h2>
+
+      <ul>
+      <% @location.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<table>
+<tr>
+  <td class="field">
+    <%= f.label :street_address %><br />
+    <%= f.text_field :street_address %>
+  </td>
+  <td class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </td>
+  <td class="field">
+    <%= f.label :state %><br />
+    <%= f.select :state, states %>
+  </td>
+  <td class="field">
+    <%= f.label :zip %><br />
+    <%= f.number_field :zip %>
+  </td>
+  <td class="field">
+    <%= f.label :day, "Delivery Day" %><br />
+    <%= f.select :day, dropoff_day %>
+  </td>
+  <td class="actions"></br>
+    <%= f.submit %>
+  </td>
+</tr>
+</table>
+<% end %>
+
+<% end %>
+<br><br>
+
+<h1>Find location</h1>
+
+<%= search_form_for @q do |f| %>
+  <%= f.text_field :street_address_or_city_or_state_or_zip_cont %>
+  <%= f.submit "Search Near" %>
+<% end %>
+
+<%= image_tag @url %>
+
+<h2>Listing locations</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Street address</th>
+      
+      <th>Distance</th>
+      
+      <th>City</th>
+      
+      <th>State</th>
+      
+      <th>Zip</th>
+      
+      <th>Day</th>
+      <th>Farm</th>
+      <th>Product List</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% for dropoff in @temp.nearbys(10) %>
+        <td data-label="Address"><%= link_to dropoff.street_address, dropoff %></td>
+        <td data-label="Distance"><%= dropoff.distance_from(@farm).round(2) %> miles </td>
+        <td data-label="City"><%= dropoff.city %></td>
+        <td data-label="State"><%= dropoff.state %></td>
+        <td data-label="Zip"><%= dropoff.zip %></td>
+        <td data-label="Day"><%= dropoff.day %></td>
+        <td data-label="Farm"><%= link_to "#{dropoff.user.business_name}", user_url(dropoff.user.id) %></td>
+        <td data-label="Product List"><%= link_to "Products",products_url(:loc => dropoff.user.id) %></td>
+        <td><%= link_to 'Show', dropoff %></td>
+        <td><%= link_to 'Edit', edit_location_path(dropoff) %></td>
+        <td><%= link_to 'Remove', dropoff, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  </tbody>
+<% end %>
+</table>
+
+<br><br>
+
+<br><br>
+
+<%= link_to 'New Location', new_location_path %>
+
 <% @body_id = "locations" %>
+
 
 <section class="main">
 <div class="inner group">	
@@ -100,4 +208,5 @@
 	</div><!-- END CONTENT -->
 		
 </div>
+<%= gmaps("markers" => {"data" => @markers.to_json}) %>
 </section>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <% @body_id = "products" %>
 
 <section class="main">
@@ -76,3 +77,69 @@
 	
 </div>
 </section>
+=======
+<h1>Listing products</h1>
+<br><br>
+<%= search_form_for @q do |f| %>
+  <%= hidden_field params[:cat], "cat" %>
+  <%= f.label :product_attribute_or_name_cont, "Product Name" %>
+  <%= f.text_field :product_attribute_or_name_cont %> 
+  <%= f.submit %>
+<% end %>
+<br><br>
+<table>
+  <tr>
+	<th>Product Image</th>
+    <th><%= sort_link @q, :name, "Name" %></th>
+    <th><%= sort_link @q, :product_attribute, "Product Category" %></th>
+    <th>Description</th>
+    <th>Packaging</th>
+    <th>Uom</th>
+    <th><%= sort_link @q, :price, "Price" %></th>
+    <th>Qty avail</th>
+    <th><%= sort_link @q, :user_id, "Farm Name" %></th>
+	<% if @user.business == 'Restaurant' %>
+	<td><%= label_tag "Qty to order:" %></td>
+	<% end %>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @products.each do |product| %>
+  <tr>
+	<td><%= image_tag product.image %></td>
+    <td><%= product.name %></td>
+    <td><%= link_to "#{product.product_attribute}", products_path(:cat => product.product_attribute) %></td>
+    <td><%= product.description %></td>
+    <td><%= product.packaging %></td>
+    <td><%= product.uom %></td>
+    <td><%= number_to_currency(product.price) %></td>
+    <td><%= product.qty_avail %></td>
+    <td><%= product.user.business_name %>    
+    <% if @user.business == 'Farm' %>
+      <% if @user.id == product.user_id %>
+    	  <td><%= link_to 'Show', product %></td>
+    	  <td><%= link_to 'Edit', edit_product_path(product) %></td>
+    	  <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+          <td><%= link_to 'Show', product %></td>
+      <% end %>
+    <% else %>
+      <td><%= number_field_tag :qty_ordered %></td>
+ 	    <td><%= button_to 'Add to Cart', order_items_path(product_id: product) %>
+      <td><%= link_to 'Order this', product %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Users', users_path %> |
+<% if @user.business == 'Farm'%>
+	<%= link_to 'New Product', new_product_path %> |
+<% else %>
+<%= link_to 'Farm Dropoff Locations', locations_path %>
+<% end %>
+>>>>>>> a7f8dd731857b3ebef8931d858764a7b84900bf0

@@ -52,6 +52,7 @@
 <body<%= " id='#{@body_id}'" if @body_id %>>
 
 <%= stylesheet_link_tag 'gmaps4rails' %>
+<<<<<<< HEAD
 	<div class="wrapper">
 		<header>
 			<div class="inner">
@@ -100,6 +101,64 @@
 	    <div><!-- innner -->
 	  </footer>
 	</div><!-- END WRAPPER -->
+=======
+
+	<header>
+		<div class="inner">
+  		<h1><%= link_to "From My Farmer", root_url %></h1>
+  		<% if logged_in? %>
+   			<nav>
+  				<ul>
+  					<li><%= link_to "View My Profile", user_url(current_user) %></li>
+  					<li><%= link_to "Dropoff Locations", locations_url(current_user) %></li>
+            <% if current_user.business == 'Restaurant' %>
+					    <li><%= link_to "Products", products_url %></li>
+            <% else %>
+              <li><%= link_to "Products", farmer_list_url %></li>
+            <% end %>
+  					<li><%= link_to "Sign Out", signout_url, :method => :delete %></li>
+  				</ul>
+  			</nav>
+  			<% else %>		
+  			<%= form_tag sessions_url, :class => "Login" do %>
+  			  <fieldset>  
+  			    <%= label_tag :email %>
+  			    <%= text_field_tag :email, nil %>
+  			  </fieldset>
+  			  <fieldset>
+  			    <%= label_tag :password %>
+  			    <%= password_field_tag :password %>
+  			  </fieldset>
+  			  <%= submit_tag "Login" %>
+  			<% end %>
+  		<% end %>
+		</div>
+	</header>
+
+
+	<!-- <#%= notice %> -->
+	<%= yield %>
+
+	
+  <footer>
+    <div class="inner">
+      <nav>
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><%= link_to "About", about_path %> </li>
+          <li><a href="#">Farmers</a></li>
+          <li><a href="#">Chefs</a></li>
+          <li><a href="#">Media</a></li>
+          <li><a href="#">Contact</a></li>
+        </ol>
+      </nav>
+      <small>&copy; 2012 From My Farmer</small>
+    <div><!-- innner -->
+
+    <%= yield :scripts %>
+  </footer>
+
+>>>>>>> a7f8dd731857b3ebef8931d858764a7b84900bf0
 </body>
 
   <script src="/assets/jquery-1.8.1.min.js"></script>

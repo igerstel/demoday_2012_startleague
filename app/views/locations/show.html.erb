@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= stylesheet_link_tag 'gmaps4rails' %>
+
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}" %>
 
 <ul>

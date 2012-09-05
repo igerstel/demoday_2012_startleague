@@ -35,11 +35,12 @@
 	    <thead>
 	      <tr>
 	        <th>Product</th>
-	        <th>Variety</th>
+	        <th>Category</th>
 	        <th>Packaging</th>
 	        <th>Pkg. Qty.</th>
 	        <th>Price</th>
 	        <th>Qty. Avail.</th>
+	        <th>Description</th>
 	      </tr>
 	    </thead>
 	    <tbody>
@@ -48,8 +49,9 @@
 	        <td data-heading="Variety"><%= f.text_field :product_attribute %></td>
 	        <td data-heading="Packaging"><%= f.text_field :packaging %></td>
 	        <td data-heading="Pkg. Qty."><%= f.text_field :uom %></td>
-	        <td data-heading="Price"><%= f.text_field :price %></td>
+	        <td data-heading="Price"> <%= f.text_field :price %></td>
 	        <td data-heading="Qty. Avail."><%= f.text_field :qty_avail %></td>
+	        <td data-heading="Description"><%= f.text_area :description %></td>
 	      </tr>
 	    </tbody>
 	  </table>
