@@ -4,8 +4,7 @@
 
 #home {
   .top {
-    height: 420px;
-    background: $dark-green url('/assets/background/home-top-bg.jpg') center top no-repeat;
+    background-color: $sky-blue;
     .inner {
       padding-top: 3em;
     }
@@ -19,11 +18,15 @@
       float: left;
       width: 50%;
     }
+    h2 {
+      text-align: center;
+    }
   }
   aside {
     @media (min-width: 600px) {
       float: right;
       width: 40%;
+      margin-bottom: -4em;
     }
     h2 {
       margin: 0 .5em .5em;
@@ -64,6 +67,14 @@
     input[type="radio"] {
       float: left;
       margin-right: 1em;
+    }
+  }
+  .bottom {
+    padding-top: 4em;
+    padding-bottom: 4em;
+    border-top: 5px solid $dark-green;
+    h2 {
+      margin-bottom: .5em;
     }
   }
 }

@@ -8,13 +8,17 @@ var Site = window.Site || {};
 		
 		// SLIDE SHOW
 
-    $("#slider1").responsiveSlides({
+    $("#slideshow").responsiveSlides({
       auto: true,
       pager: true,
       speed: 800,
       maxwidth: 600
     });
     
-  //END FUNCTIONS  
+    // ANY STRETCH
+    
+    $('#home .top').anystretch("/assets/background/home-top-bg.jpg");
+    
+  // END FUNCTIONS  
 	});
 })(jQuery);
