@@ -12,3 +12,17 @@
 	padding: .5em 1em .25em;
 	color: $white;
 }
+
+input[type='submit'].small-btn, 
+.small-btn {
+	@include box-shadow(none);
+	padding: .4em 1em .25em;
+	border-width: 1px;
+	font-family: $sans-serif;
+	font-size: 1.2em;
+	text-transform: none;
+	text-shadow: none;
+	&.order {
+		width: 5em;
+	}
+}

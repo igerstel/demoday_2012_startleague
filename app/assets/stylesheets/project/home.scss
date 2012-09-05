@@ -4,6 +4,8 @@
 
 #home {
   .top {
+  	padding-right: 5%;
+  	padding-left: 5%;
     background-color: $sky-blue;
     .inner {
       padding-top: 3em;
@@ -70,8 +72,7 @@
     }
   }
   .bottom {
-    padding-top: 4em;
-    padding-bottom: 4em;
+    padding: 4em 5% 12em;
     border-top: 5px solid $dark-green;
     h2 {
       margin-bottom: .5em;

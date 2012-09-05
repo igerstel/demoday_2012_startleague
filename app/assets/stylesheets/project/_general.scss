@@ -15,9 +15,20 @@ a {
 	@include transition;
 }
 
+html, body {
+	height: 100%;
+}
+
 body {
 	background: #fffcf7 url('/assets/background/background-texture.jpg') center top repeat;
   font-size: 62.5%;
+}
+
+.wrapper {
+	position: relative;
+	height: auto !important;
+	min-height: 100%;
+	margin: 0 auto;
 }
 
 .inner {
