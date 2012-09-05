@@ -9,6 +9,7 @@
 <br><br>
 <table>
   <tr>
+	<th>Product Image</th>
     <th><%= sort_link @q, :name, "Name" %></th>
     <th><%= sort_link @q, :product_attribute, "Product Category" %></th>
     <th>Description</th>
@@ -27,6 +28,7 @@
 
 <% @products.each do |product| %>
   <tr>
+	<td><%= image_tag product.image %></td>
     <td><%= product.name %></td>
     <td><%= link_to "#{product.product_attribute}", products_path(:cat => product.product_attribute) %></td>
     <td><%= product.description %></td>
