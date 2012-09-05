@@ -45,14 +45,14 @@ class LocationsController < ApplicationController
     @markers << {lat: @location.latitude, lng: @location.longitude}  
 
 
-    # @json = Location.all.to_gmaps4rails
+     @json = Location.all.to_gmaps4rails
 
-    # @json << @temp.to_gmaps4rails
+     @json << @temp.to_gmaps4rails
     # @dist = []
     
-    for dropoff in @temp.nearbys(10)
-      @dist << dropoff.distance.round(2)
-    end
+    #for dropoff in @temp.nearbys(10)
+    #  @dist << dropoff.distance.round(2)
+    #end
 
   #   @url = "http://maps.googleapis.com/maps/api/staticmap?center=#{@loc}&markers=#{@loc}&zoom=11&size=600x600&maptype=roadmap&markers=color:green"
   #   if @lc != 0 
