@@ -21,7 +21,7 @@ class Product < ActiveRecord::Base
         end
     end
   
->>>>>>> 84441ba48df2fde9f19bacaad927208a15034dda
+
   #validates :user_id, :numericality  => { :only_integer => true,
   # 	 							 	 :greater_than_or_equal_to => 0 }
   #validates :qty_avail, :numericality => { :only_integer => true,

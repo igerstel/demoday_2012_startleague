@@ -8,8 +8,8 @@ class LocationsController < ApplicationController
  #            {"lng": "", "lat": "" }
   #          ]'
 
-    @json = Location.all.to_gmaps4rails
-    
+    # @json = Location.all.to_gmaps4rails
+    @location = Location.first
     @lc = Location.count
     @q = Location.search(params[:q])
     if params[:q].present?
@@ -20,22 +20,31 @@ class LocationsController < ApplicationController
     elsif params[:q].present?
       @locations = @q.result(:distinct => true)
     else
-      @locations = @json
+      @locations = Location.all
     end
-    @location = Location.new
-    @farm = User.find_by_id(session["user_id"])
-    @loc = @farm.fulladdress
     @temp = Location.new
-    if (@lc == 0) || (!@json.present?)
+    if (@lc == 0) #|| (!@json.present?)
       @temp.id = 1
-    else @temp.id = @json.last["id"]
+    else @temp.id = @locations.last.id
+    end
+    if session["user_id"] != nil
+      @farm = User.find_by_id(session["user_id"])
+    else redirect_to root_url
     end
     @temp.latitude = @farm.latitude
     @temp.longitude = @farm.longitude
+    if @temp.latitude == nil
+      @temp.latitude = 41.8865
+      @temp.longitude = 87.638
+    end    
+
+
+    @json = Location.all.to_gmaps4rails
+
     @json << @temp.to_gmaps4rails
     @dist = []
     
-    for dropoff in @farm.nearbys(10)
+    for dropoff in @temp.nearbys(10)
       @dist << dropoff.distance.round(2)
     end
 

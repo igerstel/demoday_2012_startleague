@@ -61,7 +61,11 @@
   				<ul>
   					<li><%= link_to "View My Profile", user_url(current_user) %></li>
   					<li><%= link_to "Dropoff Locations", locations_url(current_user) %></li>
-					<li><%= link_to "Products", products_url %></li>
+            <% if current_user.business == 'Restaurant' %>
+					    <li><%= link_to "Products", products_url %></li>
+            <% else %>
+              <li><%= link_to "Products", farmer_list_url %></li>
+            <% end %>
   					<li><%= link_to "Sign Out", signout_url, :method => :delete %></li>
   				</ul>
   			</nav>
