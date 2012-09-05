@@ -35,7 +35,7 @@ tbody {
     font-family: $sans-serif;
     font-size: 1.2em;
     font-weight: 300;
-    @media (min-width: 600px) {
+    @media (min-width: 720px) {
       padding: .75em .5em;
       border-left: 1px solid $white;
     }
@@ -44,7 +44,7 @@ tbody {
     }
   }  
 }
-@media (max-width: 599px) {
+@media (max-width: 719px) {
   table, thead, tbody, th, td, tr {
     display: block;
   }
