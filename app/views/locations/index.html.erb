@@ -49,7 +49,7 @@
   <%= f.text_field :street_address_or_city_or_state_or_zip_cont %>
   <%= f.submit "Search Near" %>
 <% end %>
-<%= image_tag @url %>
+
 <h2>Listing locations</h2>
 <table>
   <thead>
@@ -157,43 +157,5 @@
 			  <%= f.submit "Search Near" %>
 			<% end %>
 		<% end %>
-		<%= image_tag @url %>
-		<h2>Listing locations</h2>
-		<table>
-		  <thead>
-		    <tr>
-		      <th>Street address</th>
-		      <th>Distance</th>
-		      <th>City</th>
-		      <th>State</th>
-		      <th>Zip</th>
-		      <th>Day</th>
-		      <th>Farm</th>
-		      <th>Product List</th>
-		      <th></th>
-		      <th></th>
-		      <th></th>
-		    </tr>
-		  </thead>
-		  <tbody>
-		    <tr>
-		      <% for dropoff in @temp.nearbys(10) %>
-		        <td data-label="Address"><%= link_to dropoff.street_address, dropoff %></td>
-		        <td data-label="Distance"><%= dropoff.distance_from(@farm).round(2) %> miles </td>
-		        <td data-label="City"><%= dropoff.city %></td>
-		        <td data-label="State"><%= dropoff.state %></td>
-		        <td data-label="Zip"><%= dropoff.zip %></td>
-		        <td data-label="Day"><%= dropoff.day %></td>
-		        <td data-label="Farm"><%= link_to "#{dropoff.user.business_name}", user_url(dropoff.user.id) %></td>
-		        <td data-label="Product List"><%= link_to "Products",products_url(:loc => dropoff.user.id) %></td>
-		        <td><%= link_to 'Show', dropoff %></td>
-		        <td><%= link_to 'Edit', edit_location_path(dropoff) %></td>
-		        <td><%= link_to 'Remove', dropoff, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-		      </tr>
-		  </tbody>
-		<% end %>
-		</table>
-	</div><!-- END CONTENT -->
-</div>
-<%= gmaps("markers" => {"data" => @markers.to_json}) %>
+	<%= image_tag @url %>
 </section>

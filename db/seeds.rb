@@ -74,20 +74,22 @@ if Rails.env.development? # ???
 	packaging = ['crate','bushel','barrel','pallet','bag']
 	unit = ['ea','lb','oz','dozen']
 
+	addy = ['Washington Library', 'Navy Pier', 'South Loop', 'Merchandise Mart']
+
 	puts "Creating Users..."
 	num = 0
 	4.times do |u|
 		u = User.new
 		u.email =					Faker::Internet.email
 		u.password = 			"pw#{num}"
-		u.password_confirmation =  "pw#{num}"
+		u.password_confirmation = "pw#{num}"
 		u.first_name =		Faker::Name.first_name
 		u.last_name =	 	  Faker::Name.last_name
 		u.business_name =	Faker::Company.name
-		u.address =				Faker::Address.street_address
+		u.address =				addy[num] #Faker::Address.street_address
 		u.city =					Faker::Address.city
 		u.state =					Faker::Address.state
-		u.zip =						Faker::Address.zip
+		u.zip =						60601 #Faker::Address.zip
 		u.website = 			Faker::Internet.url
 		u.phone = 				Faker::PhoneNumber.cell_phone
 		u.about =					Faker::Lorem.sentences(3)
