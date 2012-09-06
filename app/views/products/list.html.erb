@@ -57,6 +57,10 @@
 			        </div>
 			      <% end %>
 						<fieldset class="half">
+							<label>Product Image</label>
+							<%= f.file_field :image %>
+						</fieldset>
+						<fieldset class="half">
 							<label>Product</label>
 							<%= f.text_field :name %>
 						</fieldset>

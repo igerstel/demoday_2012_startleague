@@ -34,6 +34,7 @@
 			<table>
 				<thead>
 					<tr>
+						<th>Product Image</th>
 						<th>Product</th>
 						<th>Variety</th>
 						<th>Description</th>
@@ -51,6 +52,7 @@
 				<tbody>
 				<% @products.each do |product| %>
 					<tr>
+						<td data-heading="Product Image"><%= image_tag product.image %></td>
 						<td data-heading="Product"><%= product.name %></td>
 						<td data-heading="Variety"><%= link_to "#{product.product_attribute}", products_path(:cat => product.product_attribute) %></td>
 						<td data-heading="Description"><%= product.description %></td>
