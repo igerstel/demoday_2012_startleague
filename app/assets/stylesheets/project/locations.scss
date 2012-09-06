@@ -3,6 +3,17 @@
 ==================================================================================================== */
 
 #locations {
+	.content {
+		padding-bottom: 2em;
+		figure {
+			background-color: $light-gray-1;
+			border-bottom: 5px solid $dark-green;
+			text-align: center;
+			img {
+				vertical-align: bottom;
+			}
+		}
+	}
 	.add-location {
 	  h3 {
 	  	border-bottom: 1px solid adjust-lightness($dark-green, -10%);
@@ -10,6 +21,11 @@
 	  form {
 		  display: none;
 	  }
+	}
+	.listing {
+		h3 {
+			padding: .75em;
+		}
 	}
 	fieldset {
 		margin-bottom: 1em;
@@ -27,7 +43,7 @@
 	  color: $white;
 	}
 	input[type="submit"] {
-	  margin-top: .5em;
+	  border-color: $white;
 	}
 	.product-list {
 		padding: 2em;

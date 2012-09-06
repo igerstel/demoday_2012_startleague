@@ -34,38 +34,32 @@
 			<table>
 				<thead>
 					<tr>
-						<th>Product Image</th>
+						<th>Photo</th>
 						<th>Product</th>
 						<th>Variety</th>
 						<th>Description</th>
-						<th>Packaging</th>
-						<th>Pkg. Qty</th>
+						<th>Unit Qty</th>
 						<th>Unit Price</th>
-						<th>Qty Avail.</th>
+						<th>Units Avail.</th>
 						<th>Farm</th>
-						<% if @user.business == 'Restaurant' %>
+						<% if @user.business == 'Chef' %>
 						<th>Order Qty</th>
+						<th>&nbsp;</th>
 						<% end %>
-						<th></th>
 					</tr>
 				</thead>
 				<tbody>
 				<% @products.each do |product| %>
 					<tr>
-						<td data-heading="Product Image"><%= image_tag product.image %></td>
+						<td data-heading="Photo"><%= image_tag product.image %></td>
 						<td data-heading="Product"><%= product.name %></td>
 						<td data-heading="Variety"><%= link_to "#{product.product_attribute}", products_path(:cat => product.product_attribute) %></td>
 						<td data-heading="Description"><%= product.description %></td>
-						<td data-heading="Packaging"><%= product.packaging %></td>
-						<td data-heading="Pkg. Qty"><%= product.uom %></td>
+						<td data-heading="Unit Qty"><%= product.uom %> <%= product.packaging %></td>
 						<td data-heading="Unit Price"><%= number_to_currency(product.price) %></td>
-						<td data-heading="Qty Avail."><%= product.qty_avail %></td>
+						<td data-heading="Units Avail."><%= product.qty_avail %></td>
 						<td data-heading="Farm"><%= product.user.business_name %>
-						<% if @user.business == 'Farm' %>
-						<td data-heading="Order Qty"><%= link_to 'Show', product %></td>
-						<td data-heading="Product"><%= link_to 'Edit', edit_product_path(product) %></td>
-						<td data-heading="Product"><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-						<% else %>
+						<% if @user.business == 'Chef' %>
 						<td data-heading="Order Qty"><%= number_field_tag :qty_ordered %></td>
 						<td><%= button_to 'Order', order_items_path(product_id: product), :class => 'small-btn order' %>
 						<% end %>
