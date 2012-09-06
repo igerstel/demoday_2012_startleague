@@ -5,17 +5,24 @@
 /* Brand Colors */
 $dark-red: #b3364a;
 $green: #29cc29;
-$dark-green: #40804A;
-$dark-blue: #597980;
 
+$light-green: #a3ccaa;
+$dark-green: #40804a;
+$dark-green-2: #5c665e;
+
+$dark-blue: #597980;
 $sky-blue: #1d7bb8;
-$light-brown: #ffefbf;
+
+$light-brown: #f2eeda;
+$dark-brown: #66635c;
 
 /* Other Colors */
 $white: #ffffff;
 $black: #1a1a1a;
-$light-gray: #ccc;
-$med-gray: #999;
+$light-gray: #e6e6e6;
+$light-gray-1: #e6e6e6;
+$light-gray-2: #f2f2f2;
+$med-gray: #666;
 $dark-gray: #333;
 $red: #e61739;
 
@@ -26,6 +33,9 @@ $red: #e61739;
 $header-bg: $dark-green;
 $main-bg: adjust-lightness($green, 60%);
 $content-bg: $white;
+$form-bg: $dark-brown;
+$input-focus-bg: $light-brown;
+$button-bg: $dark-green;
 
 $light-border: $white;
 $med-border: $green;

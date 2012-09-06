@@ -3,12 +3,29 @@
 ==================================================================================================== */
 
 #home {
+	header {
+		background-color: transparentize($sky-blue, .25);
+		border-bottom: none;
+		h1 {
+			padding-bottom: .25em;
+		}
+	}
+	.bg-image {
+		position: absolute;
+		z-index: -9999;
+		top: 0;
+		right: 0;
+		left: 0;
+		height: 386px;
+		background: $sky-blue url(/assets/background/home-top-bg.jpg) center top no-repeat;
+		border-bottom: 5px solid $dark-gray;
+	}
   .top {
   	padding-right: 5%;
   	padding-left: 5%;
-    background-color: $sky-blue;
+  	padding-bottom: 12em;
     .inner {
-      padding-top: 3em;
+      padding-top: 2em;
     }
     h2 {
       color: $white;
@@ -16,9 +33,12 @@
     }
   }
   .major {
+  	display: none;
     @media (min-width: 600px) {
+    	display: block;
       float: left;
       width: 50%;
+      margin-bottom: 0;
     }
     h2 {
       text-align: center;
@@ -69,13 +89,6 @@
     input[type="radio"] {
       float: left;
       margin-right: 1em;
-    }
-  }
-  .bottom {
-    padding: 4em 5% 12em;
-    border-top: 5px solid $dark-green;
-    h2 {
-      margin-bottom: .5em;
     }
   }
 }

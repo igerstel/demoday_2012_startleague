@@ -7,19 +7,28 @@
 }
 
 .long-btn {
-	@include background-image(linear-gradient(adjust-lightness($dark-green, 10%), $dark-green));
+	@include background-image(linear-gradient(adjust-lightness($button-bg, 10%), $button-bg));
 	display: block;
 	padding: .5em 1em .25em;
 	color: $white;
+	&:hover,
+	&:focus {
+		@include background-image(linear-gradient(adjust-lightness($button-bg, 20%), adjust-lightness($button-bg, 10%)));
+		color: $white;
+	}
 }
 
 input[type='submit'].small-btn, 
 .small-btn {
+	@include border-radius(2em);
 	@include box-shadow(none);
 	padding: .4em 1em .25em;
-	border-width: 1px;
+	background: $button-bg;
+	border: none;
+	color: $white;
 	font-family: $sans-serif;
 	font-size: 1.2em;
+	font-weight: bold;
 	text-transform: none;
 	text-shadow: none;
 	&.order {

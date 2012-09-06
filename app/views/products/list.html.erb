@@ -56,43 +56,43 @@
 			          </ul>
 			        </div>
 			      <% end %>
-				   <fieldset class="half">
-				   <label>Product Image</label>
-			       <%= f.file_field :image %>
-				   </fieldset>
-			      <fieldset class="half">
-			      	<label>Product</label>
-		          <%= f.text_field :name %>
-			      </fieldset>
-			      <fieldset class="half right">
-			      	<label>Variety</label>
-		          <%= f.text_field :product_attribute %>
-			      </fieldset>
-			      <fieldset class="half">
-			      	<label>Packaging</label>
-		          <%= f.text_field :packaging %>
-			      </fieldset>
-			      <fieldset class="half right">
-			      	<label>Pkg. Qty</label>
-		          <%= f.text_field :uom %>
-			      </fieldset>
-			      <fieldset class="half">
-			      	<label>Price</label>
-		          <%= f.text_field :price %>
-			      </fieldset>
-			      <fieldset class="half right">
-			      	<label>Qty Avail.</label>
-		          <%= f.text_field :qty_avail %>
-			      </fieldset>
-			      <fieldset>
-			      	<label>Description</label>
-		          <%= f.text_area :description %>
-			      </fieldset>
+						<fieldset class="half">
+							<label>Product</label>
+							<%= f.text_field :name %>
+						</fieldset>
+						<fieldset class="half right">
+							<label>Variety</label>
+							<%= f.text_field :product_attribute %>
+						</fieldset>
+						<fieldset class="half">
+							<label>Packaging</label>
+							<%= f.text_field :packaging %>
+						</fieldset>
+						<fieldset class="half right">
+							<label>Pkg. Qty</label>
+							<%= f.text_field :uom %>
+						</fieldset>
+						<fieldset class="half">
+							<label>Price</label>
+							<%= f.text_field :price %>
+						</fieldset>
+						<fieldset class="half right">
+							<label>Qty Avail.</label>
+							<%= f.text_field :qty_avail %>
+						</fieldset>
+						<fieldset class="full">
+							<label>Description</label>
+							<%= f.text_area :description %>
+						</fieldset>
+						<fieldset class="full">
+							<label>Product Image</label>
+							<%= f.file_field :image %>
+						</fieldset>
 			    <%= f.submit "Add this item" %>
 			    <% end %>
 			  </div><!-- END ADD-PRODUCT -->
 			  <div class="product-list">
-			    <h3>My Products</h3>
+			    <h3>Product List</h3>
 			    <table>
 			      <thead>
 			        <tr>
@@ -102,7 +102,7 @@
 			          <th>Qty Avail.</th>
 			          <th>Unit Price</th>
 			          <!-- <th>Photo</th> -->
-			          <th>&nbsp;</th>
+			          <th colspan="2">Edit Item</th>
 			        </tr>
 			      </thead>
 			      <tbody>

@@ -21,6 +21,9 @@ textarea {
 	background: $white;
 	border: none;
 	outline: none;
+	&:focus {
+		background-color: $input-focus-bg;
+	}
 }
 
 input[type="text"], 
@@ -45,7 +48,7 @@ textarea {
 }
 
 input[type="submit"] {
-  @include background-image(linear-gradient(adjust-lightness($green, 10%), $green));
+  @include background-image(linear-gradient(adjust-lightness($button-bg, 10%), $button-bg));
   @include border-radius(2em);
   @include box-sizing(border-box);
   @include box-shadow(0 0 3px #333);
@@ -63,6 +66,6 @@ input[type="submit"] {
   text-transform: uppercase;
   &:hover, 
   &:focus {
-    @include background-image(linear-gradient(adjust-lightness($green, 20%), adjust-lightness($green, 10%)));
+    @include background-image(linear-gradient(adjust-lightness($button-bg, 20%), adjust-lightness($button-bg, 10%)));
   }
 }
