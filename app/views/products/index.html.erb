@@ -42,7 +42,7 @@
 						<th>Unit Price</th>
 						<th>Units Avail.</th>
 						<th>Farm</th>
-						<% if @user.business == 'Chef' %>
+						<% if @user.business == 'Restaurant' %>
 						<th>Order Qty</th>
 						<th>&nbsp;</th>
 						<% end %>
@@ -59,7 +59,7 @@
 						<td data-heading="Unit Price"><%= number_to_currency(product.price) %></td>
 						<td data-heading="Units Avail."><%= product.qty_avail %></td>
 						<td data-heading="Farm"><%= product.user.business_name %>
-						<% if @user.business == 'Chef' %>
+						<% if @user.business == 'Restaurant' %>
 						<td data-heading="Order Qty"><%= number_field_tag :qty_ordered %></td>
 						<td><%= button_to 'Order', order_items_path(product_id: product), :class => 'small-btn order' %>
 						<% end %>

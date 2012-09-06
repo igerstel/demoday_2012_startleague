@@ -66,10 +66,10 @@
 				<% end %>
 			</div><!-- END ADD-LOCATION -->
 			<% else %>
-			<h3>Find location</h3>
 			<%= search_form_for @q do |f| %>
+				<%= f.label "Search for Local Farms. Enter Your Location." %>
 			  <%= f.text_field :street_address_or_city_or_state_or_zip_cont %>
-			  <%= f.submit "Search Near" %>
+			  <%= f.submit "Search" %>
 			<% end %>
 			<% end %>
 			<% if @farm.business == "Chef" %>
