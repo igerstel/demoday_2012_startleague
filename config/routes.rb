@@ -23,6 +23,9 @@ Fmf4::Application.routes.draw do
 
   get "session/logout" => 'sessions#destroy', :as => :signout
 
+  get "/carts" => 'carts#show', :as => :current_cart
+  #current_cart 'cart', :controller => 'carts', :action => 'show', :id => 'current'
+  resources :carts
   resources :ratings
   resources :locations
   resources :order_items

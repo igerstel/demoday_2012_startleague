@@ -43,8 +43,8 @@
 						<th>Units Avail.</th>
 						<th>Farm</th>
 						<% if @user.business == 'Restaurant' %>
-						<th>Order Qty</th>
-						<th>&nbsp;</th>
+							<th>Order Qty</th>
+							<th>&nbsp;</th>
 						<% end %>
 					</tr>
 				</thead>
@@ -55,13 +55,16 @@
 						<td data-heading="Product"><%= product.name %></td>
 						<td data-heading="Variety"><%= link_to "#{product.product_attribute}", products_path(:cat => product.product_attribute) %></td>
 						<td data-heading="Description"><%= product.description %></td>
-						<td data-heading="Unit Qty"><%= product.uom %> <%= product.packaging %></td>
+						<td data-heading="Unit Qty"><%= product.uom %> per <%= product.packaging %></td>
 						<td data-heading="Unit Price"><%= number_to_currency(product.price) %></td>
 						<td data-heading="Units Avail."><%= product.qty_avail %></td>
 						<td data-heading="Farm"><%= product.user.business_name %>
 						<% if @user.business == 'Restaurant' %>
-						<td data-heading="Order Qty"><%= number_field_tag :qty_ordered %></td>
-						<td><%= button_to 'Order', order_items_path(product_id: product), :class => 'small-btn order' %>
+							<%= form_tag(order_items_path, :method => :post) do %>
+								<td data-heading="Order Qty"><%= number_field_tag :qty %></td>
+								<%= hidden_field_tag :id, product.id %>
+								<td><%= submit_tag 'Order', :class => 'small-btn' %>
+							 <% end %>
 						<% end %>
 					</tr>
 					<% end %>

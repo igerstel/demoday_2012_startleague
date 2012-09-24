@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'acts_as_shopping_cart'
+#gem 'acts_as_shopping_cart'
 
 gem 'rails', '3.2.6'
 

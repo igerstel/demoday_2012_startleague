@@ -1,0 +1,26 @@
+<table id="line_items">
+  <tr>
+    <th>Product</th>
+    <th>Qty</th>
+    <th class="price">Unit Price</th>
+    <th class="price">Full Price</th>
+  </tr>
+  <% for order_item in @cart.order_items %>
+    <tr class="<%= cycle :odd, :even %>">
+      <td><%= order_item.product.name %></td>
+      <td class="qty"><%= order_item.qty_ordered %></td>
+      <td class="price"><%= number_to_currency(order_item.qty_ordered_price) %></td>
+      <td class="price"><%= number_to_currency(order_item.full_price) %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td class="total price" colspan="4">
+      Total: <%= number_to_currency @cart.total_price %>
+    </td>
+  </tr>
+</table>
+
+<p>
+  <%= link_to "Continue Shopping", products_path %> |
+  <%= link_to "Checkout", new_order_path %>
+</p>
