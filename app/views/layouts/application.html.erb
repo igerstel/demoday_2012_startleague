@@ -65,9 +65,9 @@
 	  					<li><%= link_to "Sign Out", signout_url, :method => :delete %></li>
 	  				</ul>
 	  			</nav>
-	  			<% else %>		
+	  			<% else %>
 	  			<%= form_tag sessions_url, :class => "Login" do %>
-	  			  <fieldset>  
+	  			  <fieldset>
 	  			    <%= label_tag :email %>
 	  			    <%= text_field_tag :email, nil %>
 	  			  </fieldset>
@@ -80,10 +80,10 @@
 	  		<% end %>
 			</div>
 		</header>
-	
+
 		<!-- <#%= notice %> -->
 		<%= yield %>
-		
+
 	  <footer>
 	    <div class="inner">
 	      <nav>
@@ -100,7 +100,7 @@
 	    <div><!-- innner -->
 	  </footer>
 	</div><!-- END WRAPPER -->
-	
+
 </body>
 
 	<%= yield :scripts %>
@@ -110,13 +110,13 @@
   <script src="/assets/responsiveslides.min.js"></script>
   <script src="/assets/functions.js"></script>
   <script src="/assets/ios-orientationchange-fix.js"></script>
-  
+
   <%= javascript_include_tag "gmaps4rails.base" %>
   <%= javascript_include_tag "gmaps4rails.bing" %>
   <%= javascript_include_tag "gmaps4rails.googlemaps" %>
   <%= javascript_include_tag "gmaps4rails.mapquest" %>
   <%= javascript_include_tag "gmaps4rails.openlayers" %>
-  
+
   <!--[if (lt IE 9) & (!IEMobile)]>
     <script src="/assets/selectivizr.js"></script>
     <script src="/assets/respond.js"></script>
